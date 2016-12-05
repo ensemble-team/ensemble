@@ -7,7 +7,12 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.save
+    flash[:notice] = "Project created successfully"
     redirect_to @project
+  end
+
+  def show
+    @project = Project.find(params[:id])
   end
 
   private

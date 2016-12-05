@@ -1,1 +1,8 @@
 <h1>New Project</h1>
+
+<%= simple_form_for @project do |f| %>
+  <%= f.input :title, placeholder: 'Project Title' %>
+  <%= f.input :genre, placeholder: 'Project Genre' %>
+  <%= f.input :description, placeholder: 'Project Description' %>
+  <%= f.button :submit, button_html: { value: 'Create Project' } %>
+<% end %>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'ensemble/index'
+  resources :projects
 
   root 'ensemble#index'
 

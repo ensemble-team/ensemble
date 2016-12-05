@@ -1,8 +1,8 @@
 [![Stories in Ready](https://badge.waffle.io/ensemble-team/ensemble.png?label=ready&title=Ready)](https://waffle.io/ensemble-team/ensemble)
-#### Ensemble - A Platform for Music Collaboration
+##Ensemble - A Platform for Music Collaboration
 
-#Ensemble User Stories
-#MVP
+###Ensemble User Stories
+#####MVP
 
 ```
 As a user
@@ -17,3 +17,12 @@ As a User
 So that I can contribute to an existing project
 I want to download a project track
 ```
+
+#####Version One
+
+```
+As a User
+So that I can be a specific user
+I want to create a user account
+
+As a

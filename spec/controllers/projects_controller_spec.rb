@@ -15,8 +15,12 @@ RSpec.describe ProjectsController, type: :controller do
         project_params = FactoryGirl.attributes_for(:project)
         post :create, :project => project_params
 
-        expect(response).to redirect_to "/projects/1"
+        expect(response).to have_http_status(:redirect)
         expect(flash[:notice]).to match(/^Project created successfully/)
+      end
+
+      it "creates a new contact" do
+        expect{ post :create, project: FactoryGirl.attributes_for(:project)}.to change(Project, :count).by(1)
       end
     end
   end

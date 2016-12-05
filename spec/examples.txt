@@ -1,7 +1,8 @@
 example_id                                            | status  | run_time        |
 ----------------------------------------------------- | ------- | --------------- |
-./spec/controllers/ensemble_controller_spec.rb[1:1:1] | passed  | 0.0665 seconds  |
-./spec/controllers/projects_controller_spec.rb[1:1:1] | passed  | 0.01257 seconds |
+./spec/controllers/ensemble_controller_spec.rb[1:1:1] | passed  | 0.01515 seconds |
+./spec/controllers/projects_controller_spec.rb[1:1:1] | passed  | 0.06189 seconds |
 ./spec/helpers/ensemble_helper_spec.rb[1:1]           | pending | 0.00001 seconds |
-./spec/helpers/projects_helper_spec.rb[1:1]           | pending | 0.00001 seconds |
-./spec/views/ensemble/index.html.erb_spec.rb[1:1]     | pending | 0.00004 seconds |
+./spec/helpers/projects_helper_spec.rb[1:1]           | pending | 0.00003 seconds |
+./spec/models/project_spec.rb[1:1]                    | pending | 0.00001 seconds |
+./spec/views/ensemble/index.html.erb_spec.rb[1:1]     | pending | 0.00001 seconds |

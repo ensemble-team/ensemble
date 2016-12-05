@@ -350,6 +350,22 @@
         1,
         null
       ],
+      "/Users/felixharrison/Projects/week11/ensemble/spec/models/project_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/felixharrison/Projects/week11/ensemble/app/models/project.rb": [
+        1,
+        null
+      ],
+      "/Users/felixharrison/Projects/week11/ensemble/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/felixharrison/Projects/week11/ensemble/spec/views/ensemble/index.html.erb_spec.rb": [
         1,
         null,
@@ -358,6 +374,6 @@
         null
       ]
     },
-    "timestamp": 1480950486
+    "timestamp": 1480951761
   }
 }

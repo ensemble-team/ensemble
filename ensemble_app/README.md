@@ -1,24 +1,5 @@
-# README
+[![Stories in Ready](https://badge.waffle.io/ensemble-team/ensemble.png?label=ready&title=Ready)](https://waffle.io/ensemble-team/ensemble)
+[![Build Status](https://travis-ci.org/ensemble-team/ensemble.svg?branch=master)](https://travis-ci.org/ensemble-team/ensemble)
+[![Coverage Status](https://coveralls.io/repos/github/ensemble-team/ensemble/badge.svg?branch=master)](https://coveralls.io/github/ensemble-team/ensemble?branch=master)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Ensemble - A Platform for Music Collaboration

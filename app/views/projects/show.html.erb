@@ -12,6 +12,7 @@
       <audio controls>
         <source src="<%=audio_path avatar%>" type="audio/mpeg"></source>
       </audio>
+      <%= link_to "Download", controller.download(avatar)%>
       <% } %>
   </body>
 </html>

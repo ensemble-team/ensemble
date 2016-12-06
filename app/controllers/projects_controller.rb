@@ -6,8 +6,11 @@ helper :all
 
   def create
     @project = Project.new(project_params)
-    @project.save
+    if @project.save
     flash[:notice] = "Project created successfully"
+  else
+    flash[:notice] = "Could not save the project, check the information entered"
+    end
     redirect_to @project
   end
 

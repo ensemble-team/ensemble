@@ -17,12 +17,15 @@
       <%= t.button :submit, button_html: { value: 'Upload Track' } %>
     <% end %>
 
-    <% if @project.tracks.count != 0 %>
+    <% if @project.tracks.count != 0%>
+
     <% @project.tracks.each do |track| %>
+    <% if track.title != nil %>
       <audio controls>
         <source src="<%=audio_path track.avatar%>" type="audio/mpeg"></source>
       </audio>
       <a href="<%=track.avatar%>" download="Song">Download</a>
+    <% end %>
     <% end %>
     <% end %>
 

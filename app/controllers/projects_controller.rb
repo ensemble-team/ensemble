@@ -15,15 +15,14 @@ helper :all
     @project = Project.find(params[:id])
   end
 
-  def download(avatar)
-    send_file "public/#{avatar}", :disposition => 'attachement'
-    # redirect_to("index")
+  def download(track)
+    send_file("https://ensemble-app.s3.amazonaws.com/" + track.path, :disposition => 'attachment', :url_based_filename => false)
   end
 
   private
 
   def project_params
-    params.require(:project).permit(:title, :genre, :description,{avatars: []})
+    params.require(:project).permit(:title, :genre, :description)
   end
 
 end

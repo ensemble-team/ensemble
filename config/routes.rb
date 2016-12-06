@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :projects
+  get 'tracks/upload'
+
+  get 'tracks/delete'
+
+  resources :projects do
+    resources :tracks
+  end
 
   root 'ensemble#index'
 

@@ -16,7 +16,7 @@ RSpec.feature 'User creates new project', :type => :feature do
     page.has_button? 'Create Project'
   end
 
-  scenario 'user can created a new project' do
+  scenario 'user can create a new project' do
     visit new_project_path
 
     fill_in 'project_title', with: 'Moon Beam'

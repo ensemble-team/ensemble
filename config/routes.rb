@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   get 'tracks/delete'
 
-  resources :projects
+  resources :projects do
+    resources :tracks
+  end
 
   root 'ensemble#index'
 

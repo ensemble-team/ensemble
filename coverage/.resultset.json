@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/tompage/Documents/ensemble/ensemble/spec/controllers/ensemble_controller_spec.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/spec/controllers/ensemble_controller_spec.rb": [
         1,
         null,
         1,
@@ -15,7 +15,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/spec/rails_helper.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/spec/rails_helper.rb": [
         1,
         1,
         1,
@@ -35,14 +35,14 @@
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/config/environment.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/config/application.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/config/application.rb": [
         1,
         null,
         1,
@@ -59,12 +59,12 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/config/boot.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/config/environments/test.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/config/environments/test.rb": [
         1,
         null,
         null,
@@ -108,7 +108,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/config/initializers/application_controller_renderer.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -116,7 +116,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/config/initializers/assets.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -129,7 +129,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/config/initializers/backtrace_silencers.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -138,20 +138,20 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/config/initializers/cookies_serializer.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/tompage/Documents/ensemble/ensemble/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/config/initializers/inflections.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/FBell/Desktop/coding/ensemble/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -169,13 +169,13 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/config/initializers/mime_types.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/config/initializers/new_framework_defaults.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/config/initializers/new_framework_defaults.rb": [
         null,
         null,
         null,
@@ -201,12 +201,12 @@
         null,
         1
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/config/initializers/session_store.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/config/initializers/simple_form.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/config/initializers/simple_form.rb": [
         null,
         1,
         null,
@@ -373,7 +373,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/config/initializers/wrap_parameters.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -389,7 +389,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/config/routes.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/config/routes.rb": [
         1,
         null,
         1,
@@ -399,30 +399,30 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/app/helpers/application_helper.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/app/helpers/ensemble_helper.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/app/helpers/ensemble_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/app/helpers/projects_helper.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/app/helpers/projects_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/app/controllers/ensemble_controller.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/app/controllers/ensemble_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/app/controllers/application_controller.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/spec/controllers/projects_controller_spec.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/spec/controllers/projects_controller_spec.rb": [
         1,
         null,
         1,
@@ -436,7 +436,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/app/controllers/projects_controller.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/app/controllers/projects_controller.rb": [
         1,
         1,
         1,
@@ -466,7 +466,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/spec/features/create_new_project_page_spec.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/spec/features/create_new_project_page_spec.rb": [
         1,
         null,
         1,
@@ -486,7 +486,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/spec/features/upload_spec.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/spec/features/upload_spec.rb": [
         1,
         1,
         null,
@@ -503,7 +503,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/spec/helpers/ensemble_helper_spec.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/spec/helpers/ensemble_helper_spec.rb": [
         null,
         null,
         null,
@@ -520,7 +520,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/spec/helpers/projects_helper_spec.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/spec/helpers/projects_helper_spec.rb": [
         null,
         null,
         null,
@@ -537,14 +537,14 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/spec/models/project_spec.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/spec/models/project_spec.rb": [
         null,
         null,
         null,
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/spec/models/upload_spec.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/spec/models/upload_spec.rb": [
         null,
         1,
         1,
@@ -572,17 +572,17 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/app/models/project.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/app/models/project.rb": [
         1,
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/app/models/application_record.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/app/uploaders/avatar_uploader.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/app/uploaders/avatar_uploader.rb": [
         null,
         null,
         null,
@@ -636,7 +636,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensemble/spec/views/ensemble/index.html.erb_spec.rb": [
+      "/Users/FBell/Desktop/coding/ensemble/spec/views/ensemble/index.html.erb_spec.rb": [
         null,
         null,
         null,
@@ -644,6 +644,6 @@
         null
       ]
     },
-    "timestamp": 1481018894
+    "timestamp": 1481043716
   }
 }

@@ -1,3 +1,3 @@
 class Project < ApplicationRecord
-  mount_uploaders :avatars, AvatarUploader
+  has_many :tracks
 end

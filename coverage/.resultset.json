@@ -38,11 +38,11 @@
         null,
         null,
         1,
-        11,
+        8,
         null,
         null,
         1,
-        11,
+        8,
         null,
         1,
         null,
@@ -557,18 +557,6 @@
         null,
         1,
         null,
-        1,
-        1,
-        1,
-        0,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        0,
-        null,
         null,
         null,
         null
@@ -597,7 +585,7 @@
         null,
         null,
         1,
-        2,
+        0,
         null,
         null
       ],
@@ -779,39 +767,6 @@
         null,
         null
       ],
-      "/Users/felixharrison/Projects/week11/ensemble/spec/models/upload_spec.rb": [
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        0,
-        null,
-        null,
-        1,
-        1,
-        0,
-        null,
-        null,
-        1,
-        1,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/models/project.rb": [
-        1,
-        1,
-        null
-      ],
       "/Users/felixharrison/Projects/week11/ensemble/spec/views/ensemble/index.html.erb_spec.rb": [
         null,
         null,
@@ -832,8 +787,13 @@
         1,
         1,
         null
+      ],
+      "/Users/felixharrison/Projects/week11/ensemble/app/models/project.rb": [
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1481044093
+    "timestamp": 1481045257
   }
 }

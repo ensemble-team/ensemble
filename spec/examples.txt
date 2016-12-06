@@ -1,12 +1,14 @@
-example_id                                            | status  | run_time        |
------------------------------------------------------ | ------- | --------------- |
-./spec/controllers/ensemble_controller_spec.rb[1:1:1] | passed  | 0.02502 seconds |
-./spec/controllers/projects_controller_spec.rb[1:1:1] | passed  | 0.04632 seconds |
-./spec/features/create_new_project_page_spec.rb[1:1]  | passed  | 0.55793 seconds |
-./spec/features/create_new_project_page_spec.rb[1:2]  | passed  | 0.02568 seconds |
-./spec/features/upload_spec.rb[1:1]                   | passed  | 0.09728 seconds |
-./spec/helpers/ensemble_helper_spec.rb[1:1]           | pending | 0.00002 seconds |
-./spec/helpers/projects_helper_spec.rb[1:1]           | pending | 0.00003 seconds |
-./spec/models/project_spec.rb[1:1]                    | pending | 0.00001 seconds |
-./spec/models/upload_spec.rb[1:1:1]                   | failed  | 0.00135 seconds |
-./spec/views/ensemble/index.html.erb_spec.rb[1:1]     | pending | 0.00001 seconds |
+
+example_id                                              | status  | run_time        |
+------------------------------------------------------- | ------- | --------------- |
+./spec/controllers/ensemble_controller_spec.rb[1:1:1]   | passed  | 0.04391 seconds |
+./spec/controllers/projects_controller_spec.rb[1:1:1]   | passed  | 0.0158 seconds  |
+./spec/controllers/projects_controller_spec.rb[1:2:1:1] | passed  | 0.0214 seconds  |
+./spec/controllers/projects_controller_spec.rb[1:2:1:2] | passed  | 0.04289 seconds |
+./spec/features/create_new_project_page_spec.rb[1:1]    | passed  | 0.02335 seconds |
+./spec/features/create_new_project_page_spec.rb[1:2]    | passed  | 0.61601 seconds |
+./spec/features/create_new_project_page_spec.rb[1:3]    | passed  | 0.11489 seconds |
+./spec/helpers/ensemble_helper_spec.rb[1:1]             | pending | 0.00002 seconds |
+./spec/helpers/projects_helper_spec.rb[1:1]             | pending | 0.00003 seconds |
+./spec/models/project_spec.rb[1:1]                      | pending | 0.00001 seconds |
+./spec/views/ensemble/index.html.erb_spec.rb[1:1]       | pending | 0.00001 seconds |

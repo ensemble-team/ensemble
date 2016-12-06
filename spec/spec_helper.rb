@@ -2,6 +2,7 @@ require 'coveralls'
 Coveralls.wear!
 
 require 'capybara/rspec'
+require 'database_cleaner'
 
 RSpec.configure do |config|
 

@@ -1,14 +1,17 @@
-
 example_id                                              | status  | run_time        |
 ------------------------------------------------------- | ------- | --------------- |
-./spec/controllers/ensemble_controller_spec.rb[1:1:1]   | passed  | 0.04391 seconds |
-./spec/controllers/projects_controller_spec.rb[1:1:1]   | passed  | 0.0158 seconds  |
-./spec/controllers/projects_controller_spec.rb[1:2:1:1] | passed  | 0.0214 seconds  |
-./spec/controllers/projects_controller_spec.rb[1:2:1:2] | passed  | 0.04289 seconds |
-./spec/features/create_new_project_page_spec.rb[1:1]    | passed  | 0.02335 seconds |
-./spec/features/create_new_project_page_spec.rb[1:2]    | passed  | 0.61601 seconds |
-./spec/features/create_new_project_page_spec.rb[1:3]    | passed  | 0.11489 seconds |
-./spec/helpers/ensemble_helper_spec.rb[1:1]             | pending | 0.00002 seconds |
-./spec/helpers/projects_helper_spec.rb[1:1]             | pending | 0.00003 seconds |
-./spec/models/project_spec.rb[1:1]                      | pending | 0.00001 seconds |
-./spec/views/ensemble/index.html.erb_spec.rb[1:1]       | pending | 0.00001 seconds |
+./spec/controllers/ensemble_controller_spec.rb[1:1:1]   | passed  | 0.0481 seconds  |
+./spec/controllers/projects_controller_spec.rb[1:1:1]   | passed  | 0.04013 seconds |
+./spec/controllers/projects_controller_spec.rb[1:2:1:1] | passed  | 0.01748 seconds |
+./spec/controllers/projects_controller_spec.rb[1:2:1:2] | passed  | 0.06305 seconds |
+./spec/controllers/tracks_controller_spec.rb[1:1:1]     | failed  | 0.04813 seconds |
+./spec/controllers/tracks_controller_spec.rb[1:2:1]     | failed  | 0.00362 seconds |
+./spec/features/create_new_project_page_spec.rb[1:1]    | passed  | 0.02247 seconds |
+./spec/features/create_new_project_page_spec.rb[1:2]    | passed  | 0.0193 seconds  |
+./spec/features/create_new_project_page_spec.rb[1:3]    | passed  | 0.07118 seconds |
+./spec/features/upload_spec.rb[1:1]                     | failed  | 0.91555 seconds |
+./spec/helpers/tracks_helper_spec.rb[1:1]               | pending | 0.00001 seconds |
+./spec/models/track_spec.rb[1:1]                        | pending | 0.00005 seconds |
+./spec/models/upload_spec.rb[1:1:1]                     | failed  | 0.0017 seconds  |
+./spec/views/tracks/delete.html.erb_spec.rb[1:1]        | pending | 0.00001 seconds |
+./spec/views/tracks/upload.html.erb_spec.rb[1:1]        | pending | 0.00001 seconds |

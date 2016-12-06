@@ -4,5 +4,6 @@
   <%= f.input :title, placeholder: 'Project Title' %>
   <%= f.input :genre, placeholder: 'Project Genre' %>
   <%= f.input :description, placeholder: 'Project Description' %>
+  <%= f.file_field :avatars, multiple: true %>
   <%= f.button :submit, button_html: { value: 'Create Project' } %>
 <% end %>

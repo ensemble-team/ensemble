@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-
+helper :all
   def new
     @project = Project.new
   end
@@ -15,10 +15,15 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  def download(avatar)
+    send_file "public/#{avatar}", :disposition => 'attachement'
+    # redirect_to("index")
+  end
+
   private
 
   def project_params
-    params.require(:project).permit(:title, :genre, :description)
+    params.require(:project).permit(:title, :genre, :description,{avatars: []})
   end
 
 end

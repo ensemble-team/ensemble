@@ -1,5 +1,19 @@
-<div class="project">
-  <p><%= @project.title %></p>
-  <p><%= @project.genre %></p>
-  <p><%= @project.description %></p>
-</div>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <% @project.avatars.each { |avatar|  %>
+      <%= @project.title %>
+      <%= @project.genre %>
+      <%= @project.description %>
+      <audio controls>
+        <source src="<%=audio_path avatar%>" type="audio/mpeg"></source>
+      </audio>
+      <%= link_to "Download", controller.download(avatar)%>
+      <% } %>
+  </body>
+</html>

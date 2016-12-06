@@ -16,5 +16,15 @@
       <%= t.file_field :avatar %>
       <%= t.button :submit, button_html: { value: 'Upload Track' } %>
     <% end %>
+
+    <% if @project.tracks.count != 0 %>
+    <% @project.tracks.each do |track| %>
+      <audio controls>
+        <source src="<%=audio_path track.avatar%>" type="audio/mpeg"></source>
+      </audio>
+    <% end %>
+    <% end %>
   </body>
+
+
 </html>

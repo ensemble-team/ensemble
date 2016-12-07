@@ -9,9 +9,6 @@
   </head>
 
   <body>
-    <% if flash[:notice] %>
-      <div class="notice"><%= flash[:notice] %></div>
-    <% end %>
     <!-- Below for devise -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
@@ -24,8 +21,8 @@
     <% else %>
       <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
       <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
     <% end %>
-    <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
     <%= yield %>
   </body>
 </html>

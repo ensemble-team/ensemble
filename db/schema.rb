@@ -21,7 +21,16 @@ ActiveRecord::Schema.define(version: 20161207090745) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.json     "avatars"
+  end
+
+  create_table "tracks", force: :cascade do |t|
+    t.string   "title"
+    t.text     "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "avatar"
+    t.integer  "project_id"
+    t.index ["project_id"], name: "index_tracks_on_project_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,4 +52,5 @@ ActiveRecord::Schema.define(version: 20161207090745) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "tracks", "projects"
 end

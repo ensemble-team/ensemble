@@ -1,3 +1,4 @@
 class Project < ApplicationRecord
-  mount_uploaders :avatars, AvatarUploader
+  has_many :tracks
+  validates :title, presence: true
 end

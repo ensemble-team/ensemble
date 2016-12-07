@@ -37,13 +37,11 @@
         null,
         null,
         1,
-        12,
+        11,
         null,
         null,
         1,
-        12,
-        null,
-        1,
+        11,
         null,
         1,
         null,
@@ -52,13 +50,15 @@
         1,
         null,
         1,
+        null,
+        1,
         1,
         null,
         1,
         null,
         1,
-        12,
-        12,
+        11,
+        11,
         null,
         null,
         null
@@ -1213,40 +1213,6 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/models/upload_spec.rb": [
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        0,
-        null,
-        null,
-        1,
-        1,
-        0,
-        null,
-        null,
-        1,
-        1,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/project.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
       "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/models/user_spec.rb": [
         1,
         null,
@@ -1274,8 +1240,14 @@
         1,
         1,
         null
+      ],
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/project.rb": [
+        1,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1481133024
+    "timestamp": 1481133233
   }
 }

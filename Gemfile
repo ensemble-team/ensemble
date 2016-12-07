@@ -30,6 +30,8 @@ gem 'simple_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'devise'
+gem 'omniauth-facebook'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -38,6 +40,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rake'
   gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 

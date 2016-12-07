@@ -2,13 +2,16 @@ class TracksController < ApplicationController
 
   before_action :set_project
 
+  def index
+  end
+
   def create
     @track = @project.tracks.build(track_params)
 
     if @track.save
-    flash[:notice] = "Track uploaded"
-  else
-    flash[:notice] = "Could not save the track, check the information entered"
+      flash[:notice] = "Track uploaded"
+    else
+      flash[:notice] = "Could not save the track, check the information entered"
     end
     redirect_to @project
   end

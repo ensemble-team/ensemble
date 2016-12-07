@@ -1,18 +1,18 @@
 example_id                                              | status  | run_time        |
 ------------------------------------------------------- | ------- | --------------- |
-./spec/controllers/ensemble_controller_spec.rb[1:1:1]   | failed  | 0.00358 seconds |
-./spec/controllers/projects_controller_spec.rb[1:1:1]   | failed  | 0.00388 seconds |
-./spec/controllers/projects_controller_spec.rb[1:2:1:1] | failed  | 0.00689 seconds |
-./spec/controllers/projects_controller_spec.rb[1:2:1:2] | failed  | 0.02432 seconds |
-./spec/controllers/tracks_controller_spec.rb[1:1:1]     | failed  | 0.04462 seconds |
-./spec/controllers/tracks_controller_spec.rb[1:2:1]     | failed  | 0.0241 seconds  |
-./spec/features/create_new_project_page_spec.rb[1:1]    | failed  | 0.12527 seconds |
-./spec/features/create_new_project_page_spec.rb[1:2]    | failed  | 0.03964 seconds |
-./spec/features/create_new_project_page_spec.rb[1:3]    | failed  | 0.72071 seconds |
-./spec/features/upload_spec.rb[1:1]                     | failed  | 0.04376 seconds |
+./spec/controllers/ensemble_controller_spec.rb[1:1:1]   | passed  | 0.04946 seconds |
+./spec/controllers/projects_controller_spec.rb[1:1:1]   | passed  | 0.03445 seconds |
+./spec/controllers/projects_controller_spec.rb[1:2:1:1] | passed  | 0.02452 seconds |
+./spec/controllers/projects_controller_spec.rb[1:2:1:2] | passed  | 0.04321 seconds |
+./spec/controllers/tracks_controller_spec.rb[1:1:1]     | failed  | 0.05613 seconds |
+./spec/controllers/tracks_controller_spec.rb[1:2:1]     | failed  | 0.06914 seconds |
+./spec/features/create_new_project_page_spec.rb[1:1]    | failed  | 0.03977 seconds |
+./spec/features/create_new_project_page_spec.rb[1:2]    | failed  | 0.06709 seconds |
+./spec/features/create_new_project_page_spec.rb[1:3]    | failed  | 0.04587 seconds |
+./spec/features/upload_spec.rb[1:1]                     | failed  | 0.48113 seconds |
 ./spec/helpers/tracks_helper_spec.rb[1:1]               | pending | 0.00001 seconds |
-./spec/models/track_spec.rb[1:1]                        | pending | 0.00003 seconds |
-./spec/models/upload_spec.rb[1:1:1]                     | failed  | 0.0013 seconds  |
+./spec/models/track_spec.rb[1:1]                        | pending | 0.00001 seconds |
+./spec/models/upload_spec.rb[1:1:1]                     | failed  | 0.00268 seconds |
 ./spec/models/user_spec.rb[1:1]                         | pending | 0.00001 seconds |
-./spec/views/tracks/delete.html.erb_spec.rb[1:1]        | pending | 0.00001 seconds |
-./spec/views/tracks/upload.html.erb_spec.rb[1:1]        | pending | 0.00001 seconds |
+./spec/views/tracks/delete.html.erb_spec.rb[1:1]        | pending | 0.00002 seconds |
+./spec/views/tracks/upload.html.erb_spec.rb[1:1]        | pending | 0.00003 seconds |

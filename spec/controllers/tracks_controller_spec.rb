@@ -1,6 +1,9 @@
 require 'rails_helper'
 
+
 RSpec.describe TracksController, type: :controller do
+  login_user
+
 
   describe "GET #upload" do
     it "returns http success" do

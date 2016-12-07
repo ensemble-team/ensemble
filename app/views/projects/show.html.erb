@@ -6,14 +6,30 @@
     <title></title>
   </head>
   <body>
-    <% @project.avatars.each { |avatar|  %>
-      <%= @project.title %>
-      <%= @project.genre %>
-      <%= @project.description %>
+    <%= @project.title %>
+    <%= @project.genre %>
+    <%= @project.description %>
+
+    <%= simple_form_for ([@project, @project.tracks.build]) do |t| %>
+      <%= t.input :title, placeholder: 'Track Title' %>
+      <%= t.input :text, placeholder: 'Track Description' %>
+      <%= t.file_field :avatar %>
+      <%= t.button :submit, button_html: { value: 'Upload Track' } %>
+    <% end %>
+
+    <% if @project.tracks.count != 0%>
+
+    <% @project.tracks.each do |track| %>
+    <% if track.title != nil %>
       <audio controls>
-        <source src="<%=audio_path avatar%>" type="audio/mpeg"></source>
+        <source src="<%=audio_path track.avatar%>" type="audio/mpeg"></source>
       </audio>
-      <%= link_to "Download", controller.download(avatar)%>
-      <% } %>
+      <a href="<%=track.avatar%>" download="Song">Download</a>
+    <% end %>
+    <% end %>
+    <% end %>
+
   </body>
+
+
 </html>

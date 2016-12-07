@@ -1,21 +1,21 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/controllers/ensemble_controller_spec.rb": [
+      "/Users/lichien/final/ensemble/spec/controllers/ensemble_controller_spec.rb": [
         1,
         null,
         1,
         null,
         1,
         1,
-        1,
-        1,
+        0,
+        0,
         null,
         null,
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/rails_helper.rb": [
+      "/Users/lichien/final/ensemble/spec/rails_helper.rb": [
         1,
         1,
         1,
@@ -37,12 +37,10 @@
         null,
         null,
         1,
-        11,
+        1,
         null,
         null,
         1,
-        11,
-        null,
         1,
         null,
         1,
@@ -52,17 +50,25 @@
         1,
         null,
         1,
+        null,
         1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/environment.rb": [
+      "/Users/lichien/final/ensemble/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/application.rb": [
+      "/Users/lichien/final/ensemble/config/application.rb": [
         1,
         null,
         1,
@@ -79,12 +85,12 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/boot.rb": [
+      "/Users/lichien/final/ensemble/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/spring.rb": [
+      "/Users/lichien/final/ensemble/config/spring.rb": [
         null,
         null,
         null,
@@ -92,7 +98,7 @@
         null,
         5
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/environments/test.rb": [
+      "/Users/lichien/final/ensemble/config/environments/test.rb": [
         1,
         null,
         null,
@@ -136,7 +142,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/initializers/application_controller_renderer.rb": [
+      "/Users/lichien/final/ensemble/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -144,7 +150,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/initializers/assets.rb": [
+      "/Users/lichien/final/ensemble/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -157,7 +163,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/initializers/backtrace_silencers.rb": [
+      "/Users/lichien/final/ensemble/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -166,7 +172,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/initializers/carrierwave.rb": [
+      "/Users/lichien/final/ensemble/config/initializers/carrierwave.rb": [
         1,
         1,
         null,
@@ -175,16 +181,37 @@
         null,
         null,
         1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        null,
+        null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/initializers/cookies_serializer.rb": [
+      "/Users/lichien/final/ensemble/config/initializers/cookies_serializer.rb": [
         null,
         null,
         null,
         null,
         1
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/initializers/devise.rb": [
+      "/Users/lichien/final/ensemble/config/initializers/devise.rb": [
         null,
         null,
         1,
@@ -465,13 +492,13 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/initializers/filter_parameter_logging.rb": [
+      "/Users/lichien/final/ensemble/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/initializers/inflections.rb": [
+      "/Users/lichien/final/ensemble/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -489,13 +516,13 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/initializers/mime_types.rb": [
+      "/Users/lichien/final/ensemble/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/initializers/new_framework_defaults.rb": [
+      "/Users/lichien/final/ensemble/config/initializers/new_framework_defaults.rb": [
         null,
         null,
         null,
@@ -521,12 +548,12 @@
         null,
         1
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/initializers/session_store.rb": [
+      "/Users/lichien/final/ensemble/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/initializers/simple_form.rb": [
+      "/Users/lichien/final/ensemble/config/initializers/simple_form.rb": [
         null,
         1,
         null,
@@ -693,7 +720,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/initializers/wrap_parameters.rb": [
+      "/Users/lichien/final/ensemble/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -709,7 +736,17 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/factories/factories.rb": [
+      "/Users/lichien/final/ensemble/spec/factories/audio_file.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/lichien/final/ensemble/spec/factories/factories.rb": [
         1,
         1,
         1,
@@ -718,48 +755,46 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/factories/tracks.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/factories/users.rb": [
+      "/Users/lichien/final/ensemble/spec/factories/tracks.rb": [
         1,
         1,
         1,
         1,
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/config/routes.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
         1,
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/user.rb": [
+      "/Users/lichien/final/ensemble/spec/factories/users.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/lichien/final/ensemble/config/routes.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/lichien/final/ensemble/app/models/user.rb": [
         1,
         null,
         null,
@@ -787,57 +822,57 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/application_record.rb": [
+      "/Users/lichien/final/ensemble/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/application_helper.rb": [
+      "/Users/lichien/final/ensemble/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/ensemble_helper.rb": [
+      "/Users/lichien/final/ensemble/app/helpers/ensemble_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/projects_helper.rb": [
+      "/Users/lichien/final/ensemble/app/helpers/projects_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/tracks_helper.rb": [
+      "/Users/lichien/final/ensemble/app/helpers/tracks_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/support/factory_girl.rb": [
+      "/Users/lichien/final/ensemble/spec/support/factory_girl.rb": [
         1,
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/support/controller_macros.rb": [
+      "/Users/lichien/final/ensemble/spec/support/controller_macros.rb": [
         1,
         null,
         1,
         2,
-        5,
-        5,
-        5,
+        1,
+        1,
+        1,
         null,
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/ensemble_controller.rb": [
+      "/Users/lichien/final/ensemble/app/controllers/ensemble_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/application_controller.rb": [
+      "/Users/lichien/final/ensemble/app/controllers/application_controller.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/controllers/projects_controller_spec.rb": [
+      "/Users/lichien/final/ensemble/spec/controllers/projects_controller_spec.rb": [
         1,
         1,
         null,
@@ -847,74 +882,8 @@
         null,
         null,
         1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/projects_controller.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        2,
-        2,
-        2,
-        null,
-        0,
-        null,
-        2,
-        null,
-        null,
         1,
         0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        null,
-        1,
-        2,
-        null,
-        null,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/controllers/tracks_controller_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
         0,
         null,
         null,
@@ -923,52 +892,289 @@
         1,
         1,
         0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
         null,
         null,
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/tracks_controller.rb": [
+      "/Users/lichien/final/ensemble/app/controllers/projects_controller.rb": [
         1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
         null,
         1,
         null,
         1,
         0,
         null,
-        0,
-        0,
         null,
-        0,
-        null,
-        0,
-        null,
-        null,
+        null
+      ],
+      "/Users/lichien/final/ensemble/spec/controllers/tracks_controller_spec.rb": [
         1,
         null,
         null,
-        null,
-        null,
         1,
-        null,
         1,
-        0,
         null,
         null,
         1,
         2,
         null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        2,
+        null,
+        null,
+        null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/features/create_new_project_page_spec.rb": [
-        1,
-        null,
-        1,
-        1,
+      "/Users/lichien/final/ensemble/app/controllers/tracks_controller.rb": [
         1,
         null,
         1,
         null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/lichien/final/ensemble/spec/features/create_new_project_page_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null
+      ],
+      "/Users/lichien/final/ensemble/spec/features/upload_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/lichien/final/ensemble/spec/helpers/ensemble_helper_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/lichien/final/ensemble/spec/helpers/projects_helper_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/lichien/final/ensemble/spec/helpers/tracks_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/lichien/final/ensemble/spec/models/project_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/lichien/final/ensemble/spec/models/track_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/lichien/final/ensemble/app/models/track.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/lichien/final/ensemble/app/uploaders/avatar_uploader.rb": [
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/lichien/final/ensemble/spec/models/upload_spec.rb": [
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
         null,
         1,
         1,
@@ -976,182 +1182,10 @@
         1,
         0,
         0,
-        0,
         null,
-        null,
-        1,
-        1,
         null,
         1,
         0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/features/upload_spec.rb": [
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/helpers/ensemble_helper_spec.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/helpers/projects_helper_spec.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/helpers/tracks_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/models/project_spec.rb": [
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/models/track_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/track.rb": [
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/uploaders/avatar_uploader.rb": [
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/models/upload_spec.rb": [
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        0,
-        null,
-        null,
-        1,
-        1,
         0,
         null,
         null,
@@ -1162,34 +1196,34 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/project.rb": [
+      "/Users/lichien/final/ensemble/app/models/project.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/models/user_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/views/ensemble/index.html.erb_spec.rb": [
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/views/tracks/delete.html.erb_spec.rb": [
+      "/Users/lichien/final/ensemble/spec/models/user_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/spec/views/tracks/upload.html.erb_spec.rb": [
+      "/Users/lichien/final/ensemble/spec/views/ensemble/index.html.erb_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/lichien/final/ensemble/spec/views/tracks/delete.html.erb_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/lichien/final/ensemble/spec/views/tracks/upload.html.erb_spec.rb": [
         1,
         null,
         1,
@@ -1197,6 +1231,6 @@
         null
       ]
     },
-    "timestamp": 1481119395
+    "timestamp": 1481124527
   }
 }

@@ -37,5 +37,24 @@ RSpec.describe ProjectsController, type: :controller do
     end
   end
 
+  describe "DELETE #destroy", :focus => true do
+
+    before :each do
+      @project = create(:project)
+    end
+
+    it "shows flash message and redirects to project page when project is deleted" do
+      post :destroy, :id => @project.id
+
+      expect(response).to have_http_status(:redirect)
+      expect(flash[:notice]).to match(/^Project deleted/)
+    end
+
+    it 'deletes a track' do
+      expect{delete :destroy, id: @project.id}.to change(Project, :count).by (-1)
+    end
+
+  end
+
 
 end

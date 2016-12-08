@@ -18,6 +18,12 @@ helper :all
     @project = Project.find(params[:id])
   end
 
+  def destroy
+    Project.find(params[:id]).destroy
+    flash[:notice] = "Project deleted"
+    redirect_to projects_path
+  end
+
   private
 
   def project_params

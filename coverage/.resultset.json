@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/felixharrison/Projects/week11/ensemble/app/models/user.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/models/user.rb": [
         1,
         null,
         null,
@@ -29,85 +29,38 @@
         null,
         null
       ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/models/application_record.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/application_helper.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/comments_helper.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/helpers/comments_helper.rb": [
         1,
         null
       ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/ensemble_helper.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/helpers/ensemble_helper.rb": [
         1,
         null
       ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/projects_helper.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/helpers/projects_helper.rb": [
         1,
         null
       ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/tracks_helper.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/helpers/tracks_helper.rb": [
         1,
         null
       ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/comments_controller.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/controllers/comments_controller.rb": [
         1,
         null,
         1,
         0,
         0,
         0,
-        null,
-        null,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/application_controller.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/ensemble_controller.rb": [
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/projects_controller.rb": [
-        1,
-        1,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        2,
-        2,
-        2,
         null,
         null,
         1,
@@ -118,7 +71,54 @@
         null,
         null
       ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/tracks_controller.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/app/controllers/ensemble_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/app/controllers/projects_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/app/controllers/tracks_controller.rb": [
         1,
         null,
         1,
@@ -135,9 +135,6 @@
         0,
         null,
         0,
-        null,
-        null,
-        1,
         null,
         null,
         1,
@@ -157,25 +154,86 @@
         null,
         null
       ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/models/project.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/models/project.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/channels/application_cable/channel.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/models/track.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/app/uploaders/avatar_uploader.rb": [
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/channels/application_cable/connection.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/users/omniauth_callbacks_controller.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/controllers/users/omniauth_callbacks_controller.rb": [
         0,
         0,
         0,
@@ -190,84 +248,23 @@
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/mailers/application_mailer.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/models/comment.rb": [
         0,
         0,
         0,
         0,
         0
       ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/models/track.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/jobs/application_job.rb": [
         0,
+        0
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/felixharrison/Projects/week11/ensemble/app/uploaders/avatar_uploader.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+      "/Users/fbell/Desktop/coding/ensemble/app/models/comment.rb": [
         0,
         0,
         0,
@@ -275,6 +272,6 @@
         0
       ]
     },
-    "timestamp": 1481207229
+    "timestamp": 1481211319
   }
 }

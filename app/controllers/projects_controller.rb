@@ -1,5 +1,10 @@
 class ProjectsController < ApplicationController
 helper :all
+
+  def index
+    @projects = Project.all
+  end
+
   def new
     @project = Project.new
   end

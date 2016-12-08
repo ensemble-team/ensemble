@@ -37,7 +37,7 @@ RSpec.describe ProjectsController, type: :controller do
     end
   end
 
-  describe "DELETE #destroy", :focus => true do
+  describe "DELETE #destroy" do
 
     before :each do
       @project = create(:project)

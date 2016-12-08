@@ -1,6 +1,4 @@
 class Track < ApplicationRecord
-  mount_uploader :avatar, AvatarUploader
-  belongs_to :project
-  has_many :comments, as: :comment_owner
-  validates :title, presence: true
+  belongs_to :users
+  belongs_to :track_owner, polymorphic: true
 end

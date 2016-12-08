@@ -5,16 +5,24 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @project = Project.find(params[:project_id])
-    @comment = Comment.new(comment_pararms)
-    @comment.update({user_id: current_user.id, comment_owner_id: @project.id, comment_owner_type: Project })
+    if params[:project_id]
+      @comment_owner = Project.find(params[:project_id])
+    elsif params[:branch_id]
+        @comment_owner = Branch.find(params[:branch_id])
+    end
+
+    @comment = @comment_owner.comments.build(comment_params)
+
+    # @project = Project.find(params[:project_id])
+    # @comment = Comment.new(comment_params)
+    @comment.update({ user_id: current_user.id })
     @comment.save!
     redirect_to @project
   end
 
   private
 
-  def comment_pararms
+  def comment_params
     params.require(:comment).permit(:body)
   end
 

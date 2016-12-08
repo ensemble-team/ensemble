@@ -10,7 +10,6 @@ class CommentsController < ApplicationController
     elsif params[:branch_id]
         @comment_owner = Branch.find(params[:branch_id])
     end
-
     @comment = @comment_owner.comments.build(comment_params)
     @comment.update({ user_id: current_user.id })
     @comment.save!

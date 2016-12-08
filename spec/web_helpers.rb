@@ -1,12 +1,9 @@
-
-
-
 def sign_up
-visit "/users/sign_up"
-fill_in "user_email",  with: "tom@gmail.com"
-fill_in "user_password",  with: "password"
-fill_in "user_password_confirmation",  with: "password"
-click_button "Sign up"
+  visit "/users/sign_up"
+  fill_in "user_email",  with: "tom@gmail.com"
+  fill_in "user_password",  with: "password"
+  fill_in "user_password_confirmation",  with: "password"
+  click_button "Sign up"
 end
 
 def sign_in
@@ -18,6 +15,15 @@ end
 
 def sign_out
   click_link ("Logout")
+end
+
+def create_project
+  sign_up
+  click_button "New Project"
+  fill_in "Title", with: "New project"
+  fill_in "Genre", with: "Funk"
+  fill_in "Description", with: "Great new song"
+  click_button "Create Project"
 end
 
 def facebook_sign_in

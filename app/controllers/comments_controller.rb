@@ -1,15 +1,22 @@
 class CommentsController < ApplicationController
 
+  def new
+    @comment = Comment.new
+  end
+
   def create
-    @track = Track.find(params[:track_id])
-    @comment = @track.comments.create(comment_pararms)
-    redirect_to track_path(@track)
+  
+    @project = Project.find(params[:project_id])
+    @comment = Comment.new(comment_pararms)
+    @comment.update({user_id: current_user.id, comment_owner_id: @project.id, comment_owner_type: Project })
+    @comment.save!
+    redirect_to @project
   end
 
   private
 
   def comment_pararms
-    params.require(:comment).permit(:commenter, :body)
+    params.require(:comment).permit(:body)
   end
 
 end

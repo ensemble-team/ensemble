@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :comment do
-    commenter "MyString"
     body "MyText"
-    track nil
+    comment_owner_id 1
+    comment_owner_type "MyString"
   end
 end

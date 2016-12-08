@@ -1,5 +1,10 @@
 class ProjectsController < ApplicationController
 helper :all
+
+  def index
+    @projects = Project.all
+  end
+
   def new
     @project = Project.new
   end
@@ -18,8 +23,10 @@ helper :all
     @project = Project.find(params[:id])
   end
 
-  def download(track)
-    send_file("https://ensemble-app.s3.amazonaws.com/" + track.path, :disposition => 'attachment', :url_based_filename => false)
+  def destroy
+    Project.find(params[:id]).destroy
+    flash[:notice] = "Project deleted"
+    redirect_to projects_path
   end
 
   private

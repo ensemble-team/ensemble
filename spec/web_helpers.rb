@@ -1,3 +1,6 @@
+
+
+
 def sign_up
   visit "/users/sign_up"
   fill_in "user_email",  with: "tom@gmail.com"
@@ -33,24 +36,4 @@ def create_branch
   fill_in "Instrument", with: "Trombone"
   fill_in "Description", with: "Windy"
   click_button "Create Branch"
-end
-
-def facebook_sign_in
-  # visit "/"
-  # click_link("Sign in with Facebook")
-  OmniAuth.config.test_mode = true
-  OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new({
-        'provider' => 'facebook',
-        'uid' => '12345',
-        'user_info' => {
-          'username' => 'Tom',
-          'email' => 'tom@gmail.com'
-        },
-        'credentials' => {
-          'token' => 'mock_token',
-          'secret' => 'mock_secret'
-        }
-      })
-
-  OmniAuth.config.add_mock(:facebook, {uid: '12345'})
 end

@@ -7,4 +7,11 @@ module WebHelpers
     click_button 'Log in'
   end
 
+  def upload_track
+    sign_in
+    @project = create(:project)
+    @track = create(:track, project_id: @project.id)
+    visit "/projects/#{@project.id}"
+  end
+
 end

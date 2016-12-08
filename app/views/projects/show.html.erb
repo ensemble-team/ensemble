@@ -24,7 +24,8 @@
       <audio controls>
         <source src="<%=audio_path track.avatar%>" type="audio/mpeg"></source>
       </audio>
-      <a href="<%=track.avatar%>" download="Song">Download</a>
+      <a href="<%=track.avatar%>" download="Song">Download</a><br>
+      <%= link_to 'Remove track', project_track_path(@project, track), method: :delete, data: {confirm: 'Are you sure you would like to delete this track?'} %>
     <% end %>
     <% end %>
     <% end %>

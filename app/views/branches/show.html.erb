@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,20 +5,20 @@
     <title></title>
   </head>
   <body>
-    <%= @project.title %>
-    <%= @project.genre %>
-    <%= @project.description %>
+    <%= @branch.title %>
+    <%= @branch.instrument %>
+    <%= @branch.description %>
 
-    <%= simple_form_for ([@project, @project.tracks.build]) do |t| %>
+    <%= simple_form_for ([@branch, @branch.tracks.build]) do |t| %>
       <%= t.input :title, placeholder: 'Track Title' %>
       <%= t.input :text, placeholder: 'Track Description' %>
       <%= t.file_field :avatar %>
       <%= t.button :submit, button_html: { value: 'Upload Track' } %>
     <% end %>
 
-    <% if @project.tracks.count != 0%>
+    <% if @branch.tracks.count != 0%>
 
-    <% @project.tracks.each do |track| %>
+    <% @branch.tracks.each do |track| %>
     <% if track.title != nil %>
       <audio controls>
         <source src="<%=audio_path track.avatar%>" type="audio/mpeg"></source>
@@ -29,13 +28,13 @@
     <% end %>
     <% end %>
 
-    <%= simple_form_for ([@project, @project.comments.build]) do |c| %>
+    <%= simple_form_for ([@branch, @branch.comments.build]) do |c| %>
       <%= c.input :body, placeholder: 'Comment' %>
       <%= c.button :submit, button_html: { value: 'Save' } %>
     <% end %>
 
-    <%if @project.comments.count != 0 %>
-    <% @project.comments.each do |comment|%>
+    <%if @branch.comments.count != 0 %>
+    <% @branch.comments.each do |comment|%>
     <% if comment.user_id != nil %>
     <% user = User.find(comment.user_id) %>
     <%= user.email + " said:" %>
@@ -44,16 +43,5 @@
     <% end %>
     <% end %>
 
-    <h2>Create a branch</h2>
-    <%= simple_form_for ([@project, @project.branches.build]) do |b| %>
-      <%= b.input :title, placeholder: 'Title' %>
-      <%= b.input :instrument, placeholder: 'Instrument' %>
-      <%= b.input :description, placeholder: 'Description' %>
-      <%= b.button :submit, button_html: { value: 'Upload Track' } %>
-    <% end %>
-
-
   </body>
-
-
 </html>

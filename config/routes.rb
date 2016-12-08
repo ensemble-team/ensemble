@@ -7,6 +7,19 @@ Rails.application.routes.draw do
   resources :projects do
     resources :comments
   end
+
+  resources :projects do
+    resources :branches
+  end
+
+  resources :branches do
+    resources :tracks
+  end
+
+  resources :branches do
+    resources :comments
+  end
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
 

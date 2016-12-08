@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.feature "Track", type: :feature do
 
 
-  context "delete tracks", :focus => true do
+  context "delete tracks" do
 
     it "successfully deletes a track" do
       upload_track

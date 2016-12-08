@@ -6,4 +6,4 @@ services:
 before_script:
 - psql -c 'create database ensemble_app_test;' -U postgres
 before_install:
-  openssl aes-256-cbc -K $encrypted_3281ea65534d_key -iv $encrypted_3281ea65534d_iv -in .env.enc -out .env -d
+    openssl aes-256-cbc -K $encrypted_a07f5c7224fe_key -iv $encrypted_a07f5c7224fe_iv -in .env.enc -out .env -d

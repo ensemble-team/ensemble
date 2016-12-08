@@ -30,6 +30,13 @@ RSpec.describe TracksController, type: :controller do
       expect(flash[:notice]).to match(/^Track uploaded/)
     end
 
+    it "shows flash message and redirects to project page", :focus => true do
+      post :create, :project_id => project.id, track: FactoryGirl.attributes_for(:project, project_id: project.id, title: nil)
+
+      expect(response).to have_http_status(:redirect)
+      expect(flash[:notice]).to match(/^Could not save the track, check the information entered/)
+    end
+
     it "creates a track" do
       expect{post :create, :project_id => project.id, track: @project_params }.to change(Track, :count).by 1
     end

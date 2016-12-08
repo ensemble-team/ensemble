@@ -18,10 +18,6 @@ helper :all
     @project = Project.find(params[:id])
   end
 
-  def download(track)
-    send_file("https://ensemble-app.s3.amazonaws.com/" + track.path, :disposition => 'attachment', :url_based_filename => false)
-  end
-
   private
 
   def project_params

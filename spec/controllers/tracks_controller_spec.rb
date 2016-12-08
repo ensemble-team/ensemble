@@ -44,6 +44,13 @@ RSpec.describe TracksController, type: :controller do
 
   describe "DELETE #destroy" do
 
+    it "shows flash message and redirects to project page when track is deleted", :focus => true do
+      post :destroy, :project_id => project.id, id: track.id
+
+      expect(response).to have_http_status(:redirect)
+      expect(flash[:notice]).to match(/^Track deleted/)
+    end
+
     it 'deletes a track' do
       expect{delete :destroy, project_id: project.id, id: track.id}.to change(Track, :count).by (-1)
     end

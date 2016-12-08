@@ -1,45 +1,39 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/controllers/ensemble_controller_spec.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/spec/controllers/comments_controller_spec.rb": [
         1,
         null,
         1,
-        null,
-        1,
-        1,
-        1,
-        0,
-        null,
-        null,
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/rails_helper.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/spec/rails_helper.rb": [
         1,
         1,
         1,
         1,
         1,
         1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
         1,
         1,
         1,
         1,
         null,
+        1,
         null,
         1,
-        14,
+        1,
+        1,
+        1,
         null,
         null,
         1,
-        14,
+        13,
+        null,
+        null,
+        1,
+        13,
         null,
         1,
         null,
@@ -50,14 +44,14 @@
         1,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/environment.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/application.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/application.rb": [
         1,
         null,
         1,
@@ -74,12 +68,12 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/boot.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/spring.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/spring.rb": [
         null,
         null,
         null,
@@ -87,7 +81,7 @@
         null,
         5
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/environments/test.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/environments/test.rb": [
         1,
         null,
         null,
@@ -131,7 +125,7 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/initializers/application_controller_renderer.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -139,7 +133,7 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/initializers/assets.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -152,7 +146,7 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/initializers/backtrace_silencers.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -161,7 +155,7 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/initializers/carrierwave.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/initializers/carrierwave.rb": [
         1,
         1,
         null,
@@ -172,14 +166,14 @@
         1,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/initializers/cookies_serializer.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/initializers/cookies_serializer.rb": [
         null,
         null,
         null,
         null,
         1
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/initializers/devise.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/initializers/devise.rb": [
         null,
         null,
         1,
@@ -460,13 +454,13 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/initializers/filter_parameter_logging.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/initializers/inflections.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -484,13 +478,13 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/initializers/mime_types.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/initializers/new_framework_defaults.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/initializers/new_framework_defaults.rb": [
         null,
         null,
         null,
@@ -516,12 +510,12 @@
         null,
         1
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/initializers/session_store.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/initializers/simple_form.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/initializers/simple_form.rb": [
         null,
         1,
         null,
@@ -688,7 +682,7 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/initializers/wrap_parameters.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -704,7 +698,7 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/factories/factories.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/spec/factories/comments.rb": [
         1,
         1,
         1,
@@ -713,7 +707,8 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/factories/tracks.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/spec/factories/factories.rb": [
+        1,
         1,
         1,
         1,
@@ -721,14 +716,22 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/factories/users.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/spec/factories/tracks.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/spec/factories/users.rb": [
         1,
         1,
         null,
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/config/routes.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/config/routes.rb": [
         1,
         null,
         1,
@@ -746,7 +749,7 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/app/models/user.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/models/user.rb": [
         1,
         null,
         null,
@@ -755,47 +758,51 @@
         null,
         null,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        0,
+        0,
+        0,
+        0,
+        0,
         null,
         null,
         null,
         null,
         null,
         1,
-        5,
-        5,
+        4,
+        4,
         0,
         null,
         null,
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/app/models/application_record.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/app/helpers/application_helper.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/app/helpers/ensemble_helper.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/helpers/comments_helper.rb": [
         1,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/app/helpers/projects_helper.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/helpers/ensemble_helper.rb": [
         1,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/app/helpers/tracks_helper.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/helpers/projects_helper.rb": [
         1,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/web_helpers.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/helpers/tracks_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/spec/web_helpers.rb": [
         null,
         null,
         null,
@@ -838,24 +845,111 @@
         0,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/support/factory_girl.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/spec/support/factory_girl.rb": [
         1,
         1,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/app/controllers/ensemble_controller.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/spec/support/omniauth_helper.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/app/controllers/comments_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/spec/controllers/ensemble_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/app/controllers/ensemble_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/app/controllers/application_controller.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/controllers/projects_controller_spec.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/spec/controllers/projects_controller_spec.rb": [
         1,
         null,
         1,
@@ -886,7 +980,7 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/app/controllers/projects_controller.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/controllers/projects_controller.rb": [
         1,
         1,
         1,
@@ -919,7 +1013,7 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/controllers/tracks_controller_spec.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/spec/controllers/tracks_controller_spec.rb": [
         1,
         null,
         1,
@@ -940,7 +1034,7 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/app/controllers/tracks_controller.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/controllers/tracks_controller.rb": [
         1,
         null,
         1,
@@ -972,7 +1066,7 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/features/create_new_project_page_spec.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/spec/features/create_new_project_page_spec.rb": [
         1,
         null,
         1,
@@ -1003,7 +1097,7 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/features/upload_spec.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/spec/features/upload_spec.rb": [
         1,
         1,
         null,
@@ -1020,7 +1114,7 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/features/user_spec.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/spec/features/user_spec.rb": [
         1,
         null,
         1,
@@ -1037,192 +1131,138 @@
         1,
         1,
         1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        0,
-        null,
-        0,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/helpers/ensemble_helper_spec.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/helpers/projects_helper_spec.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/helpers/tracks_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/models/project_spec.rb": [
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/models/track_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/app/models/track.rb": [
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/app/uploaders/avatar_uploader.rb": [
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/models/upload_spec.rb": [
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        0,
         null,
         null,
         1,
         1,
         0,
-        null,
-        null,
-        1,
-        1,
         0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/app/models/project.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/spec/helpers/comments_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/spec/helpers/ensemble_helper_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/spec/helpers/projects_helper_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/spec/helpers/tracks_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/spec/models/comment_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/app/models/comment.rb": [
+        1,
         1,
         1,
         1,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/models/user_spec.rb": [
-        1,
-        1,
+      "/Users/fbell/Desktop/coding/ensemble/spec/models/project_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/spec/models/track_spec.rb": [
         1,
         null,
         1,
-        0,
-        0,
+        1,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/app/models/track.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/app/uploaders/avatar_uploader.rb": [
         null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
         null,
         null,
         null,
@@ -1265,49 +1305,113 @@
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/views/ensemble/index.html.erb_spec.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/spec/models/upload_spec.rb": [
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        0,
         null,
         null,
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        0,
         null,
         null,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/views/tracks/delete.html.erb_spec.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/app/models/project.rb": [
         1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/spec/views/tracks/upload.html.erb_spec.rb": [
-        1,
-        null,
         1,
         1,
         null
       ],
-      "/Users/LaurentBo/Documents/Makers Challenges/Week11/ensemble/app/controllers/users/omniauth_callbacks_controller.rb": [
+      "/Users/fbell/Desktop/coding/ensemble/spec/models/user_spec.rb": [
         1,
-        null,
         1,
-        null,
         1,
         null,
         1,
         0,
         0,
         null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/spec/views/ensemble/index.html.erb_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/spec/views/tracks/delete.html.erb_spec.rb": [
+        1,
+        null,
         1,
         1,
-        null,
-        null,
+        null
+      ],
+      "/Users/fbell/Desktop/coding/ensemble/spec/views/tracks/upload.html.erb_spec.rb": [
+        1,
         null,
         1,
-        0,
-        null,
+        1,
         null
       ]
     },
-    "timestamp": 1481126770
+    "timestamp": 1481189100
   }
 }

@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     # @comment = Comment.new(comment_params)
     @comment.update({ user_id: current_user.id })
     @comment.save!
-    redirect_to @project
+    redirect_to @comment_owner
   end
 
   private

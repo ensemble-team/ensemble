@@ -1,4 +1,4 @@
 class Track < ApplicationRecord
-  belongs_to :users
+  mount_uploader :avatar, AvatarUploader
   belongs_to :track_owner, polymorphic: true
 end

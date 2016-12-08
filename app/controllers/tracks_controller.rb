@@ -8,7 +8,6 @@ class TracksController < ApplicationController
   end
 
   def create
-    current_user
     if params[:project_id]
       @track_owner = Project.find(params[:project_id])
     elsif params[:branch_id]
@@ -21,7 +20,7 @@ class TracksController < ApplicationController
     # @comment = Comment.new(comment_params)
     @track.update({ user_id: current_user.id })
     @track.save!
-    redirect_to @track
+    redirect_to @track_owner
 
     # @track = @project.tracks.build(track_params)
 

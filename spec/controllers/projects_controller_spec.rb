@@ -1,6 +1,10 @@
 require 'rails_helper'
+require 'support/controller_macros'
 
 RSpec.describe ProjectsController, type: :controller do
+  login_user
+
+  # before { subject.stub(current_user: user, authenticate_user!: true) }
 
   describe "GET #new" do
     it "retrns http success" do

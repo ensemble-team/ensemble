@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.feature 'User creates new project', :type => :feature do
+
+  before(:each) do
+    sign_in
+  end
+
   scenario 'user can see project creation page' do
     visit new_project_path
 

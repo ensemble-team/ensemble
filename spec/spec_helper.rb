@@ -1,29 +1,41 @@
 require 'coveralls'
 Coveralls.wear!
+
 require 'rubygems'
 require 'omniauth'
 require 'capybara/rspec'
 require 'database_cleaner'
 
-OmniAuth.config.test_mode = true
-OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new({
-      'provider' => 'facebook',
-      'uid' => '12345',
-      'user_info' => {
-        'username' => 'Tom',
-        'email' => 'tom@gmail.com'
-      },
-      'credentials' => {
-        'token' => 'mock_token',
-        'secret' => 'mock_secret'
-      }
-    })
-
-OmniAuth.config.add_mock(:facebook, {uid: '12345'})
+# OmniAuth.config.test_mode = true
+# OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new({
+#       'provider' => 'facebook',
+#       'uid' => '12345',
+#       'user_info' => {
+#         'username' => 'Tom',
+#         'email' => 'tom@gmail.com'
+#       },
+#       'credentials' => {
+#         'token' => 'mock_token',
+#         'secret' => 'mock_secret'
+#       }
+#     })
+#
+# OmniAuth.config.add_mock(:facebook, {uid: '12345'})
 
 RSpec.configure do |config|
 
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
 
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
 
   config.expect_with :rspec do |expectations|
 

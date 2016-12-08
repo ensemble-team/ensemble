@@ -26,6 +26,15 @@ def create_project
   click_button "Create Project"
 end
 
+
+def create_branch
+  create_project
+  fill_in "branch_title", with: "New branch"
+  fill_in "Instrument", with: "Trombone"
+  fill_in "Description", with: "Windy"
+  click_button "Create Branch"
+end
+
 def facebook_sign_in
   # visit "/"
   # click_link("Sign in with Facebook")

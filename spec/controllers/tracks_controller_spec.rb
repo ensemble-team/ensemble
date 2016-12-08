@@ -30,7 +30,7 @@ RSpec.describe TracksController, type: :controller do
       expect(flash[:notice]).to match(/^Track uploaded/)
     end
 
-    it "shows flash message and redirects to project page", :focus => true do
+    it "shows flash message and redirects to project page" do
       post :create, :project_id => project.id, track: FactoryGirl.attributes_for(:project, project_id: project.id, title: nil)
 
       expect(response).to have_http_status(:redirect)
@@ -44,7 +44,7 @@ RSpec.describe TracksController, type: :controller do
 
   describe "DELETE #destroy" do
 
-    it "shows flash message and redirects to project page when track is deleted", :focus => true do
+    it "shows flash message and redirects to project page when track is deleted" do
       post :destroy, :project_id => project.id, id: track.id
 
       expect(response).to have_http_status(:redirect)

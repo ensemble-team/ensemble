@@ -1,5 +1,10 @@
 class ProjectsController < ApplicationController
 helper :all
+
+  def index
+    @projects = Project.all
+  end
+
   def new
     @project = Project.new
   end
@@ -16,6 +21,12 @@ helper :all
 
   def show
     @project = Project.find(params[:id])
+  end
+
+  def destroy
+    Project.find(params[:id]).destroy
+    flash[:notice] = "Project deleted"
+    redirect_to projects_path
   end
 
   private

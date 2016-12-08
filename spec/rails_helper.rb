@@ -7,6 +7,7 @@ require_relative 'web_helpers'
 require 'capybara/rails'
 require 'factory_girl_rails'
 require 'support/factory_girl'
+require 'support/omniauth_helper'
 
 ActiveRecord::Migration.maintain_test_schema!
 

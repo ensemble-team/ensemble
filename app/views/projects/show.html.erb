@@ -55,6 +55,12 @@
     <% end %>
 
 
+    <h2>Send a Collaboration request </h2>
+    <%= simple_form_for ([@project, @project.requests.build]) do |r| %>
+      <%= r.input :message, placeholder: 'Message' %>
+      <%= r.button :submit, button_html: { value: 'Save' } %>
+    <% end %>
+
     <h2> Mix requests <h2>
       <%if @project.branches.count != 0 %>
       <% @project.branches.each do |branch| %>

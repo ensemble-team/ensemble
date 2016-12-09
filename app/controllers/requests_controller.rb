@@ -10,8 +10,8 @@ class RequestsController < ApplicationController
     @request.update({collab_id: current_user.id, owner_id: user.id, status: "In progress"} )
 
    elsif params[:project_id]
-     @request_owner = Project.find(params[:id])
-     user = User.find(@project.user_id)
+     @request_owner = Project.find(params[:project_id])
+     user = User.find(@request_owner.user_id)
      @request = @request_owner.requests.build(request_params)
      @request.update({collab_id: current_user.id, owner_id: user.id, status: "In progress"} )
     end

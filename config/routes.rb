@@ -6,6 +6,13 @@ Rails.application.routes.draw do
     resources :tracks
   end
 
+    resources :requests do
+      post :reject
+  end
+  resources :requests do
+    post :approve
+end
+
   resources :projects do
     resources :requests
   end

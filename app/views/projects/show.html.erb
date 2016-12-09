@@ -79,12 +79,10 @@
       <% @project.requests.each do |request| %>
       <%if request.id != nil  %>
       <% user = User.find(request.collab_id) %>
-      <br><%= user.username %>
-      <br>  <%= request.message %>
-      <form>
-      <%= button_to 'Approve Request', project_request_path(@project), action: request.approve_request, method: :put %>
-    
-    </form>
+      From: <%= user.email %>
+      Message: <%= request.message %>
+      <%= button_to 'Reject Request', request_reject_path(request), method: :post%>
+      <%= button_to 'Accept Request', request_approve_path(request), method: :post%>
       <% end %>
       <% end %>
       <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161209092423) do
+ActiveRecord::Schema.define(version: 20161209121747) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 20161209092423) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "collaborations", force: :cascade do |t|
+    t.integer  "collaborator"
+    t.integer  "project_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["project_id"], name: "index_collaborations_on_project_id", using: :btree
   end
 
   create_table "comments", force: :cascade do |t|
@@ -57,10 +65,11 @@ ActiveRecord::Schema.define(version: 20161209092423) do
     t.integer  "collab_id"
     t.text     "message"
     t.string   "status"
-    t.integer  "branch_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["branch_id"], name: "index_requests_on_branch_id", using: :btree
+    t.integer  "request_owner_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "request_owner_type"
+    t.index ["request_owner_id"], name: "index_requests_on_request_owner_id", using: :btree
   end
 
   create_table "tracks", force: :cascade do |t|
@@ -95,5 +104,6 @@ ActiveRecord::Schema.define(version: 20161209092423) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "requests", "branches"
+  add_foreign_key "collaborations", "projects"
+  add_foreign_key "requests", "branches", column: "request_owner_id"
 end

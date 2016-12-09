@@ -47,6 +47,12 @@ module WebHelpers
     @project = create(:project, id: id)
   end
 
+  def create_specific_branch(id)
+    sign_in
+    @project = create(:project, id: id)
+    @branch = create(:branch, project_id: @project.id, id: 2)
+  end
+
 
   def create_branch
     create_project

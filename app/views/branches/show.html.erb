@@ -9,11 +9,13 @@
     <%= @branch.instrument %>
     <%= @branch.description %>
 
-    <%= simple_form_for ([@branch, @branch.tracks.build]) do |t| %>
-      <%= t.input :title, placeholder: 'Track Title' %>
-      <%= t.input :text, placeholder: 'Track Description' %>
-      <%= t.file_field :avatar %>
-      <%= t.button :submit, button_html: { value: 'Upload Track' } %>
+    <% if @branch.user_id == current_user.id %>
+      <%= simple_form_for ([@branch, @branch.tracks.build]) do |t| %>
+        <%= t.input :title, placeholder: 'Track Title' %>
+        <%= t.input :text, placeholder: 'Track Description' %>
+        <%= t.file_field :avatar %>
+        <%= t.button :submit, button_html: { value: 'Upload Track' } %>
+      <% end %>
     <% end %>
 
     <% if @branch.tracks.count != 0%>

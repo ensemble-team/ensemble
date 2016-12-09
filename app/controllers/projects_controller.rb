@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
-helper :all
+  helper :all
+
 
   def index
     @projects = Project.all
@@ -13,11 +14,12 @@ helper :all
     @project = current_user.projects.build(project_params)
     @project.update({user_id: current_user.id})
     if @project.save
-    flash[:notice] = "Project created successfully"
-  else
-    flash[:notice] = "Could not save the project, check the information entered"
+      flash[:notice] = "Project created successfully"
+      redirect_to @project
+    else
+      flash[:notice] = "Please enter a project title"
+      redirect_to new_project_path
     end
-    redirect_to @project
   end
 
   def show

@@ -10,13 +10,16 @@
     <%= @project.genre %>
     <%= @project.description %>
 
-    <%= simple_form_for ([@project, @project.tracks.build]) do |t| %>
-      <%= t.input :title, placeholder: 'Track Title' %>
-      <%= t.input :text, placeholder: 'Track Description' %>
-      <%= t.file_field :avatar %>
-      <%= t.button :submit, button_html: { value: 'Upload Track' } %>
+    <% if @project.user_id == current_user.id %>
+      <h2>Upload Your Master Track</h2>
+      <%= simple_form_for ([@project, @project.tracks.build]) do |t| %>
+        <%= t.input :title, placeholder: 'Track Title' %>
+        <%= t.input :text, placeholder: 'Track Description' %>
+        <%= t.file_field :avatar %>
+        <%= t.button :submit, button_html: { value: 'Upload Track' } %>
+      <% end %>
+      <%= button_to 'Delete Project', project_path(@project), method: :delete, data: {confirm: 'Are you sure you want to delete this project?'} %>
     <% end %>
-    <%= button_to 'Delete Project', project_path(@project), method: :delete, data: {confirm: 'Are you sure you want to delete this project?'} %>
 
     <% if @project.tracks.count != 0%>
 

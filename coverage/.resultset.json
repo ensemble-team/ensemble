@@ -97,6 +97,7 @@
         1,
         1,
         1,
+        null,
         null
       ],
       "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/comments_controller.rb": [
@@ -142,23 +143,25 @@
         1,
         1,
         null,
+        null,
         1,
         1,
         null,
         null,
         1,
-        10,
+        12,
         null,
         null,
         1,
-        10,
-        10,
-        10,
+        11,
+        11,
+        11,
+        9,
         9,
         null,
-        1,
+        2,
+        2,
         null,
-        10,
         null,
         null,
         1,
@@ -174,7 +177,7 @@
         1,
         null,
         1,
-        10,
+        11,
         null,
         null,
         null
@@ -274,15 +277,6 @@
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/branch.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
       "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/track.rb": [
         1,
         1,
@@ -350,6 +344,15 @@
         1,
         null
       ],
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/branch.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/channels/application_cable/channel.rb": [
         0,
         0,
@@ -394,6 +397,6 @@
         0
       ]
     },
-    "timestamp": 1481297121
+    "timestamp": 1481298360
   }
 }

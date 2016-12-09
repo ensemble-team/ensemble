@@ -16,7 +16,6 @@ class TracksController < ApplicationController
 
     @track = @track_owner.tracks.build(track_params)
     @track.update({ user_id: current_user.id })
-    @track.save!
     if @track.save
       flash[:notice] = "Track uploaded"
     else

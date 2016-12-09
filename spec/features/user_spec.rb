@@ -6,13 +6,13 @@ RSpec.feature "User", type: :feature do
   context "create user" do
 
     it "successfully create a user with email" do
-      sign_up
+      sign_in
       expect(User.count).to eq(1)
     end
     it "successfully log in/out a user" do
-      sign_up
-      sign_out
       sign_in
+      sign_out
+      sign_in_again
       expect(page).to have_content("Signed in successfully")
     end
 

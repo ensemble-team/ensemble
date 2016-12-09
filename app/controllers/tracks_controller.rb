@@ -25,9 +25,15 @@ class TracksController < ApplicationController
   end
 
   def destroy
-    @track = @project.tracks.find(params[:id]).destroy
+    if params[:project_id]
+      @track_owner = Project.find(params[:project_id])
+    elsif params[:branch_id]
+      @track_owner = Branch.find(params[:branch_id])
+    end
+
+    @track = @track_owner.tracks.find(params[:id]).destroy
     flash[:notice] = "Track deleted"
-    redirect_to @project
+    redirect_to @track_owner
   end
 
   private

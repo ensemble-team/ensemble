@@ -21,7 +21,7 @@ RSpec.describe TracksController, type: :controller do
   end
 
 
-  describe "POST #create", :focus => true do
+  describe "POST #create" do
 
     it "shows flash message and redirects to project page when created" do
       post :create, :project_id => project.id, track: @track_params
@@ -31,9 +31,6 @@ RSpec.describe TracksController, type: :controller do
     end
 
     it "shows flash message and redirects to project page when not created" do
-      p project
-      p track
-      p @track_params
       post :create, :project_id => project.id, track: FactoryGirl.attributes_for(:track, track_owner_id: project.id, title: nil, track_owner_type: "Project")
 
       expect(response).to have_http_status(:redirect)
@@ -55,6 +52,7 @@ RSpec.describe TracksController, type: :controller do
     end
 
     it 'deletes a track' do
+      track
       expect{delete :destroy, project_id: project.id, id: track.id}.to change(Track, :count).by (-1)
     end
 

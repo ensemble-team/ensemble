@@ -12,7 +12,7 @@ RSpec.describe RequestsController, type: :controller do
     @request_params = FactoryGirl.attributes_for(:request, branch_id: branch.id)
   end
 
-  context "#create", focus: true do
+  context "#create" do
     it "shows flash message and redirect to branch page" do
       post :create, branch_id: branch.id, request: @request_params
       expect(response).to have_http_status(:redirect)

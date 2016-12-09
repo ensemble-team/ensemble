@@ -4,7 +4,8 @@ example_id                                              | status  | run_time    
 ./spec/controllers/projects_controller_spec.rb[1:1:1]   | passed  | 0.02766 seconds |
 ./spec/controllers/projects_controller_spec.rb[1:2:1:1] | passed  | 0.01865 seconds |
 ./spec/controllers/projects_controller_spec.rb[1:2:1:2] | passed  | 0.02245 seconds |
-./spec/controllers/requests_controller_spec.rb[1:1:1]   | passed  | 0.18807 seconds |
+./spec/controllers/requests_controller_spec.rb[1:1:1]   | passed  | 0.02926 seconds |
+./spec/controllers/requests_controller_spec.rb[1:1:2]   | passed  | 0.19435 seconds |
 ./spec/controllers/tracks_controller_spec.rb[1:1:1]     | passed  | 0.0385 seconds  |
 ./spec/controllers/tracks_controller_spec.rb[1:2:1]     | passed  | 0.0291 seconds  |
 ./spec/controllers/tracks_controller_spec.rb[1:2:2]     | passed  | 0.0312 seconds  |

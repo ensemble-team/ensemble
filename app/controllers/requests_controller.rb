@@ -12,14 +12,14 @@ class RequestsController < ApplicationController
     @request = @branch.requests.build(request_params)
     @request.update({collab_id: current_user.id, owner_id: user.id, status: "In progress"} )
     if @request.save
-    flash[:notice] = "Request sent successfully"
-  else
-    flash[:notice] = "Could not send the request, check the information entered"
+      flash[:notice] = "Request sent successfully"
+    else
+      flash[:notice] = "Could not send the request, check the information entered"
     end
     redirect_to @branch
 
   end
-
+  
   private
 
   def request_params

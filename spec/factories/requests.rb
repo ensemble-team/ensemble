@@ -4,6 +4,6 @@ FactoryGirl.define do
     collab_id 1
     message "Please accept"
     status "In Progress"
-    branches 1
+    branch_id 1
   end
 end

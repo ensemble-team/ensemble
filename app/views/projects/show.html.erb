@@ -53,6 +53,21 @@
     <% end %>
 
 
+    <h2> Mix requests <h2>
+      <%if @project.branches.count != 0 %>
+      <% @project.branches.each do |branch| %>
+      <%if branch.requests.count != 0 %>
+      <% branch.requests.each do |request| %>
+      <% user = User.find(request.collab_id) %>
+      <br><%= user.username %>
+    <br>  <%= request.message %>
+      <% end %>
+      <% end %>
+      <% end %>
+      <% end %>
+
+
+
   </body>
 
 

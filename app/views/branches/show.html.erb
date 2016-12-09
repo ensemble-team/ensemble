@@ -43,5 +43,11 @@
     <% end %>
     <% end %>
 
+    <h2>Send a Mix request </h2>
+    <%= simple_form_for ([@branch, @branch.requests.build]) do |r| %>
+      <%= r.input :message, placeholder: 'Message' %>
+      <%= r.button :submit, button_html: { value: 'Save' } %>
+    <% end %>
+
   </body>
 </html>

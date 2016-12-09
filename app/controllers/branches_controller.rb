@@ -16,6 +16,7 @@ class BranchesController < ApplicationController
     @branch = Branch.find(params[:id])
   end
 
+
   private
 
   def branch_params

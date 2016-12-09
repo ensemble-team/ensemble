@@ -29,7 +29,7 @@ RSpec.feature 'User creates new project', :type => :feature do
     expect(page).to have_content 'Project created successfully'
   end
 
-  scenario "delete projects", :focus => true do
+  scenario "delete projects" do
     visit new_project_path
 
     fill_in 'project_title', with: 'Moon Beam'

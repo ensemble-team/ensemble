@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%= @branch.title %>
+    <%= @branch.instrument %>
+    <%= @branch.description %>
+
+    <%= simple_form_for ([@branch, @branch.tracks.build]) do |t| %>
+      <%= t.input :title, placeholder: 'Track Title' %>
+      <%= t.input :text, placeholder: 'Track Description' %>
+      <%= t.file_field :avatar %>
+      <%= t.button :submit, button_html: { value: 'Upload Track' } %>
+    <% end %>
+
+    <% if @branch.tracks.count != 0%>
+
+    <% @branch.tracks.each do |track| %>
+    <% if track.title != nil %>
+      <audio controls>
+        <source src="<%=audio_path track.avatar%>" type="audio/mpeg"></source>
+      </audio>
+      <a href="<%=track.avatar%>" download="Song">Download</a>
+    <% end %>
+    <% end %>
+    <% end %>
+
+    <%= simple_form_for ([@branch, @branch.comments.build]) do |c| %>
+      <%= c.input :body, placeholder: 'Comment' %>
+      <%= c.button :submit, button_html: { value: 'Save' } %>
+    <% end %>
+
+    <%if @branch.comments.count != 0 %>
+    <% @branch.comments.each do |comment|%>
+    <% if comment.user_id != nil %>
+    <% user = User.find(comment.user_id) %>
+    <%= user.email + " said:" %>
+    <%= comment.body %>
+      <% end %>
+    <% end %>
+    <% end %>
+
+  </body>
+</html>

@@ -1,25 +1,39 @@
 class TracksController < ApplicationController
 
-  before_action :set_project
+  def new
+    @track = Track.new
+  end
 
   def index
   end
 
   def create
-    @track = @project.tracks.build(track_params)
+    if params[:project_id]
+      @track_owner = Project.find(params[:project_id])
+    elsif params[:branch_id]
+      @track_owner = Branch.find(params[:branch_id])
+    end
 
+    @track = @track_owner.tracks.build(track_params)
+    @track.update({ user_id: current_user.id })
     if @track.save
       flash[:notice] = "Track uploaded"
     else
       flash[:notice] = "Could not save the track, check the information entered"
     end
-    redirect_to @project
+    redirect_to @track_owner
   end
 
   def destroy
-    @track = @project.tracks.find(params[:id]).destroy
+    if params[:project_id]
+      @track_owner = Project.find(params[:project_id])
+    elsif params[:branch_id]
+      @track_owner = Branch.find(params[:branch_id])
+    end
+
+    @track = @track_owner.tracks.find(params[:id]).destroy
     flash[:notice] = "Track deleted"
-    redirect_to @project
+    redirect_to @track_owner
   end
 
   private

@@ -31,6 +31,30 @@
     <% end %>
     <% end %>
 
+    <%= simple_form_for ([@project, @project.comments.build]) do |c| %>
+      <%= c.input :body, placeholder: 'Comment' %>
+      <%= c.button :submit, button_html: { value: 'Save' } %>
+    <% end %>
+
+    <%if @project.comments.count != 0 %>
+    <% @project.comments.each do |comment|%>
+    <% if comment.user_id != nil %>
+    <% user = User.find(comment.user_id) %>
+    <%= user.email + " said:" %>
+    <%= comment.body %>
+      <% end %>
+    <% end %>
+    <% end %>
+
+    <h2>Create a branch</h2>
+    <%= simple_form_for ([@project, @project.branches.build]) do |b| %>
+      <%= b.input :title, placeholder: 'Title' %>
+      <%= b.input :instrument, placeholder: 'Instrument' %>
+      <%= b.input :description, placeholder: 'Description' %>
+      <%= b.button :submit, button_html: { value: 'Upload Track' } %>
+    <% end %>
+
+
   </body>
 
 

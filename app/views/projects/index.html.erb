@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
+
   <body>
     <h1>This is the project page</h1>
 
+    <% @projects.each do |a| %>
+    Title:<br><%= a.title %><br><br>
+    <% end %>
 
 
   </body>
-</html>

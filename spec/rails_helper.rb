@@ -3,7 +3,6 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
-require_relative 'web_helpers'
 require 'capybara/rails'
 require 'factory_girl_rails'
 require 'support/factory_girl'
@@ -43,6 +42,7 @@ RSpec.configure do |config|
   config.after(:each) do
     if Rails.env.test? || Rails.env.cucumber?
       FileUtils.rm_rf(Dir["#{Rails.root}/spec/support/uploads"])
+      FileUtils.rm_rf(Dir["#{Rails.root}/public/uploads/tmp/[^.]*"])
     end
   end
 end

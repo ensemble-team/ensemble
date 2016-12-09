@@ -16,7 +16,6 @@ class TracksController < ApplicationController
 
     @track = @track_owner.tracks.build(track_params)
     @track.update({ user_id: current_user.id })
-    @track.save!
     if @track.save
       flash[:notice] = "Track uploaded"
     else
@@ -25,7 +24,16 @@ class TracksController < ApplicationController
     redirect_to @track_owner
   end
 
-  def delete
+  def destroy
+    if params[:project_id]
+      @track_owner = Project.find(params[:project_id])
+    elsif params[:branch_id]
+      @track_owner = Branch.find(params[:branch_id])
+    end
+
+    @track = @track_owner.tracks.find(params[:id]).destroy
+    flash[:notice] = "Track deleted"
+    redirect_to @track_owner
   end
 
   private

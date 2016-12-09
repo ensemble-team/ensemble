@@ -16,6 +16,7 @@
       <%= t.file_field :avatar %>
       <%= t.button :submit, button_html: { value: 'Upload Track' } %>
     <% end %>
+    <%= button_to 'Delete Project', project_path(@project), method: :delete, data: {confirm: 'Are you sure you want to delete this project?'} %>
 
     <% if @project.tracks.count != 0%>
 
@@ -25,6 +26,7 @@
         <source src="<%=audio_path track.avatar%>" type="audio/mpeg"></source>
       </audio>
       <a href="<%=track.avatar%>" download="Song">Download</a>
+      <%= button_to 'Remove track', project_track_path(@project, track), method: :delete, data: {confirm: 'Are you sure you would like to delete this track?'} %>
     <% end %>
     <% end %>
     <% end %>

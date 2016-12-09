@@ -7,12 +7,13 @@ Rails.application.routes.draw do
   end
 
   resources :projects do
+    resources :requests
+  end
+  resources :projects do
     resources :comments
   end
 
-  resources :projects do
-    resources :requests
-  end
+
   resources :projects do
     resources :branches
   end
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
   resources :branches do
     resources :comments
   end
+
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 

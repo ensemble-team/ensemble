@@ -1,6 +1,7 @@
 class RequestsController < ApplicationController
 
-  helper :all
+
+
   def create
     if params[:branch_id]
       p "here"
@@ -9,7 +10,6 @@ class RequestsController < ApplicationController
       user = User.find(@project.user_id)
       @request = @request_owner.requests.build(request_params)
       @request.update({collab_id: current_user.id, owner_id: user.id, status: "In progress"} )
-
     elsif params[:project_id]
       p "hello"
       @request_owner = Project.find(params[:project_id])
@@ -23,8 +23,20 @@ class RequestsController < ApplicationController
       flash[:notice] = "Could not send the request, check the information entered"
     end
     redirect_to @request_owner
+  end
 
 
+  def update
+    def approve_request
+      self.update({ status: "Approved"})
+      # @collaboration = Collaboration.new
+      # @collaboration.update({ collaborator: self.collab_id})
+
+    end
+
+    def reject_request
+      self.update({ status: "Rejected"})
+    end
   end
 
   private

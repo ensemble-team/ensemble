@@ -1,6 +1,6 @@
 <h1>New Project</h1>
 
-<%= simple_form_for @project do |f| %>
+<%= simple_form_for current_user.projects.build do |f| %>
   <%= f.input :title, placeholder: 'Project Title' %>
   <%= f.input :genre, placeholder: 'Project Genre' %>
   <%= f.input :description, placeholder: 'Project Description' %>

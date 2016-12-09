@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  
+
   resources :projects do
     resources :tracks
   end
@@ -12,6 +14,9 @@ Rails.application.routes.draw do
     resources :branches
   end
 
+  resources :branches do
+    resources :requests
+  end
   resources :branches do
     resources :tracks
   end

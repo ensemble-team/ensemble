@@ -49,6 +49,18 @@ ActiveRecord::Schema.define(version: 20161209092423) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer  "owner_id"
+    t.integer  "collab_id"
+    t.text     "message"
+    t.string   "status"
+    t.integer  "branch_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["branch_id"], name: "index_requests_on_branch_id", using: :btree
   end
 
   create_table "tracks", force: :cascade do |t|
@@ -83,4 +95,5 @@ ActiveRecord::Schema.define(version: 20161209092423) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "requests", "branches"
 end

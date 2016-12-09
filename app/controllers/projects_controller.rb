@@ -10,7 +10,9 @@ helper :all
   end
 
   def create
-    @project = Project.new(project_params)
+    @project = current_user.projects.build(project_params)
+    @project.update({user_id: current_user.id})
+    @project.save!
     if @project.save
     flash[:notice] = "Project created successfully"
   else

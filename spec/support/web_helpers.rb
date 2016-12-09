@@ -7,6 +7,14 @@ module WebHelpers
     click_button 'Log in'
   end
 
+  def new_user_sign_in
+    @user2 = create(:user, email: "ensemble@gmail.com", id: 2)
+    visit new_user_session_path
+    fill_in 'Email', with: @user2.email
+    fill_in 'Password', with: @user2.password
+    click_button 'Log in'
+  end
+
   def upload_track
     sign_in
     @project = create(:project)
@@ -32,6 +40,11 @@ module WebHelpers
     fill_in "Genre", with: "Funk"
     fill_in "Description", with: "Great new song"
     click_button "Create Project"
+  end
+
+  def create_specific_project(id)
+    sign_in
+    @project = create(:project, id: id)
   end
 
 

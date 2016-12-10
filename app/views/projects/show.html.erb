@@ -50,6 +50,7 @@
         <% end %>
       <% end %>
   <% end %>
+  <% if @project.collaborations.count != 0 %>
   <% @project.collaborations.each do |collaboration| %>
     <% if current_user.id == collaboration.collaborator %>
       <h2>Create a branch</h2>
@@ -61,7 +62,7 @@
       <% end %>
     <% end %>
     <% end %>
-
+    <% end %>
 
     <h2>Send a Collaboration request </h2>
     <%= simple_form_for ([@project, @project.requests.build]) do |r| %>
@@ -94,6 +95,16 @@
         <% end %>
       <% end %>
     <% end %>
+
+
+      <% if current_user.id == @project.user_id && @project.collaborations.count != 0  %>
+      <h2> Excisting collaborations <h2>
+      <% @project.collaborations.each do |collaboration| %>
+       <%user = User.find(collaboration.collaborator) %>
+       <a>From: <%= user.email %><a>
+        <%= button_to 'Remove Collaboration', project_collaboration_path(@project, collaboration), method: :delete, data: {confirm: 'Are you sure you would like to delete this track?'} %>
+        <% end %>
+      <% end %>
 
       </body>
       </html>

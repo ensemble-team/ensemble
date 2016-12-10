@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :projects do
     resources :tracks
   end
-
+  resources :projects do
+    resources :collaborations
+  end
     resources :requests do
       post :reject
   end

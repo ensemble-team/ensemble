@@ -52,5 +52,34 @@
       <%= r.button :submit, button_html: { value: 'Save' } %>
     <% end %>
     <% end %>
+      <% if current_user.id == @branch.user_id %>
+    <h2>Send a message to the project owner </h2>
+      <%= simple_form_for ([current_user, current_user.messages.build]) do |m| %>
+        <%= m.hidden_field :recipient, :value => @branch.user_id %>
+        <%= m.hidden_field :sender, :value => current_user.id %>
+        <%= m.hidden_field :branch_id, :value => @branch.id %>
+        <%= m.hidden_field :project_id, :value => @branch.project_id %>
+        <%= m.input :body, placeholder: 'Message' %>
+        <%= m.button :submit, button_html: { value: 'Save' } %>
+    <% end %>
+        Message sent
+        <% current_user.messages.each do |message| %>
+        <% if message.branch_id == @branch.id %>
+        <% user = User.find(message.recipient) %>
+        from: <%= user.email %>
+        <br><%= message.body %>
+        <% end %>
+        <% end %>
+        Message received
+        <% Message.all.each do|message| %>
+        <% if message.branch_id == @branch.id %>
+        <% if message.recipient == current_user.id %>
+        <% user = User.find(message.sender) %>
+        <br>from: <%= user.email %>
+        <br><%= message.body %>
+        <% end %>
+        <% end %>
+        <% end %>
+    <% end %>
   </body>
 </html>

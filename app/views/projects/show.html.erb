@@ -106,5 +106,32 @@
         <% end %>
       <% end %>
 
+      <% if current_user.id == @project.user_id%>
+      Message sent
+      <% current_user.messages.each do |message| %>
+      <% if message.project_id == @project.id %>
+      <% user = User.find(message.recipient) %>
+      from: <%= user.email %>
+      <br><%= message.body %>
+      <% end %>
+      <% end %>
+      Message received
+      <% Message.all.each do|message| %>
+      <% if message.project_id == @project.id && message.recipient == current_user.id %>
+      <% user = User.find(message.sender) %>
+      <br>from: <%= user.email %>
+      <br><%= message.body %>
+      <h2>Reply: <h2>
+        <%= simple_form_for ([current_user, current_user.messages.build]) do |m| %>
+          <%= m.hidden_field :recipient, :value => message.sender %>
+          <%= m.hidden_field :sender, :value => current_user.id %>
+          <%= m.hidden_field :branch_id, :value => message.branch_id %>
+          <%= m.hidden_field :project, :value => nil %>
+          <%= m.input :body, placeholder: 'Message' %>
+          <%= m.button :submit, button_html: { value: 'Save' } %>
+      <% end %>
+      <% end %>
+      <% end %>
+  <% end %>
       </body>
       </html>

@@ -1,82 +1,99 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <%= @project.title %>
-    <%= @project.genre %>
-    <%= @project.description %>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <%= @project.title %>
+  <%= @project.genre %>
+  <%= @project.description %>
 
-    <%= simple_form_for ([@project, @project.tracks.build]) do |t| %>
-      <%= t.input :title, placeholder: 'Track Title' %>
-      <%= t.input :text, placeholder: 'Track Description' %>
-      <%= t.file_field :avatar %>
-      <%= t.button :submit, button_html: { value: 'Upload Track' } %>
-    <% end %>
-    <%= button_to 'Delete Project', project_path(@project), method: :delete, data: {confirm: 'Are you sure you want to delete this project?'} %>
+  <%= simple_form_for ([@project, @project.tracks.build]) do |t| %>
+  <%= t.input :title, placeholder: 'Track Title' %>
+  <%= t.input :text, placeholder: 'Track Description' %>
+  <%= t.file_field :avatar %>
+  <%= t.button :submit, button_html: { value: 'Upload Track' } %>
+  <% end %>
+  <%= button_to 'Delete Project', project_path(@project), method: :delete, data: {confirm: 'Are you sure you want to delete this project?'} %>
 
-    <% if @project.tracks.count != 0%>
-
+  <% if @project.tracks.count != 0%>
     <% @project.tracks.each do |track| %>
-    <% if track.title != nil %>
-      <audio controls>
-        <source src="<%=audio_path track.avatar%>" type="audio/mpeg"></source>
-      </audio>
-      <a href="<%=track.avatar%>" download="Song">Download</a>
-      <%= button_to 'Remove track', project_track_path(@project, track), method: :delete, data: {confirm: 'Are you sure you would like to delete this track?'} %>
+      <% if track.title != nil %>
+        <audio src="<%=audio_path track.avatar%>" type="audio/mpeg" controls> </audio>
+      <% end %>
+      <% @project.collaborations.each do |collaboration| %>
+        <% if current_user.id == collaboration.collaborator %>
+        <a href="<%=track.avatar%>" download="Song">Download</a>
+        <% else %>
+        <h2> Send a collaboration request to download the track <h2>
+        <% end %>
+        <% if current_user.id == @project.user_id %>
+        <%= button_to 'Remove track', project_track_path(@project, track), method: :delete, data: {confirm: 'Are you sure you would like to delete this track?'} %>
+        <% end %>
     <% end %>
     <% end %>
     <% end %>
 
     <%= simple_form_for ([@project, @project.comments.build]) do |c| %>
-      <%= c.input :body, placeholder: 'Comment' %>
-      <%= c.button :submit, button_html: { value: 'Save' } %>
+    <%= c.input :body, placeholder: 'Comment' %>
+    <%= c.button :submit, button_html: { value: 'Save' } %>
     <% end %>
 
     <%if @project.comments.count != 0 %>
-    <% @project.comments.each do |comment|%>
-    <% if comment.user_id != nil %>
-    <% user = User.find(comment.user_id) %>
-    <%= user.email + " said:" %>
-    <%= comment.body %>
+      <% @project.comments.each do |comment|%>
+        <% if comment.user_id != nil %>
+          <% user = User.find(comment.user_id) %>
+          <%= user.email + " said:" %>
+          <%= comment.body %>
+        <% end %>
       <% end %>
-    <% end %>
-    <% end %>
-
-    <h2>Create a branch</h2>
-    <%= simple_form_for ([@project, @project.branches.build]) do |b| %>
+  <% end %>
+  <% @project.collaborations.each do |collaboration| %>
+    <% if current_user.id == collaboration.collaborator %>
+      <h2>Create a branch</h2>
+      <%= simple_form_for ([@project, @project.branches.build]) do |b| %>
       <%= b.input :title, placeholder: 'Title' %>
       <%= b.input :instrument, placeholder: 'Instrument' %>
       <%= b.input :description, placeholder: 'Description' %>
       <%= b.button :submit, button_html: { value: 'Upload Track' } %>
+      <% end %>
+    <% end %>
     <% end %>
 
 
     <h2>Send a Collaboration request </h2>
     <%= simple_form_for ([@project, @project.requests.build]) do |r| %>
-      <%= r.input :message, placeholder: 'Message' %>
-      <%= r.button :submit, button_html: { value: 'Save' } %>
+    <%= r.input :message, placeholder: 'Message' %>
+    <%= r.button :submit, button_html: { value: 'Save' } %>
     <% end %>
 
     <h2> Mix requests <h2>
-      <%if @project.branches.count != 0 %>
+    <%if @project.branches.count != 0 %>
       <% @project.branches.each do |branch| %>
-      <%if branch.requests.count != 0 %>
-      <% branch.requests.each do |request| %>
-      <% user = User.find(request.collab_id) %>
-      <br><%= user.username %>
-    <br>  <%= request.message %>
+        <%if branch.requests.count != 0 %>
+          <% branch.requests.each do |request| %>
+          <% user = User.find(request.collab_id) %>
+          <br><%= user.username %>
+          <br>  <%= request.message %>
+          <% end %>
+        <% end %>
       <% end %>
+    <% end %>
+
+      <h2> Collab requests <h2>
+      <%if @project.requests.count != 0 %>
+        <% @project.requests.each do |request| %>
+          <%if request.id != nil  %>
+            <% user = User.find(request.collab_id) %>
+            From: <%= user.email %>
+            Message: <%= request.message %>
+            <%= button_to 'Reject Request', request_reject_path(request), method: :post%>
+            <%= button_to 'Accept Request', request_approve_path(request), method: :post%>
+        <% end %>
       <% end %>
-      <% end %>
-      <% end %>
+    <% end %>
 
-
-
-  </body>
-
-
-</html>
+      </body>
+      </html>

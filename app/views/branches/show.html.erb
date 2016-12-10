@@ -8,23 +8,25 @@
     <%= @branch.title %>
     <%= @branch.instrument %>
     <%= @branch.description %>
-
+    <% if current_user.id == @branch.user_id %>
     <%= simple_form_for ([@branch, @branch.tracks.build]) do |t| %>
       <%= t.input :title, placeholder: 'Track Title' %>
       <%= t.input :text, placeholder: 'Track Description' %>
       <%= t.file_field :avatar %>
       <%= t.button :submit, button_html: { value: 'Upload Track' } %>
     <% end %>
+    <% end %>
 
     <% if @branch.tracks.count != 0%>
-
     <% @branch.tracks.each do |track| %>
     <% if track.title != nil %>
       <audio controls>
         <source src="<%=audio_path track.avatar%>" type="audio/mpeg"></source>
       </audio>
+      <% end %>
+      <% if current_user.id == @branch.user_id %>
       <a href="<%=track.avatar%>" download="Song">Download</a>
-    <% end %>
+      <% end %>
     <% end %>
     <% end %>
 
@@ -43,11 +45,12 @@
     <% end %>
     <% end %>
 
+    <% if current_user.id == @branch.user_id %>
     <h2>Send a Mix request </h2>
     <%= simple_form_for ([@branch, @branch.requests.build]) do |r| %>
       <%= r.input :message, placeholder: 'Message' %>
       <%= r.button :submit, button_html: { value: 'Save' } %>
     <% end %>
-
+    <% end %>
   </body>
 </html>

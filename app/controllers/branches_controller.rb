@@ -14,8 +14,14 @@ class BranchesController < ApplicationController
 
   def show
     @branch = Branch.find(params[:id])
+    @project = Project.find(@branch.project_id)
   end
 
+  def destroy #add tests(feature and unit)
+    @branch = Branch.find(params[:id]).destroy
+    flash[:notice] = "Branch deleted"
+    redirect_to projects_path
+  end
 
   private
 

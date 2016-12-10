@@ -21,6 +21,15 @@ module WebHelpers
     click_button "Log in"
   end
 
+  def sign_in_as_different_user
+    @another_user = create(:user, email: "test2@test.com", password: "password", password_confirmation: "password", id: 2)
+    visit new_user_session_path
+    fill_in 'Email', with: @another_user.email
+    fill_in 'Password', with: @another_user.password
+    click_button 'Log in'
+    visit "/projects/#{@project.id}" #specific for track_delete_spec
+  end
+
   def sign_out
     click_link ("Logout")
   end

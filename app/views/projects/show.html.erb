@@ -29,10 +29,11 @@
         <% else %>
         <h2> Send a collaboration request to download the track <h2>
         <% end %>
-        <% if current_user.id == @project.user_id %>
+        <% end %>
+        <% if current_user.id == @project.user_id && track.id != nil%>
         <%= button_to 'Remove track', project_track_path(@project, track), method: :delete, data: {confirm: 'Are you sure you would like to delete this track?'} %>
         <% end %>
-    <% end %>
+
     <% end %>
     <% end %>
 

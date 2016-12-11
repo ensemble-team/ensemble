@@ -42,7 +42,7 @@ end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resource :user do
-  resources :messages
+    resources :lists
   end
 
   root 'ensemble#index'

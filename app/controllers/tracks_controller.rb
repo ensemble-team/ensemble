@@ -7,6 +7,9 @@ class TracksController < ApplicationController
   def index
   end
 
+  def show
+    @track = Track.find(params[:id])
+  end
   def create
     if params[:project_id]
       @track_owner = Project.find(params[:project_id])

@@ -28,7 +28,7 @@
       <% if track.title != nil %>
         <audio src="<%=audio_path track.avatar%>" type="audio/mpeg" controls> </audio>
       <% @project.collaborations.each do |collaboration| %>
-        <% if current_user.id == (collaboration.collaborator || @project.user_id)  %>
+        <% if current_user.id == collaboration.collaborator || current_user.id == @project.user_id %>
         <a href="<%=track.avatar%>" download="Song">Download</a>
         <% else %>
         <h2> Send a collaboration request to download the track <h2>
@@ -57,7 +57,7 @@
   <% end %>
   <% if @project.collaborations.count != 0 %>
   <% @project.collaborations.each do |collaboration| %>
-    <% if current_user.id == collaboration.collaborator %>
+    <% if current_user.id == collaboration.collaborator  %>
       <h2>Create a branch</h2>
       <%= simple_form_for ([@project, @project.branches.build]) do |b| %>
       <%= b.input :title, placeholder: 'Title' %>
@@ -149,7 +149,26 @@
       <% end %>
   <% end %>
 
+<%if @project.branches.count != 0 %>
+  <% if @project.blacklists.count == 0 %>
+<% @project.branches.each do |branch| %>
+<%= branch.title %>
+<%= link_to "See Branch", branch_path(branch) %>
+<%end%>
+<%end%>
 
+<% if @project.blacklists.count != 0 %>
+List of current branches
+<% @project.blacklists.each do |blacklist| %>
+<% @project.branches.each do |branch| %>
+<% if blacklist.blocked != current_user.id %>
+<br><%= branch.title %>
+<%= link_to "See Branch", branch_path(branch) %>
+<%end%>
+<%end%>
+<%end%>
+<%end%>
+<%end%>
 
       </body>
       </html>

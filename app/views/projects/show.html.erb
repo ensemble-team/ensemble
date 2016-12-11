@@ -7,6 +7,23 @@
 </head>
 <body>
 
+Messages Box
+<% Message.all.each do|message| %>
+<% if message.recipient == current_user.id %>
+<% user = User.find(message.sender) %>
+<br>from: <%= user.email %> on: <%= message.created_at %>
+<br><%= message.body %>
+<h2>Reply: <h2>
+  <%= simple_form_for ([current_user, current_user.messages.build]) do |m| %>
+    <%= m.hidden_field :recipient, :value => user.id %>
+    <%= m.hidden_field :sender, :value => current_user.id %>
+    <%= m.hidden_field :branch_id, :value => nil %>
+    <%= m.hidden_field :project_id, :value => nil %>
+    <%= m.input :body, placeholder: 'Message' %>
+    <%= m.button :submit, button_html: { value: 'Save' } %>
+<% end %>
+<% end %>
+<% end %>
 
   <%= @project.title %>
   <%= @project.genre %>
@@ -141,8 +158,8 @@
       <% end %>
       <h2>Reply: <h2>
         <%= simple_form_for ([current_user, current_user.messages.build]) do |m| %>
-          <%= m.hidden_field :recipient, :value => current_user.id %>
-          <%= m.hidden_field :sender, :value => branch.user_id %>
+          <%= m.hidden_field :recipient, :value => branch.user_id %>
+          <%= m.hidden_field :sender, :value => current_user.id %>
           <%= m.hidden_field :branch_id, :value => branch.id %>
           <%= m.hidden_field :project_id, :value => @project.id %>
           <%= m.input :body, placeholder: 'Message' %>

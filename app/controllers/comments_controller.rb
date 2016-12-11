@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
     else
       flash[:notice] = "Could not save the comment, check the information entered"
     end
-    redirect_to @comment_owner
+    redirect_to request.referrer  
   end
 
   private

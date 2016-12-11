@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  
+
 
   def create
     if params[:branch_id]
@@ -19,7 +19,7 @@ class RequestsController < ApplicationController
     else
       flash[:notice] = "Could not send the request, check the information entered"
     end
-    redirect_to @request_owner
+    redirect_to request.referrer  
   end
 
   def show

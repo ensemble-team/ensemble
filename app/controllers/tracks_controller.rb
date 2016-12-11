@@ -24,7 +24,7 @@ class TracksController < ApplicationController
     else
       flash[:notice] = "Could not save the track, check the information entered"
     end
-    redirect_to @track_owner
+    redirect_to request.referrer  
   end
 
   def destroy

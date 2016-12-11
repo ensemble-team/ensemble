@@ -7,6 +7,7 @@ class MessagesController < ApplicationController
       else
         flash[:notice] = "Could not send the message, check the information entered"
       end
+      redirect_to request.referrer  
   end
 
 private

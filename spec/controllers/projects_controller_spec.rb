@@ -28,7 +28,7 @@ RSpec.describe ProjectsController, type: :controller do
         post :create, :project => project_params
 
         expect(response).to have_http_status(:redirect)
-        expect(flash[:notice]).to match(/^Could not save the project, check the information entered/)
+        expect(flash[:notice]).to match(/^Please enter a project title/)
       end
 
       it "creates a new contact" do

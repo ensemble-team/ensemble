@@ -21,7 +21,9 @@ end
   resources :projects do
     resources :comments
   end
-
+  resources :projects do
+    resources :blacklists
+  end
 
   resources :projects do
     resources :branches
@@ -38,7 +40,9 @@ end
     resources :comments
   end
 
-
+  resources :branches do
+    resources :blacklists
+  end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resource :user do

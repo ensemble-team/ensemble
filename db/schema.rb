@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161210174422) do
+ActiveRecord::Schema.define(version: 20161211155343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,11 @@ ActiveRecord::Schema.define(version: 20161210174422) do
   end
 
   create_table "blacklists", force: :cascade do |t|
-    t.integer  "user_id"
-    t.text     "body"
-    t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_blacklists_on_project_id", using: :btree
+    t.integer  "blocked"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "block_source_id"
+    t.string   "block_source_type"
   end
 
   create_table "branches", force: :cascade do |t|
@@ -121,11 +120,12 @@ ActiveRecord::Schema.define(version: 20161210174422) do
     t.string   "uid"
     t.string   "image"
     t.string   "username"
+    t.string   "role"
+    t.integer  "role_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "blacklists", "projects"
   add_foreign_key "collaborations", "projects"
   add_foreign_key "messages", "users"
 end

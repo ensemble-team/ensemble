@@ -41,7 +41,9 @@ end
 
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-
+  resource :user do
+  resources :messages
+  end
 
   root 'ensemble#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

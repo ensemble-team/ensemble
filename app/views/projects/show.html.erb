@@ -70,6 +70,7 @@
     <%= r.button :submit, button_html: { value: 'Save' } %>
     <% end %>
 
+<%if current_user.id == @project.user_id %>
     <h2> Mix requests <h2>
     <%if @project.branches.count != 0 %>
       <% @project.branches.each do |branch| %>
@@ -97,7 +98,7 @@
     <% end %>
 
 
-      <% if current_user.id == @project.user_id && @project.collaborations.count != 0  %>
+      <% if @project.collaborations.count != 0  %>
       <h2> Excisting collaborations <h2>
       <% @project.collaborations.each do |collaboration| %>
        <%user = User.find(collaboration.collaborator) %>
@@ -105,7 +106,7 @@
         <%= button_to 'Remove Collaboration', project_collaboration_path(@project, collaboration), method: :delete, data: {confirm: 'Are you sure you would like to delete this track?'} %>
         <% end %>
       <% end %>
-
+<% end %>
       <% if current_user.id == @project.user_id%>
       Message sent
       <% current_user.messages.each do |message| %>

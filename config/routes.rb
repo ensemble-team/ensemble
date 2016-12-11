@@ -38,9 +38,7 @@ end
     resources :comments
   end
 
-  resources :users do
-    resources :messages
-  end
+
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 

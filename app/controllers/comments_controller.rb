@@ -12,20 +12,18 @@ class CommentsController < ApplicationController
         @comment_owner = Branch.find(params[:branch_id])
     end
     @comment = @comment_owner.comments.build(comment_params)
-    @comment.update({ user_id: current_user.id })
-    @comment.save!
     if @comment.save
       flash[:notice] = "Comment added"
     else
       flash[:notice] = "Could not save the comment, check the information entered"
     end
-    redirect_to request.referrer  
+    redirect_to request.referrer
   end
 
   private
 
   def comment_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:body, :user_id)
   end
 
 end

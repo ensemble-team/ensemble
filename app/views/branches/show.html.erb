@@ -10,6 +10,7 @@
     <%= @branch.description %>
     <% if current_user.id == @branch.user_id %>
     <%= simple_form_for ([@branch, @branch.tracks.build]) do |t| %>
+      <%= t.hidden_field :user_id, :value => current_user.id %>
       <%= t.input :title, placeholder: 'Track Title' %>
       <%= t.input :text, placeholder: 'Track Description' %>
       <%= t.file_field :avatar %>
@@ -31,6 +32,7 @@
     <% end %>
 
     <%= simple_form_for ([@branch, @branch.comments.build]) do |c| %>
+      <%= c.hidden_field :user_id, :value => current_user.id %>
       <%= c.input :body, placeholder: 'Comment' %>
       <%= c.button :submit, button_html: { value: 'Save' } %>
     <% end %>
@@ -48,6 +50,9 @@
     <% if current_user.id == @branch.user_id %>
     <h2>Send a Mix request </h2>
     <%= simple_form_for ([@branch, @branch.requests.build]) do |r| %>
+      <%= r.hidden_field :status, :value => "In progress" %>
+      <%= r.hidden_field :owner_id, :value => @branch.user_id %>
+      <%= r.hidden_field :collab_id, :value => current_user.id %>
       <%= r.input :message, placeholder: 'Message' %>
       <%= r.button :submit, button_html: { value: 'Save' } %>
     <% end %>

@@ -7,7 +7,6 @@ class BranchesController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @branch = @project.branches.build(branch_params)
-    @branch.update({ user_id: current_user.id })
     @branch.save!
     redirect_to @branch
   end
@@ -20,7 +19,7 @@ class BranchesController < ApplicationController
   private
 
   def branch_params
-    params.require(:branch).permit(:title, :instrument, :description)
+    params.require(:branch).permit(:title, :instrument, :description, :user_id)
   end
 
 end

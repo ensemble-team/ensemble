@@ -11,7 +11,6 @@ helper :all
 
   def create
     @project = current_user.projects.build(project_params)
-    @project.update({user_id: current_user.id})
     if @project.save
     flash[:notice] = "Project created successfully"
   else
@@ -33,7 +32,7 @@ helper :all
   private
 
   def project_params
-    params.require(:project).permit(:title, :genre, :description)
+    params.require(:project).permit(:title, :genre, :description, :user_id)
   end
 
 end

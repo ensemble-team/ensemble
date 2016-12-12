@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
     @user.update(user_params)
     @user.save!
+    redirect_to request.referrer
   end
 
   private
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:image)
+    params.require(:user).permit(:image, :bio)
   end
 
 end

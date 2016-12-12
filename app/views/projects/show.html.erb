@@ -1,8 +1,9 @@
 <body>
 
-  <%= @project.title %>
-  <%= @project.genre %>
-  <%= @project.description %>
+  Title: <%= @project.title %><br>
+  Genre: <%= @project.genre %><br>
+  Description: <%= @project.description %><br>
+  <%= button_to 'Delete Project', project_path(@project), method: :delete, data: {confirm: 'Are you sure you want to delete this project?'} %>
 
      <% if @project.user_id == current_user.id %>
       <h2>Upload Your Master Track</h2>
@@ -11,9 +12,8 @@
         <%= t.input :title, placeholder: 'Track Title' %>
         <%= t.input :text, placeholder: 'Track Description' %>
         <%= t.file_field :avatar %>
-        <%= t.button :submit, button_html: { value: 'Upload Track' } %>
+        <%= t.button :submit, button_html: { value: 'Upload Track' } %><br><br>
       <% end %>
-      <%= button_to 'Delete Project', project_path(@project), method: :delete, data: {confirm: 'Are you sure you want to delete this project?'} %>
     <% end %>
 
   <% if @project.tracks.count != 0%>
@@ -28,7 +28,7 @@
           <% end %>
         <% end %>
         <% if current_user.id == @project.user_id%>
-          <%= button_to 'Remove track', project_track_path(@project, track), method: :delete, data: {confirm: 'Are you sure you would like to delete this track?'} %>
+          <%= button_to 'Remove track', project_track_path(@project, track), method: :delete, data: {confirm: 'Are you sure you would like to delete this track?'} %><br><br>
         <% end %>
       <% end %>
     <% end %>
@@ -92,10 +92,14 @@
       <% @project.branches.each do |branch| %>
         <%if branch.requests.count != 0 %>
           <% branch.requests.each do |request| %>
-            <% user = User.find(request.collab_id) %>
-            <br><%= user.username %>
-            <br>  <%= request.message %>
-            <%= button_to 'View Mix Request', request_path(request), method: :get%>
+            <%if request.id != nil && request.status == "In progress" %>
+              <% user = User.find(request.collab_id) %>
+              <%= user.username %>
+              <%= request.message %>
+              <%= button_to 'View Mix Request', request_path(request), method: :get%><br>
+              <% else %>
+              No current requests
+            <% end %>
           <% end %>
         <% end %>
       <% end %>
@@ -110,6 +114,8 @@
           Message: <%= request.message %>
           <%= button_to 'Accept Request', request_approve_collab_path(request), method: :post%>
           <%= button_to 'Reject Request', request_reject_collab_path(request), method: :post%>
+          <% else %>
+          No current requests
         <% end %>
       <% end %>
     <% end %>
@@ -122,7 +128,7 @@
           <%= button_to 'Remove Collaboration', project_collaboration_path(@project, collaboration), method: :delete, data: {confirm: 'Are you sure you would like to delete this collaboration?'} %>
             <%= simple_form_for ([@project, @project.blacklists.build]) do |b| %>
               <%= b.hidden_field :blocked, :value => user.id %>
-              <%= b.button :submit, button_html: { value: 'Block user' } %>
+              <%= b.button :submit, button_html: { value: 'Block user' } %><br><br>
             <% end %>
       <% end %>
     <% end %>

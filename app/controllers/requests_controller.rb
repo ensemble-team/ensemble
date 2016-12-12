@@ -20,7 +20,7 @@ class RequestsController < ApplicationController
   def show
     if params[:project_id]
       @request = Request.find(params[:id])
-      redirect_to('/show+page')
+      redirect_to request_approve_mix_path
     end
 
     @request = Request.find(params[:id])

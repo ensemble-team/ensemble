@@ -23,7 +23,7 @@
       <% end %>
     <% end %>
 
-    <% if @branch.tracks.count != 0%>
+    <% if @branch.tracks.any? %>
       <% @branch.tracks.each do |track| %>
         <% if track.title != nil %>
           <audio src="<%=audio_path track.avatar%>" type="audio/mpeg" controls></audio>
@@ -43,7 +43,7 @@
       <%= c.button :submit, button_html: { value: 'Save' } %>
     <% end %>
 
-    <%if @branch.comments.count != 0 %>
+    <%if @branch.comments.any? %>
       <% @branch.comments.each do |comment|%>
         <% if comment.user_id != nil %>
           <% user = User.find(comment.user_id) %>
@@ -100,7 +100,7 @@
         </div>
 
         <div>
-          <h2>Reply: <h2>
+          <h2>Reply: </h2>
           <% project = Project.find(@branch.project_id) %>
           <%= simple_form_for ([current_user, current_user.messages.build]) do |m| %>
             <%= m.hidden_field :recipient, :value => project.user_id %>

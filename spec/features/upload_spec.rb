@@ -5,6 +5,7 @@ RSpec.feature "Project", :type => :feature  do
 
 
   it "uploads a track to a project" do
+    create_user
     sign_in
     @project = create(:project)
     visit "/projects/#{@project.id}"
@@ -18,6 +19,7 @@ RSpec.feature "Project", :type => :feature  do
 
 
   it "uploads a track to a branch" do
+    create_user
     create_branch
     fill_in "Title", with: "Nice Song"
     fill_in "Text", with: "Sexy"
@@ -28,6 +30,7 @@ RSpec.feature "Project", :type => :feature  do
   end
 
   it "prevents non super user from uploading track" do
+    create_user
     create_specific_project(100)
     sign_out
     new_user_sign_in

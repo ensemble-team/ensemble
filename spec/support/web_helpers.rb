@@ -72,7 +72,7 @@ module WebHelpers
 
   def create_branch
     create_project
-    fill_in "branch_title", with: "New branch"
+    fill_in "Title", with: "New branch"
     fill_in "Instrument", with: "Trombone"
     fill_in "Description", with: "Windy"
     click_button "Create Branch"
@@ -101,7 +101,6 @@ module WebHelpers
     @track = create(:track, track_owner_id: @project.id, track_owner_type: "Project")
     fill_in "Track Title", with: "Super song"
     click_button('Create Track')
-
   end
 
   def create_branch_request

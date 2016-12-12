@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.feature 'User creates new project', :type => :feature do
 
   before(:each) do
+    create_user
     sign_in
   end
 

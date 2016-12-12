@@ -126,5 +126,4 @@ ActiveRecord::Schema.define(version: 20161211155343) do
 
   add_foreign_key "collaborations", "projects"
   add_foreign_key "messages", "users"
-  add_foreign_key "requests", "branches", column: "request_owner_id"
 end

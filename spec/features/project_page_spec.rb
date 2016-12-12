@@ -52,7 +52,7 @@ RSpec.feature 'User creates new project', :type => :feature do
   end
 
   scenario "Merge request button is present on page after contributing user sends request", focus: true  do
-    create_branch_as_user2
+    create_branch_as_user_3
     click_link_or_button("Request Mix Track")
     sign_out
     sign_in
@@ -62,7 +62,7 @@ RSpec.feature 'User creates new project', :type => :feature do
   end
 
   scenario "Merge request button is present on page after contributing user sends request", focus: true  do
-    create_branch_as_user2
+    create_branch_as_user_3
     click_link_or_button("Request Mix Track")
     sign_out
     sign_in

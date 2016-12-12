@@ -25,8 +25,12 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:request_id])
     @request.update({ status: "Approved"})
     @collaboration = Collaboration.new ({ collaborator: @request.collab_id, project_id: @request.request_owner_id})
-    @collaboration.save!
-
+    if @collaboration.save!
+      flash[:notice] = "Approved collaborator"
+    else
+      flash[:notice] = "Rejected collaborator"
+    end
+    redirect_to request.referrer
   end
 
   def reject

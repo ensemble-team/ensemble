@@ -95,6 +95,8 @@
             <% user = User.find(request.collab_id) %>
             <br><%= user.username %>
             <br>  <%= request.message %>
+            <%= button_to 'Approve', request_approve_path(request), method: :post%>
+            <%= button_to 'Reject', request_reject_path(request), method: :post%>
           <% end %>
         <% end %>
       <% end %>
@@ -107,8 +109,8 @@
           <% user = User.find(request.collab_id) %>
           From: <%= user.email %>
           Message: <%= request.message %>
-          <%= button_to 'Reject Request', request_reject_path(request), method: :post%>
           <%= button_to 'Accept Request', request_approve_path(request), method: :post%>
+          <%= button_to 'Reject Request', request_reject_path(request), method: :post%>
         <% end %>
       <% end %>
     <% end %>

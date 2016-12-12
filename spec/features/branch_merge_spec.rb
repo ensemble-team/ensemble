@@ -8,7 +8,7 @@ RSpec.feature 'User can request merge', :type => :feature do
   end
 
 
-  scenario "User should be able to click request merge button", focus: true  do
+  scenario "User should be able to click request merge button" do
     create_branch_as_user_3
     fill_in "Mix Request", with: "Please accept"
     click_link_or_button('Create Request')

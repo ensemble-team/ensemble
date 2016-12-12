@@ -103,7 +103,7 @@ RSpec.feature 'User creates new project', :type => :feature do
   end
 
 
-  context "user can reject collaborator", focus: true do
+  context "user can reject collaborator" do
     it "flashes rejected collaborator" do
       create_user
       create_specific_project(5)
@@ -118,8 +118,6 @@ RSpec.feature 'User creates new project', :type => :feature do
       visit('projects/5')
       click_link_or_button('Reject Request')
       expect(page).to have_content('Rejected collaborator')
-
-
     end
   end
 

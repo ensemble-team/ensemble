@@ -32,8 +32,8 @@ module WebHelpers
 
   def sign_in_again
     visit "/users/sign_in"
-    fill_in "user_email",  with: @user.email
-    fill_in "user_password",  with: @user.password
+    fill_in "user_email",  with: 'test@test.com'
+    fill_in "user_password",  with: 'password'
     click_button "Log in"
   end
 
@@ -69,14 +69,6 @@ module WebHelpers
     @branch = create(:branch, project_id: @project.id, id: 2)
   end
 
-
-  def create_branch
-    create_project
-    fill_in "Title", with: "New branch"
-    fill_in "Instrument", with: "Trombone"
-    fill_in "Description", with: "Windy"
-    click_button "Create Branch"
-  end
 
   def create_branch_as_user_3
     create_user

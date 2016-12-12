@@ -2,17 +2,16 @@ require 'rails_helper'
 
 RSpec.feature 'User creates new project', :type => :feature do
 
-  before(:each) do
+  scenario 'user can see project creation page' do
     create_user
     sign_in
-  end
-
-  scenario 'user can see project creation page' do
     visit new_project_path
     expect(page).to have_content 'New Project'
   end
 
   scenario 'user can input project details' do
+    create_user
+    sign_in
     visit new_project_path
     expect(page).to have_content 'Title'
     expect(page).to have_content 'Genre'
@@ -21,6 +20,8 @@ RSpec.feature 'User creates new project', :type => :feature do
   end
 
   scenario 'user can created a new project' do
+    create_user
+    sign_in
     visit new_project_path
     fill_in 'project_title', with: 'Moon Beam'
     fill_in 'project_genre', with: 'Jazz'
@@ -32,6 +33,8 @@ RSpec.feature 'User creates new project', :type => :feature do
 
 
   scenario 'user must input title of project to create project' do
+    create_user
+    sign_in
     visit new_project_path
     fill_in 'project_genre', with: 'Jazz'
     fill_in 'project_description', with: 'Free flowing funk'
@@ -41,8 +44,9 @@ RSpec.feature 'User creates new project', :type => :feature do
   end
 
   scenario "delete projects" do
+    create_user
+    sign_in
     visit new_project_path
-
     fill_in 'project_title', with: 'Moon Beam'
     fill_in 'project_genre', with: 'Jazz'
     fill_in 'project_description', with: 'Free flowing funk'

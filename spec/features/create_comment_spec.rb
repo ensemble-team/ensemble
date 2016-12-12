@@ -12,8 +12,7 @@ RSpec.feature 'User writes new comment', :type => :feature do
   end
 
   scenario 'user can write a comment on a branch page' do
-    create_user
-    create_branch
+    create_branch_as_user_3
     fill_in "Body", with: "Great song"
     click_button "Create Comment"
     expect(page).to have_content "Comment added"

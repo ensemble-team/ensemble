@@ -19,8 +19,7 @@ RSpec.feature "Project", :type => :feature  do
 
 
   it "uploads a track to a branch" do
-    create_user
-    create_branch
+    create_branch_as_user_3
     fill_in "Title", with: "Nice Song"
     fill_in "Text", with: "Sexy"
     attach_file 'track_avatar', './spec/fixtures/files/mpthreetest.mp3'

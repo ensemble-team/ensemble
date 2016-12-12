@@ -39,7 +39,7 @@
       <% end %>
     <% end %>
     <% end %>
-    <% end %>
+
 
     <%= simple_form_for ([@branch, @branch.comments.build]) do |c| %>
       <%= c.hidden_field :user_id, :value => current_user.id %>

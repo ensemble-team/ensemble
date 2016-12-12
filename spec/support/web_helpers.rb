@@ -71,6 +71,28 @@ module WebHelpers
     click_button "Create Branch"
   end
 
+  def create_branch_as_user2
+    sign_in_as_different_user
+    visit('projects/1')
+    fill_in "Message", with: "Please accept"
+    click_button "Create Request"
+    sign_out
+    sign_in
+    visit('projects/1')
+    click_link_or_button('Accept Request')
+    sign_out
+    sign_in_as_different_user
+    visit('projects/1')
+    fill_in "branch_title", with: "New branch"
+    fill_in "Instrument", with: "Trombone"
+    fill_in "Description", with: "Windy"
+    click_button("Create Branch")
+    click_button("Choose file")
+    @track = create(:track, track_owner_id: @project.id, track_owner_type: "Project")
+    click_button('Create Track')
+    
+  end
+
   def create_branch_request
     create_branch
     fill_in "Message", with: "Please accept"

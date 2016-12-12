@@ -21,4 +21,6 @@ RSpec.feature 'User creates new branch', :type => :feature do
       visit '/branches/2'
       expect(page).not_to have_content("Upload")
     end
+
+
 end

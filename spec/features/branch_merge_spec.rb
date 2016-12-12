@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'User can request merge', :type => :feature do
+RSpec.feature 'User can request merge', :type => :feature, focus: true do
 
   scenario "create project and then create merge request" do
     create_branch_as_user2

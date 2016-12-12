@@ -21,7 +21,7 @@
     <div>
       <% if @user.id == current_user.id %>
         <br><h2>Messages Inbox</h2>
-        <% if @messages.count != 0 %>
+        <% if @messages.any? %>
           <% @messages.each do |message| %>
             <% sender = find_sender(message)  %>
             <ul>
@@ -44,12 +44,14 @@
 
     <div>
       <h2>Current Projects</h2>
-      <% if @projects.count != 0 %>
+      <% if @projects.any? %>
         <% @projects.each do |project| %>
-          <%= project.title %>
-          <%= project.description %>
-          Created on: <%= project.created_at.strftime("%m/%d/%Y") %>
-          <%= link_to "See the project", project_path(project) %>
+          <li>
+            <%= project.title %>
+            <%= project.description %>
+            Created on: <%= project.created_at.strftime("%m/%d/%Y") %>
+            <%= link_to "See the project", project_path(project) %>
+          </li>
         <% end %>
       <% else %>
         <% if @user.id == current_user.id %>
@@ -62,13 +64,15 @@
 
     <div>
       <h2>Current Collaborations</h2>
-      <% if @branches.count != 0 %>
+      <% if @branches.any? %>
         <% @branches.each do |branch| %>
-          <%= branch.title %>
-          <%= branch.instrument %>
-          <%= branch.description %>
-          Created on: <%= branch.created_at.strftime("%m/%d/%Y") %>
-          <%= link_to "See the collaboration page", branch_path(branch) %>
+          <li>
+            <%= branch.title %>
+            <%= branch.instrument %>
+            <%= branch.description %>
+            Created on: <%= branch.created_at.strftime("%m/%d/%Y") %>
+            <%= link_to "See the collaboration page", branch_path(branch) %>
+          </li>
         <% end %>
       <% else %>
         <% if @user.id == current_user.id %>

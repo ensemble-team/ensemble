@@ -22,15 +22,22 @@ class UsersController < ApplicationController
   private
 
   def user_messages
-    @messages = Message.where(recipient: params[:id])
+    find_user
+    @messages = Message.where(recipient: @user.id)
   end
 
   def user_projects
-    @projects = Project.where(user_id: params[:id])
+    find_user
+    @projects = Project.where(user_id: @user.id)
   end
 
   def user_collaborations
-    @branches = Branch.where(user_id: params[:id])
+    find_user
+    @branches = Branch.where(user_id: @user.id)
+  end
+
+  def find_user
+    @user = User.find_by(username: params[:username])
   end
 
   def user_params

@@ -62,7 +62,7 @@ RSpec.feature 'User creates new project', :type => :feature do
       expect(page).to have_button('View Mix Request')
     end
 
-    it 'project owner can merge tracks' do
+    it 'project owner see master and branch tracks' do
       create_branch_as_user_3
       fill_in 'Mix Request', with: "Please Accept"
       click_link_or_button("Create Request")
@@ -71,6 +71,31 @@ RSpec.feature 'User creates new project', :type => :feature do
       visit('projects/1000')
       click_link_or_button("View Mix Request")
       expect(page).to have_css('audio')
+    end
+
+    it 'project owner can merge tracks' do
+      create_branch_as_user_3
+      fill_in 'Mix Request', with: "Please Accept"
+      click_link_or_button("Create Request")
+      sign_out
+      sign_in
+      visit('projects/1000')
+      click_link_or_button("View Mix Request")
+      click_button('Approve Mix Request')
+      expect(page).to have_content('Approved mix')
+    end
+
+
+    it 'project owner can merge tracks' do
+      create_branch_as_user_3
+      fill_in 'Mix Request', with: "Please Accept"
+      click_link_or_button("Create Request")
+      sign_out
+      sign_in
+      visit('projects/1000')
+      click_link_or_button("View Mix Request")
+      click_button('Reject Mix Request')
+      expect(page).to have_content('Rejected mix')
     end
 
   end

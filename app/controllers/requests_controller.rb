@@ -32,8 +32,6 @@ class RequestsController < ApplicationController
     @collaboration = Collaboration.new ({ collaborator: @request.collab_id, project_id: @request.request_owner_id})
       if @collaboration.save!
         flash[:notice] = "Approved collaborator"
-      else
-        flash[:notice] = "Rejected collaborator"
       end
     redirect_to request.referrer
   end
@@ -41,6 +39,8 @@ class RequestsController < ApplicationController
   def reject_collab
     @request = Request.find(params[:request_id])
     @request.update({ status: "Rejected"})
+      flash[:notice] = "Rejected collaborator"
+      redirect_to request.referrer
   end
 
   def approve_mix
@@ -52,8 +52,6 @@ class RequestsController < ApplicationController
       @project.tracks.each do |t|
         if t.update ({ avatar: track.avatar })
           flash[:notice] = "Approved mix"
-        else
-          flash[:notice] = "Rejected mix"
         end
       end
     end

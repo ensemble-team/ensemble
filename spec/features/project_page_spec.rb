@@ -73,7 +73,7 @@ RSpec.feature 'User creates new project', :type => :feature do
       expect(page).to have_css('audio')
     end
 
-    it 'project owner can merge tracks', focus: true do
+    it 'project owner can merge tracks' do
       create_branch_as_user_3
       fill_in 'Mix Request', with: "Please Accept"
       click_link_or_button("Create Request")
@@ -87,7 +87,7 @@ RSpec.feature 'User creates new project', :type => :feature do
     end
 
 
-    it 'project owner can merge tracks', focus: true do
+    it 'project owner can merge tracks' do
       create_branch_as_user_3
       fill_in 'Mix Request', with: "Please Accept"
       click_link_or_button("Create Request")
@@ -100,10 +100,27 @@ RSpec.feature 'User creates new project', :type => :feature do
       expect(current_path).to eq('/projects')
     end
 
-
-
-
   end
 
+
+  context "user can reject collaborator", focus: true do
+    it "flashes rejected collaborator" do
+      create_user
+      create_specific_project(5)
+      sign_out
+      create_user_3
+      sign_in_as_user_3
+      visit('projects/5')
+      fill_in "Message", with: "Please accept"
+      click_button "Create Request"
+      sign_out
+      sign_in
+      visit('projects/5')
+      click_link_or_button('Reject Request')
+      expect(page).to have_content('Rejected collaborator')
+
+
+    end
+  end
 
 end

@@ -97,7 +97,7 @@
               <%= user.username %>
               <%= request.message %>
               <%= button_to 'View Mix Request', request_path(request), method: :get%><br>
-              <% else %>
+            <% else %>
               No current requests
             <% end %>
           <% end %>
@@ -171,8 +171,10 @@
   <%if @project.branches.count != 0 %>
     <% if @project.blacklists.count == 0 %>
       <% @project.branches.each do |branch| %>
-        <%= branch.title %>
-        <%= link_to "See Branch", branch_path(branch) %>
+        <% if branch.id != nil %>
+          <%= branch.title %>
+          <%= link_to "See Branch", branch_path() %>
+        <% end %>
       <% end %>
     <% end %>
 

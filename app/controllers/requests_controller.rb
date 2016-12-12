@@ -46,10 +46,7 @@ class RequestsController < ApplicationController
   def approve_mix
     @request = Request.find(params[:request_id])
     @request.update({ status: "Approved"})
-
-
     @branch = Branch.find(@request.request_owner_id)
-
     @branch.tracks.each do |track|
       @project = Project.find(@branch.project_id)
       @project.tracks.each do |t|
@@ -59,13 +56,15 @@ class RequestsController < ApplicationController
           flash[:notice] = "Rejected mix"
         end
       end
-  end
+    end
     redirect_to projects_path
   end
 
   def reject_mix
     @request = Request.find(params[:request_id])
     @request.update({ status: "Rejected"})
+    flash[:notice] = "Rejected mix"
+    redirect_to projects_path
   end
 
   private

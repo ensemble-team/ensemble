@@ -2,8 +2,18 @@
   <body>
     <h1>This is the project page</h1>
 
-    <% @projects.each do |a| %>
-    Title:<br><%= a.title %><br><br>
+    <% @projects.each do |project| %>
+    <% if project.blacklists.count != 0 %>
+    <% project.blacklists.each do |blacklist| %>
+    <% if blacklist.blocked != current_user.id %>
+    Title:<br><%= project.title %><br><br>
+    <%= link_to "See project", project_path(project) %>
+    <% end %>
+    <% end %>
+    <% else %>
+    Title:<br><%= project.title %><br><br>
+    <%= link_to "See project", project_path(project) %>
+    <% end %>
     <% end %>
 
 

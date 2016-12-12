@@ -71,5 +71,15 @@ module WebHelpers
     click_button "Create Branch"
   end
 
+  def create_branch_request
+    create_branch
+    fill_in "Message", with: "Please accept"
+    click_button "Create Request"
+  end
 
+  def create_collab_request
+    create_project
+    fill_in "Message", with: "Please accept my collab request"
+    click_button "Create Request"
+  end
 end

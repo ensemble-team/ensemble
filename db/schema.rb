@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161209121747) do
+ActiveRecord::Schema.define(version: 20161211155343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20161209121747) do
     t.string   "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "blacklists", force: :cascade do |t|
+    t.integer  "blocked"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "block_source_id"
+    t.string   "block_source_type"
   end
 
   create_table "branches", force: :cascade do |t|
@@ -49,6 +57,18 @@ ActiveRecord::Schema.define(version: 20161209121747) do
     t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "recipient"
+    t.integer  "sender"
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "branch_id"
+    t.integer  "project_id"
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
   create_table "projects", force: :cascade do |t|
@@ -100,10 +120,12 @@ ActiveRecord::Schema.define(version: 20161209121747) do
     t.string   "uid"
     t.string   "image"
     t.string   "username"
+    t.string   "role"
+    t.integer  "role_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "collaborations", "projects"
-  add_foreign_key "requests", "branches", column: "request_owner_id"
+  add_foreign_key "messages", "users"
 end

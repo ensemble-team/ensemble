@@ -41,6 +41,11 @@ class RequestsController < ApplicationController
   def approve_mix
     @request = Request.find(params[:request_id])
     @request.update({ status: "Approved"})
+    # @project = Project.find(params[:project_id])
+    # @master = @project.tracks
+    # @branch = Branch.find(params[:branch_id])
+    # @mixtrack = @branch.tracks
+    # @master.update({ avatar: @mixtrack.track.avatar})
 
       if @request.save!
         flash[:notice] = "Approved mix"

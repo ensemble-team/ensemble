@@ -32,7 +32,7 @@ example_id                                              | status  | run_time    
 ./spec/features/project_page_spec.rb[1:4]               | unknown |              |
 ./spec/features/project_page_spec.rb[1:5]               | unknown |              |
 ./spec/features/project_page_spec.rb[1:6:1]             | passed  | 1.23 seconds |
-./spec/features/project_page_spec.rb[1:6:2]             | passed  | 2.41 seconds |
+./spec/features/project_page_spec.rb[1:6:2]             | failed  | 1.79 seconds |
 ./spec/features/track_delete_spec.rb[1:1:1]             | unknown |              |
 ./spec/features/track_delete_spec.rb[1:1:2]             | unknown |              |
 ./spec/features/upload_spec.rb[1:1]                     | unknown |              |

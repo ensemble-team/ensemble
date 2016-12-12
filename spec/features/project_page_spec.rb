@@ -71,6 +71,7 @@ RSpec.feature 'User creates new project', :type => :feature do
       sign_in
       visit('projects/1000')
       click_link_or_button("Approve")
+      # expect { Track.id }.to eq (Branch.track.id)
       expect(page).to have_content("Approved mix")
     end
 

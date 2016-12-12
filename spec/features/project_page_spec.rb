@@ -51,18 +51,29 @@ RSpec.feature 'User creates new project', :type => :feature do
 
   end
 
-  scenario "Merge request button is present on page after contributing user sends request", focus: true  do
-    create_branch_as_user_3
-    fill_in 'Mix Request', with: "Please Accept"
-    click_link_or_button("Create Request")
-    sign_out
-    sign_in
-    visit('projects/1000')
-    p page.body
-    expect(page).to have_button('Approve')
-    expect(page).to have_button('Reject')
-    click_link_or_button("Approve")
-    # expect(page).to have_content("Approved collaborator")
+  context "Mix request" do
+    it 'button is present on page after contributing user sends request' do
+      create_branch_as_user_3
+      fill_in 'Mix Request', with: "Please Accept"
+      click_link_or_button("Create Request")
+      sign_out
+      sign_in
+      visit('projects/1000')
+      expect(page).to have_button('Approve')
+      expect(page).to have_button('Reject')
+    end
+
+    it 'project owner can merge tracks', focus: true do
+      create_branch_as_user_3
+      fill_in 'Mix Request', with: "Please Accept"
+      click_link_or_button("Create Request")
+      sign_out
+      sign_in
+      visit('projects/1000')
+      click_link_or_button("Approve")
+      expect(page).to have_content("Approved mix")
+    end
+
   end
 
 

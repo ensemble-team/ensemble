@@ -41,11 +41,11 @@ class RequestsController < ApplicationController
   def approve_mix
     @request = Request.find(params[:request_id])
     @request.update({ status: "Approved"})
-    @collaboration = Collaboration.new ({ collaborator: @request.collab_id, project_id: @request.request_owner_id})
-      if @collaboration.save!
-        flash[:notice] = "Approved collaborator"
+
+      if @request.save!
+        flash[:notice] = "Approved mix"
       else
-        flash[:notice] = "Rejected collaborator"
+        flash[:notice] = "Rejected mix"
       end
     redirect_to request.referrer
   end

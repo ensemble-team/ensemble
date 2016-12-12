@@ -8,7 +8,6 @@ module WebHelpers
     create(:user, email: "berrydingle@email.com", password: "password", password_confirmation: "password", id: 3)
   end
 
-
   def sign_in
     visit new_user_session_path
     fill_in 'Email', with: 'test@test.com'
@@ -116,4 +115,5 @@ module WebHelpers
     fill_in "Message", with: "Please accept my collab request"
     click_button "Create Request"
   end
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161212152255) do
+ActiveRecord::Schema.define(version: 20161212161412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,17 @@ ActiveRecord::Schema.define(version: 20161212152255) do
     t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.string   "notification_owner_type"
+    t.integer  "notification_owner_id"
+    t.integer  "notified_by"
+    t.boolean  "read"
+    t.integer  "user_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["user_id"], name: "index_notifications_on_user_id", using: :btree
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "title"
     t.string   "genre"
@@ -129,4 +140,5 @@ ActiveRecord::Schema.define(version: 20161212152255) do
 
   add_foreign_key "collaborations", "projects"
   add_foreign_key "messages", "users"
+  add_foreign_key "notifications", "users"
 end

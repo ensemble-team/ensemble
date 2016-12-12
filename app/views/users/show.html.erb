@@ -5,27 +5,27 @@
     <title></title>
   </head>
   <body>
-    <%= @user.email %>
-    <br><h1>User's profile</h1>
-    <br><h2>Messages Box</h2>
-    <% Message.all.each do|message| %>
-    <% if message.recipient == current_user.id %>
-    <% user = User.find(message.sender) %>
-    <ul>
-    <li>from: <%= user.email %> on: <%= message.created_at.strftime("%m/%d/%Y") %></li>
-    <li><%= message.body %></li>
-  </ul>
-  <h2>Reply: <h2>
-    <%= simple_form_for ([current_user, current_user.messages.build]) do |m| %>
-      <%= m.hidden_field :recipient, :value => user.id %>
-      <%= m.hidden_field :sender, :value => current_user.id %>
-      <%= m.hidden_field :branch_id, :value => nil %>
-      <%= m.hidden_field :project_id, :value => nil %>
-      <%= m.input :body, placeholder: 'Message' %>
-      <%= m.button :submit, button_html: { value: 'Save' } %>
-  <% end %>
-    <% end %>
-
+    <br><h1><%= @user.username %> profile</h1>
+    <% if @user.id == current_user.id %>
+      <br><h2>Messages Board</h2>
+      <% if @messages.count != 0 %>
+        <% @messages.each do |message| %>
+          <% sender = find_sender(message)  %>
+          <ul>
+            <li>from: <%= sender.email %> on: <%= message.created_at.strftime("%m/%d/%Y") %></li>
+            <li><%= message.body %></li>
+          </ul>
+          <p>Reply:<p>
+          <%= simple_form_for ([current_user, current_user.messages.build]) do |m| %>
+            <%= m.hidden_field :recipient, :value => sender.id %>
+            <%= m.hidden_field :sender, :value => current_user.id %>
+            <%= m.hidden_field :branch_id, :value => nil %>
+            <%= m.hidden_field :project_id, :value => nil %>
+            <%= m.input :body, placeholder: 'Message' %>
+            <%= m.button :submit, button_html: { value: 'Save' } %>
+          <% end %>
+        <% end %>
+      <% end %>
     <% end %>
   </body>
 </html>

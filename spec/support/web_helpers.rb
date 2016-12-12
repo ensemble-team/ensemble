@@ -7,6 +7,14 @@ module WebHelpers
     click_button 'Log in'
   end
 
+  def new_user_sign_in
+    @user2 = create(:user, email: "ensemble@gmail.com", id: 2)
+    visit new_user_session_path
+    fill_in 'Email', with: @user2.email
+    fill_in 'Password', with: @user2.password
+    click_button 'Log in'
+  end
+
   def upload_track
     sign_in
     @project = create(:project)
@@ -21,6 +29,15 @@ module WebHelpers
     click_button "Log in"
   end
 
+  def sign_in_as_different_user
+    @another_user = create(:user, email: "test2@test.com", password: "password", password_confirmation: "password", id: 2)
+    visit new_user_session_path
+    fill_in 'Email', with: @another_user.email
+    fill_in 'Password', with: @another_user.password
+    click_button 'Log in'
+    visit "/projects/#{@project.id}" #specific for track_delete_spec
+  end
+
   def sign_out
     click_link ("Logout")
   end
@@ -32,6 +49,17 @@ module WebHelpers
     fill_in "Genre", with: "Funk"
     fill_in "Description", with: "Great new song"
     click_button "Create Project"
+  end
+
+  def create_specific_project(id)
+    sign_in
+    @project = create(:project, id: id)
+  end
+
+  def create_specific_branch(id)
+    sign_in
+    @project = create(:project, id: id)
+    @branch = create(:branch, project_id: @project.id, id: 2)
   end
 
 

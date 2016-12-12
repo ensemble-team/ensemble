@@ -8,6 +8,9 @@
     <%= @branch.title %>
     <%= @branch.instrument %>
     <%= @branch.description %>
+    <% if @branch.user_id == current_user.id || @project.id == current_user.id %>
+      <%= button_to 'Delete Branch', branch_path(@branch), method: :delete, data: { confirm: 'Are you sure you want to delete this branch?'} %>
+    <% end %>
 
     <% if @branch.user_id == current_user.id %>
       <%= simple_form_for ([@branch, @branch.tracks.build]) do |t| %>
@@ -26,6 +29,9 @@
         <source src="<%=audio_path track.avatar%>" type="audio/mpeg"></source>
       </audio>
       <a href="<%=track.avatar%>" download="Song">Download</a>
+      <% if @branch.user_id == current_user.id || @project.id == current_user.id %>
+        <%= button_to 'Remove track', [@branch, track], method: :delete, data: {confirm: 'Are you sure you would like to delete this track?'} %>
+      <% end %>
     <% end %>
     <% end %>
     <% end %>

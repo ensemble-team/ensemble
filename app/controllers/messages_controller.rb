@@ -14,7 +14,6 @@ class MessagesController < ApplicationController
 private
 
 def create_notification(message)
-  return if message.user_id == current_user.id
   if message.branch_id
     @message_owner = message.branch_id
   elsif message.project_id && message.branch_id == nil

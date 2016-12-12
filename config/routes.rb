@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'notifications/link_through'
+
   resources :projects do
     resources :tracks
   end
@@ -45,11 +47,17 @@ end
   end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
   resource :user do
+    resources :notifications
+    get 'notification/:id/link_through', to: 'notifications#link_through', as: :link_through
     resources :messages
     resources :users, :only => [:show, :update]
     get ":username", to: "users#show"
   end
+
+
+
 
 
   root 'ensemble#index'

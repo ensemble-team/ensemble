@@ -1,0 +1,8 @@
+<ul>
+  <% @notifications.each do |n| %>
+    <li>
+      <% sender = User.find(n.notified_by) %>
+      <%= sender.username %>'s has made a <%= n.notification_owner_type %>
+    </li>
+  <% end %>
+</ul>

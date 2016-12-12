@@ -48,7 +48,11 @@
           <%= link_to "See the project", project_path(project) %>
         <% end %>
       <% else %>
-        You are not working on any projects at the moment.
+        <% if @user.id == current_user.id %>
+          You are not working on any projects at the moment.
+        <% else %>
+          <%= @user.username %> is not working on any projects at the moment.
+        <% end %>
       <% end %>
     </div>
 
@@ -63,7 +67,11 @@
           <%= link_to "See the collaboration page", branch_path(branch) %>
         <% end %>
       <% else %>
-        You are not collaborating on any projects at the moment.
+        <% if @user.id == current_user.id %>
+          You are not collaborating on any projects at the moment.
+        <% else %>
+          <%= @user.username %> is not collaborating on any projects at the moment.
+        <% end %>
       <% end %>
     </div>
 

@@ -46,18 +46,21 @@ class RequestsController < ApplicationController
   def approve_mix
     @request = Request.find(params[:request_id])
     @request.update({ status: "Approved"})
-    # @project = Project.find(params[:project_id])
-    # @master = @project.tracks
-    # @branch = Branch.find(params[:branch_id])
-    # @mixtrack = @branch.tracks
-    # @master.update({ avatar: @mixtrack.track.avatar})
 
-      if @request.save!
-        flash[:notice] = "Approved mix"
-      else
-        flash[:notice] = "Rejected mix"
+
+    @branch = Branch.find(@request.request_owner_id)
+
+    @branch.tracks.each do |track|
+      @project = Project.find(@branch.project_id)
+      @project.tracks.each do |t|
+        if t.update ({ avatar: track.avatar })
+          flash[:notice] = "Approved mix"
+        else
+          flash[:notice] = "Rejected mix"
+        end
       end
-    redirect_to request.referrer
+  end
+    redirect_to projects_path
   end
 
   def reject_mix

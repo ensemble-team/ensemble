@@ -28,6 +28,6 @@
     <% end %>
   <% end %>
 
-<br><br><%= button_to 'Approve Mix Request', request_approve_mix_path(request), method: :post %>
+<br><br><%= button_to 'Approve Mix Request', request_approve_mix_path(@request.id), method: :post %>
 
 </body>

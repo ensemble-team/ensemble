@@ -18,6 +18,11 @@ class RequestsController < ApplicationController
   end
 
   def show
+    if params[:project_id]
+      @request = Request.find(params[:id])
+      redirect_to('/show+page')
+    end
+
     @request = Request.find(params[:id])
   end
 

@@ -95,8 +95,7 @@
             <% user = User.find(request.collab_id) %>
             <br><%= user.username %>
             <br>  <%= request.message %>
-            <%= button_to 'Approve', request_approve_mix_path(request), method: :post%>
-            <%= button_to 'Reject', request_reject_mix_path(request), method: :post%>
+            <%= button_to 'View Mix Request', request_approve_mix_path(request)%>
           <% end %>
         <% end %>
       <% end %>

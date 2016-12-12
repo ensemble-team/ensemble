@@ -18,8 +18,9 @@
   <% elsif n.notification_owner_type == "Track" %>
     <li>
       <% t = Track.find(n.notification_owner_id) %>
+      <% o = t.track_owner_type.constantize.find(t.track_owner_id) %>
       <%= sender.username %> has uploaded a new track
-      <%= link_to "Listen to the track", t %>
+      <%= link_to "Listen to the track", o %>
     </li>
     <% elsif n.notification_owner_type == "Branch" %>
       <li>

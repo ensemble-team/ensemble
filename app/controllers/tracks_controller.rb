@@ -40,12 +40,20 @@ class TracksController < ApplicationController
   private
 
   def create_notification(track_owner, track)
-    return if params[:project_id]
+    if params[:project_id]
     project = Project.find(track_owner.project_id)
     Notification.create!(notification_owner_id: track_owner.id,
                          notification_owner_type: 'Track',
                          user_id: project.user_id,
                          notified_by: current_user.id)
+     elsif params[:branch_id]
+     branch = Branch.find(track_owner.track_id)
+     project = Project.find(branch.project_id)
+     Notification.create!(notification_owner_id: track_owner.id,
+                          notification_owner_type: 'Track',
+                          user_id: project.user_id,
+                          notified_by: current_user.id)
+    end
   end
 
   def track_params

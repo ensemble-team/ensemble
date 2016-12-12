@@ -6,7 +6,11 @@
   </head>
   <body>
     <div>
-      <img src="<%= @user.image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
+      <% if @user.provider == 'facebook' %>
+        <img src="http://graph.facebook.com/v2.6/<%= @user.uid %>/picture" style="width:152px; height:152px; border-radius: 50%;"></img>
+      <% else %>
+        <img src="<%= @user.image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
+      <% end  %>
     </div>
 
     <div>

@@ -12,7 +12,7 @@
     <% if message.recipient == current_user.id %>
     <% user = User.find(message.sender) %>
     <ul>
-    <li>from: <%= user.email %> on: <%= message.created_at %></li>
+    <li>from: <%= user.email %> on: <%= message.created_at.strftime("%m/%d/%Y") %></li>
     <li><%= message.body %></li>
   </ul>
   <h2>Reply: <h2>

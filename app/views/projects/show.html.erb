@@ -95,8 +95,8 @@
             <% user = User.find(request.collab_id) %>
             <br><%= user.username %>
             <br>  <%= request.message %>
-            <%= button_to 'Approve', request_approve_path(request), method: :post%>
-            <%= button_to 'Reject', request_reject_path(request), method: :post%>
+            <%= button_to 'Approve', request_approve_mix_path(request), method: :post%>
+            <%= button_to 'Reject', request_reject_mix_path(request), method: :post%>
           <% end %>
         <% end %>
       <% end %>
@@ -109,14 +109,14 @@
           <% user = User.find(request.collab_id) %>
           From: <%= user.email %>
           Message: <%= request.message %>
-          <%= button_to 'Accept Request', request_approve_path(request), method: :post%>
-          <%= button_to 'Reject Request', request_reject_path(request), method: :post%>
+          <%= button_to 'Accept Request', request_approve_collab_path(request), method: :post%>
+          <%= button_to 'Reject Request', request_reject_collab_path(request), method: :post%>
         <% end %>
       <% end %>
     <% end %>
 
     <% if @project.collaborations.count != 0  && @project.user_id == current_user.id %>
-      <h2> Excisting collaborations </h2>
+      <h2> Existing collaborations </h2>
       <% @project.collaborations.each do |collaboration| %>
          <%user = User.find(collaboration.collaborator) %>
          <a>From: <%= user.email %><a>

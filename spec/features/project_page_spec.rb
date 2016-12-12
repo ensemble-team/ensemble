@@ -58,21 +58,12 @@ RSpec.feature 'User creates new project', :type => :feature do
     sign_out
     sign_in
     visit('projects/1000')
+    p page.body
     expect(page).to have_button('Approve')
     expect(page).to have_button('Reject')
-    click_on("Approve")
-    expect(page).to have_content("Approved collaborator")
+    click_link_or_button("Approve")
+    # expect(page).to have_content("Approved collaborator")
   end
-
-  # scenario "Merge request button is present on page after contributing user sends request", focus: true  do
-  #   create_branch_as_user_3
-  #   fill_in 'Mix Request', with: "Please Accept"
-  #   click_link_or_button("Create Request")
-  #   sign_out
-  #   sign_in
-  #   visit('projects/1000')
-  #
-  # end
 
 
 end

@@ -9,10 +9,16 @@ Rails.application.routes.draw do
     resources :collaborations
   end
     resources :requests do
-      post :reject
+      post :reject_collab
   end
   resources :requests do
-    post :approve
+    post :approve_collab
+end
+resources :requests do
+  post :approve_mix
+end
+resources :requests do
+  post :reject_mix
 end
 
   resources :projects do

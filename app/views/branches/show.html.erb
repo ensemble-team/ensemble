@@ -102,7 +102,7 @@
           <% end %>
         </div>
 
-        <h2>Reply: <h2>
+        <h2>Reply: </h2>
           <% project = Project.find(@branch.project_id) %>
           <%= simple_form_for ([current_user, current_user.messages.build]) do |m| %>
             <%= m.hidden_field :recipient, :value => project.user_id %>

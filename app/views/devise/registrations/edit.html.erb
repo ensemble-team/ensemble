@@ -1,5 +1,14 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
+<div>
+  <img src="<%= @user.image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
+Upload a new picture
+<%= simple_form_for current_user do |i| %>
+  <%= i.file_field :image %>
+  <%= i.button :submit, "Upload Picture" %>
+<% end %>
+</div>
+
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 

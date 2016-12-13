@@ -25,6 +25,7 @@ body {
     width: 100%;
     padding: 0;
     background-color: #fff;
+    height: 100vh;
 }
 
 .huge {
@@ -122,7 +123,7 @@ ul.alert-dropdown {
         border: none;
         border-radius: 0;
         overflow-y: auto;
-        background-color: #222;
+        background-color: #337ab7;
         bottom: 0;
         overflow-x: hidden;
         padding-bottom: 40px;
@@ -130,8 +131,12 @@ ul.alert-dropdown {
 
     .side-nav>li>a {
         width: 225px;
+        color: #fff;
     }
 
+    .side-nav>li>a>i {
+      color: #fff;
+    }
     .side-nav li a:hover,
     .side-nav li a:focus {
         outline: none;
@@ -147,9 +152,8 @@ ul.alert-dropdown {
     display: block;
     padding: 10px 15px 10px 38px;
     text-decoration: none;
-    color: #999;
+    color: #fff;
 }
-
 .side-nav>li>ul>li>a:hover {
     color: #fff;
 }

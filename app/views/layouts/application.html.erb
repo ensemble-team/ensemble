@@ -8,11 +8,8 @@
     <meta name="author" content="">
     <title>EnsembleApp</title>
     <%= csrf_meta_tags %>
-    <link rel="stylesheet" href="https://blackrockdigital.github.io/startbootstrap-sb-admin/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://blackrockdigital.github.io/startbootstrap-sb-admin/css/sb-admin.css">
-    <link rel="stylesheet" href="https://blackrockdigital.github.io/startbootstrap-sb-admin/css/plugins/morris.css">
-    <link rel="stylesheet" href="https://blackrockdigital.github.io/startbootstrap-sb-admin/font-awesome/css/font-awesome.min.css">
-
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
   </head>
 
   <body>
@@ -140,16 +137,16 @@
                       <a href="/projects"><i class="fa fa-fw fa-desktop"></i> Projects</a>
                     </li>
                     <li>
-                      <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Tracks</a>
+                      <a href="/projects/1"><i class="fa fa-fw fa-bar-chart-o"></i> Collaborations</a>
                     </li>
                     <li>
-                      <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Requests <i class="fa fa-fw fa-caret-down"></i></a>
+                      <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Recent Projects <i class="fa fa-fw fa-caret-down"></i></a>
                       <ul id="demo" class="collapse">
                           <li>
-                              <a href="#">Player 1</a>
+                              <a href="#">Project 1</a>
                           </li>
                           <li>
-                              <a href="#">Player 2</a>
+                              <a href="#">Project 2</a>
                           </li>
                       </ul>
                     </li>
@@ -157,16 +154,11 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
-      </div>
 
 
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/jquery.js"></script>
-    <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/bootstrap.min.js"></script>
-    <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/raphael.min.js"></script>
-    <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris.min.js"></script>
-    <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris-data.min.js"></script>
+  </div>
   </body>
 </html>

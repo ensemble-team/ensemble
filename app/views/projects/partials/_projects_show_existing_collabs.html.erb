@@ -1,0 +1,11 @@
+<% if @project.collaborations.any?  && @project.user_id == current_user.id %>
+  <% @project.collaborations.each do |collaboration| %>
+    <%user = User.find(collaboration.collaborator) %>
+    <a>From: <%= user.email %><a>
+    <%= button_to 'Remove Collaboration', project_collaboration_path(@project, collaboration), method: :delete, data: {confirm: 'Are you sure you would like to delete this collaboration?'} %>
+    <%= simple_form_for ([@project, @project.blacklists.build]) do |b| %>
+      <%= b.hidden_field :blocked, :value => user.id %>
+      <%= b.button :submit, button_html: { value: 'Block user' } %><br><br>
+    <% end %>
+  <% end %>
+<% end %>

@@ -5,7 +5,7 @@ module WebHelpers
   end
 
   def create_user_3
-    create(:user, email: "berrydingle@email.com", password: "password", password_confirmation: "password", id: 3)
+    create(:user, username: 'berrydingle', email: "berrydingle@email.com", password: "password", password_confirmation: "password", id: 3)
   end
 
   def sign_in

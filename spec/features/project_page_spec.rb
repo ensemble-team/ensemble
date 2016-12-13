@@ -78,7 +78,7 @@ RSpec.feature 'User creates new project', :type => :feature do
       expect(page).to have_css('audio')
     end
 
-    it 'project owner can merge tracks', focus: true do
+    it 'project owner can merge tracks' do
       create_branch_as_user_3
       fill_in 'Mix Request', with: "Please Accept"
       click_link_or_button("Create Request")

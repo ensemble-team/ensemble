@@ -1,11 +1,7 @@
 <body>
-
   <%= @request.message %>
 
-
-  <% @request = Request.find(params[:id]) %>
-
-  <% @branch = Branch.find(@request.request_owner_id) %>
+  <% @branch = Branch.find(@request.owner_id) %>
   <% @project = Project.find(@branch.project_id) %>
 
 

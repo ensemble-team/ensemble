@@ -19,21 +19,13 @@ class RequestsController < ApplicationController
   end
 
   def show
-    if params[:project_id]
-      @request = Request.find(params[:id])
-      redirect_to request_approve_mix_path
-    end
-
     @request = Request.find(params[:id])
-    owner = @request.owner_type.constantize
-    @owner = owner.find(@request.owner_id)
-    redirect_to @owner
   end
 
   def approve_collab
     @request = Request.find(params[:request_id])
     @request.update({ status: "Approved"})
-    @collaboration = Collaboration.new ({ collaborator: @request.collab_id, project_id: @request.request_owner_id})
+    @collaboration = Collaboration.new ({ collaborator: @request.collab_id, project_id: @request.owner_id})
       if @collaboration.save!
         flash[:notice] = "Approved collaborator"
       end
@@ -50,7 +42,7 @@ class RequestsController < ApplicationController
   def approve_mix
     @request = Request.find(params[:request_id])
     @request.update({ status: "Approved"})
-    @branch = Branch.find(@request.request_owner_id)
+    @branch = Branch.find(@request.owner_id)
     @branch.tracks.each do |track|
       @project = Project.find(@branch.project_id)
       @project.tracks.each do |t|
@@ -59,14 +51,16 @@ class RequestsController < ApplicationController
         end
       end
     end
-    redirect_to projects_path
+    redirect_to @project
   end
 
   def reject_mix
     @request = Request.find(params[:request_id])
+    @branch = Branch.find(@request.owner_id)
+    @project = Project.find(@branch.project_id)
     @request.update({ status: "Rejected"})
     flash[:notice] = "Rejected mix"
-    redirect_to projects_path
+    redirect_to @project
   end
 
   private
@@ -74,9 +68,9 @@ class RequestsController < ApplicationController
 
   def create_notification(request_owner, request)
     return if request_owner.user_id == current_user.id
-    Notification.create!(owner_id: request_owner.id,
+    Notification.create!(owner_id: request.id,
                          owner_type: 'Request',
-                         user_id: request.owner_id,
+                         user_id: request_owner.user_id,
                          notified_by: current_user.id)
   end
 

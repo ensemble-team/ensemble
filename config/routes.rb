@@ -7,28 +7,35 @@ Rails.application.routes.draw do
   resources :projects do
     resources :tracks
   end
+
   resources :projects do
     resources :collaborations
   end
-    resources :requests do
-      post :reject_collab
+
+  resources :requests do
+    post :reject_collab
   end
+
   resources :requests do
     post :approve_collab
-end
-resources :requests do
-  post :approve_mix
-end
-resources :requests do
-  post :reject_mix
-end
+  end
+
+  resources :requests do
+    post :approve_mix
+  end
+
+  resources :requests do
+    post :reject_mix
+  end
 
   resources :projects do
     resources :requests
   end
+
   resources :projects do
     resources :comments
   end
+
   resources :projects do
     resources :blacklists
   end
@@ -40,6 +47,7 @@ end
   resources :branches do
     resources :requests
   end
+  
   resources :branches do
     resources :tracks
   end

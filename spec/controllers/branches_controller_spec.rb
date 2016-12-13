@@ -10,11 +10,11 @@ RSpec.describe BranchesController, type: :controller do
 
   it "deletes a branch" do
     branch
-    expect{delete :destroy, id: branch.id}.to change(Branch, :count).by (-1)
+    expect{delete :destroy, project_id: project, id: branch.id}.to change(Branch, :count).by (-1)
   end
 
   it "shows flash message and redirects to project page when project is deleted" do
-    post :destroy, id: branch.id
+    post :destroy, project_id: project, id: branch.id
     expect(response).to have_http_status(:redirect)
     expect(flash[:notice]).to match(/^Branch deleted/)
   end

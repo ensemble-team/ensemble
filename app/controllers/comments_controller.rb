@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
     end
     @comment = @comment_owner.comments.build(comment_params)
     if @comment.save
+      create_notification(@comment_owner, @comment)
       flash[:notice] = "Comment added"
     else
       flash[:notice] = "Could not save the comment, check the information entered"
@@ -26,4 +27,11 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:body, :user_id)
   end
 
+  def create_notification(comment_owner, comment)
+    return if comment_owner.user_id == current_user.id
+    Notification.create!(notification_owner_id: comment.id,
+                         notification_owner_type: 'Comment',
+                         user_id: comment_owner.user_id,
+                         notified_by: current_user.id)
+  end
 end

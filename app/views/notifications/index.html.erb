@@ -1,0 +1,33 @@
+<ul>
+  <% @notifications.each do |n| %>
+  <% sender = User.find(n.notified_by) %>
+  <% if n.notification_owner_type == "Comment" %>
+    <li>
+      <% c = Comment.find(n.notification_owner_id) %>
+      <% o = c.comment_owner_type %>
+      <% l = o.constantize.find(c.comment_owner_id) %>
+      <%= sender.username %> has made a comment
+      <%= link_to "See comment", l %>
+    </li>
+
+  <% elsif n.notification_owner_type == "Message" %>
+    <li>
+      <%= sender.username %> has send you a message
+      <%= link_to "See message", user_url %>
+    </li>
+  <% elsif n.notification_owner_type == "Track" %>
+    <li>
+      <% t = Track.find(n.notification_owner_id) %>
+      <% o = t.track_owner_type.constantize.find(t.track_owner_id) %>
+      <%= sender.username %> has uploaded a new track
+      <%= link_to "Listen to the track", o %>
+    </li>
+    <% elsif n.notification_owner_type == "Branch" %>
+      <li>
+        <% b = Branch.find(n.notification_owner_id) %>
+        <%= sender.username %> has created a new branch
+        <%= link_to "See the branch", b %>
+      </li>
+      <% end %>
+  <% end %>
+</ul>

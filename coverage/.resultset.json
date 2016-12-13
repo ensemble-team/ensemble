@@ -1,26 +1,17 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/user.rb": [
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
+      "/Users/felixharrison/Projects/week11/ensemble/app/models/user.rb": [
         1,
         1,
         null,
         null,
-        null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         null,
@@ -28,61 +19,130 @@
         0,
         0,
         0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
         null,
         null,
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/application_record.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/application_helper.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/uploaders/avatar_uploader.rb": [
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/blacklists_helper.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/blacklists_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/branches_helper.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/branches_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/collaborations_helper.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/collaborations_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/comments_helper.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/comments_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/ensemble_helper.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/ensemble_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/messages_helper.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/messages_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/projects_helper.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/notifications_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/requests_helper.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/projects_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/tracks_helper.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/requests_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/users_helper.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/tracks_helper.rb": [
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/branches_controller.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/branches_controller.rb": [
         1,
         null,
         1,
@@ -90,6 +150,7 @@
         null,
         null,
         1,
+        11,
         11,
         11,
         11,
@@ -109,6 +170,13 @@
         null,
         null,
         1,
+        1,
+        11,
+        11,
+        null,
+        null,
+        null,
+        null,
         null,
         1,
         11,
@@ -116,20 +184,42 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/application_controller.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/application_controller.rb": [
         1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        180,
+        180,
+        null,
+        null,
+        null
+      ],
+      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/ensemble_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/ensemble_controller.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/notifications_controller.rb": [
         1,
+        null,
         1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/projects_controller.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/projects_controller.rb": [
         1,
         1,
         null,
@@ -171,7 +261,7 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/requests_controller.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/requests_controller.rb": [
         1,
         null,
         null,
@@ -184,6 +274,7 @@
         13,
         null,
         21,
+        19,
         19,
         null,
         2,
@@ -241,12 +332,21 @@
         null,
         1,
         null,
+        null,
+        1,
+        19,
+        12,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
         21,
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/tracks_controller.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/tracks_controller.rb": [
         1,
         null,
         1,
@@ -268,6 +368,7 @@
         16,
         16,
         15,
+        15,
         null,
         1,
         null,
@@ -288,6 +389,23 @@
         1,
         null,
         1,
+        15,
+        3,
+        3,
+        null,
+        null,
+        null,
+        12,
+        12,
+        12,
+        12,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
         16,
         null,
         null,
@@ -296,9 +414,16 @@
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/project.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/models/notification.rb": [
+        1,
         1,
         null,
+        null
+      ],
+      "/Users/felixharrison/Projects/week11/ensemble/app/models/project.rb": [
+        1,
+        null,
+        1,
         1,
         1,
         1,
@@ -310,7 +435,46 @@
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/branch.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/models/track.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/felixharrison/Projects/week11/ensemble/app/models/comment.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/felixharrison/Projects/week11/ensemble/app/models/collaboration.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/felixharrison/Projects/week11/ensemble/app/models/request.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/felixharrison/Projects/week11/ensemble/app/models/message.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/felixharrison/Projects/week11/ensemble/app/models/branch.rb": [
+        1,
         1,
         1,
         1,
@@ -321,100 +485,12 @@
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/track.rb": [
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/uploaders/avatar_uploader.rb": [
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/comment.rb": [
-        1,
+      "/Users/felixharrison/Projects/week11/ensemble/app/models/blacklist.rb": [
         1,
         1,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/collaboration.rb": [
-        1,
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/request.rb": [
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/message.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/blacklist.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/comments_controller.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/comments_controller.rb": [
         1,
         null,
         null,
@@ -431,6 +507,7 @@
         2,
         2,
         2,
+        2,
         null,
         0,
         null,
@@ -441,46 +518,30 @@
         null,
         1,
         2,
+        null,
+        null,
+        1,
+        2,
+        0,
+        null,
+        null,
         null,
         null,
         null
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/channels/application_cable/channel.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/channels/application_cable/connection.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/blacklists_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/collaborations_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/blacklists_controller.rb": [
         0,
         0,
         0,
@@ -497,7 +558,9 @@
         0,
         0
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/messages_controller.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/collaborations_controller.rb": [
+        0,
+        0,
         0,
         0,
         0,
@@ -519,7 +582,24 @@
         0,
         0
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/users/omniauth_callbacks_controller.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/messages_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -540,7 +620,20 @@
         0,
         0
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/users_controller.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/users/omniauth_callbacks_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -548,17 +641,66 @@
         0,
         0
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/jobs/application_job.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/controllers/users_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0
       ],
-      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/mailers/application_mailer.rb": [
+      "/Users/felixharrison/Projects/week11/ensemble/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/felixharrison/Projects/week11/ensemble/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1481620503
+    "timestamp": 1481626515
   }
 }

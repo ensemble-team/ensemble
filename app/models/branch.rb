@@ -1,10 +1,10 @@
 class Branch < ApplicationRecord
   belongs_to :project
-  has_many :comments, as: :comment_owner
-  has_many :notifications, as: :notification_owner
-  has_many :tracks, as: :track_owner, dependent: :destroy
-  has_many :requests, as: :request_owner
-  has_many :messages, as: :source
-  has_many :blacklists, as: :block_source
+  has_many :comments, as: :owner, dependent: :destroy
+  has_many :notifications, as: :owner
+  has_many :tracks, as: :owner, dependent: :destroy
+  has_many :requests, as: :owner
+  has_many :messages
+  has_many :blacklists, as: :owner
   validates :title, presence: true
 end

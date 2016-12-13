@@ -9,6 +9,7 @@ class TracksController < ApplicationController
 
   def show
     @track = Track.find(params[:id])
+
   end
   def create
     if params[:project_id]
@@ -42,15 +43,15 @@ class TracksController < ApplicationController
   def create_notification(track_owner, track)
     if params[:project_id]
     project = Project.find(params[:project_id])
-    Notification.create!(notification_owner_id: track_owner.id,
-                         notification_owner_type: 'Track',
+    Notification.create!(owner_id: project.id,
+                         owner_type: 'Track',
                          user_id: project.user_id,
                          notified_by: current_user.id)
      elsif params[:branch_id]
-     branch = Branch.find(params[:branch_id])
-     project = Project.find(branch.project_id)
-     Notification.create!(notification_owner_id: track_owner.id,
-                          notification_owner_type: 'Track',
+     project = Project.find(track_owner.project_id)
+     Notification.create!(owner_id: track_owner.id,
+                          owner_type: 'Track',
+
                           user_id: project.user_id,
                           notified_by: current_user.id)
     end

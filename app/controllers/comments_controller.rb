@@ -5,6 +5,12 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
+  def show
+    @comment = Comment.find(params[:id])
+    owner = @comment.owner_type.constantize
+    @owner = owner.find(@comment.owner_id)
+    redirect_to @owner
+  end
   def create
     if params[:project_id]
       @comment_owner = Project.find(params[:project_id])
@@ -29,8 +35,8 @@ class CommentsController < ApplicationController
 
   def create_notification(comment_owner, comment)
     return if comment_owner.user_id == current_user.id
-    Notification.create!(notification_owner_id: comment.id,
-                         notification_owner_type: 'Comment',
+    Notification.create!(owner_id: comment.id,
+                         owner_type: 'Comment',
                          user_id: comment_owner.user_id,
                          notified_by: current_user.id)
   end

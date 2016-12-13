@@ -22,8 +22,8 @@ def create_notification(message)
     @message_owner = nil
   end
 
-  Notification.create!(notification_owner_id: @message_owner,
-                       notification_owner_type: 'Message',
+  Notification.create!(owner_id: @message_owner,
+                       owner_type: 'Message',
                        user_id: message.recipient,
                        notified_by: current_user.id)
 end

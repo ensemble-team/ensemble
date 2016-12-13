@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161212161412) do
+ActiveRecord::Schema.define(version: 20161213094141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 20161212161412) do
 
   create_table "blacklists", force: :cascade do |t|
     t.integer  "blocked"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.integer  "block_source_id"
-    t.string   "block_source_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "owner_id"
+    t.string   "owner_type"
   end
 
   create_table "branches", force: :cascade do |t|
@@ -52,11 +52,11 @@ ActiveRecord::Schema.define(version: 20161212161412) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
-    t.integer  "comment_owner_id"
-    t.string   "comment_owner_type"
+    t.integer  "owner_id"
+    t.string   "owner_type"
     t.integer  "user_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "messages", force: :cascade do |t|
@@ -72,13 +72,13 @@ ActiveRecord::Schema.define(version: 20161212161412) do
   end
 
   create_table "notifications", force: :cascade do |t|
-    t.string   "notification_owner_type"
-    t.integer  "notification_owner_id"
+    t.string   "owner_type"
+    t.integer  "owner_id"
     t.integer  "notified_by"
     t.boolean  "read"
     t.integer  "user_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["user_id"], name: "index_notifications_on_user_id", using: :btree
   end
 
@@ -96,22 +96,22 @@ ActiveRecord::Schema.define(version: 20161212161412) do
     t.integer  "collab_id"
     t.text     "message"
     t.string   "status"
-    t.integer  "request_owner_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "request_owner_type"
-    t.index ["request_owner_id"], name: "index_requests_on_request_owner_id", using: :btree
+    t.integer  "receiver_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "owner_type"
+    t.index ["receiver_id"], name: "index_requests_on_receiver_id", using: :btree
   end
 
   create_table "tracks", force: :cascade do |t|
     t.string   "title"
     t.text     "text"
     t.string   "avatar"
-    t.string   "track_owner_type"
+    t.string   "owner_type"
     t.integer  "user_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "track_owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "owner_id"
   end
 
   create_table "users", force: :cascade do |t|

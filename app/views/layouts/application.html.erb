@@ -30,7 +30,6 @@
 
             <ul class="nav navbar-right top-nav">
               <% if user_signed_in? %>
-              <li> Logged in as <strong><%= current_user.email %></strong></li>
               <%= render "layouts/partials/layouts_messages_dropdown" %>
               <%= render "layouts/partials/layouts_notifications_dropdown" %>
               <%= render "layouts/partials/layouts_profile_dropdown", locals: { users: @users} %>

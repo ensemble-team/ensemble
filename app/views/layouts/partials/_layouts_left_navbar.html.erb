@@ -6,22 +6,25 @@
             <a href="/"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
         </li>
         <li>
-          <a href="/projects"><i class="fa fa-fw fa-desktop"></i> Projects</a>
-        </li>
-        <li>
-          <a href="/projects/1"><i class="fa fa-fw fa-bar-chart-o"></i> Collaborations</a>
-        </li>
-        <li>
-          <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Recent Projects <i class="fa fa-fw fa-caret-down"></i></a>
+          <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-desktop"></i> Projects <i class="fa fa-fw fa-caret-down"></i></a>
           <ul id="demo" class="collapse">
               <li>
-                  <a href="#">Project 1</a>
+                  <a href="/projects">All Projects</a>
               </li>
               <li>
-                  <a href="#">Project 2</a>
+                  <a href="projects/new">New Project</a>
               </li>
           </ul>
+          <li>
+            <a href="/"><i class="fa fa-fw fa-bar-chart-o"></i> Collaborations</a>
+          </li>
         </li>
+        <div class="" style="position:absolute;bottom:2em;left:1em;color:white;letter-spacing:0.8px;">
+          <% if user_signed_in? %>
+          <li> Welcome <strong><%= current_user.username %></strong></li>
+          <% end  %>
+
+        </div>
     </ul>
 </div>
 

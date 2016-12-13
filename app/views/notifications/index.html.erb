@@ -1,0 +1,46 @@
+<ul>
+  <% @notifications.each do |n| %>
+    <% sender = User.find(n.notified_by) %>
+    <% if n.owner_type == "Message" %>
+      <li>
+        <%= sender.username %> has send you a message
+        <%= link_to "See message", "/user/#{current_user.username}" %>
+      </li>
+    <% elsif n.owner_type == "Branch" %>
+      <% branch = Branch.find(n.owner_id) %>
+      <li>
+        <%= sender.username %> has created a Branch
+        <%= link_to "See Branch", branch %>
+      </li>
+    <% elsif n.owner_type == "Comment"  %>
+      <% comment = Comment.find(n.owner_id) %>
+      <% origin = comment.owner_type.constantize.find(comment.owner_id) %>
+      <li>
+        <%= sender.username %> has made a new comment
+        <%= link_to "Have a look", [origin, comment] %>
+      </li>
+    <% elsif n.owner_type == "Track"  %>
+      <% track = Track.find(n.owner_id) %>
+      <% origin2 = track.owner_type.constantize.find(track.owner_id) %>
+      <li>
+        <%= sender.username %> has uploaded a new track
+        <%= link_to "Listen to the track", origin2 %>
+      </li>
+    <% elsif n.owner_type == "Request"  %>
+      <% request = Request.find(n.owner_id) %>
+      <% owner = request.owner_type.constantize.find(request.owner_id) %>
+      <% if owner.class == Branch %>
+      <% project = Project.find(owner.project_id) %>
+        <li>
+          <%= sender.username %> has sent a new request
+          <%= link_to "Have a look", project %>
+        </li>
+      <% elsif owner.class == Project %>
+        <li>
+          <%= sender.username %> has sent a new request
+          <%= link_to "Have a look", owner %>
+        </li>
+      <% end %>
+    <% end %>
+  <% end %>
+</ul>

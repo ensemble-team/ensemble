@@ -1,5 +1,6 @@
 class Request < ApplicationRecord
-  belongs_to :request_owner, polymorphic: true
+  belongs_to :owner, polymorphic: true
   validates :message, presence: true
+  has_many :notifications, as: :owner, dependent: :destroy
 
 end

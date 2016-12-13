@@ -10,6 +10,7 @@ class RequestsController < ApplicationController
       @request = @request_owner.requests.build(request_params)
     end
     if @request.save
+      create_notification(@request_owner, @request)
       flash[:notice] = "Request sent successfully"
     else
       flash[:notice] = "Could not send the request, check the information entered"
@@ -18,18 +19,13 @@ class RequestsController < ApplicationController
   end
 
   def show
-    if params[:project_id]
-      @request = Request.find(params[:id])
-      redirect_to request_approve_mix_path
-    end
-
     @request = Request.find(params[:id])
   end
 
   def approve_collab
     @request = Request.find(params[:request_id])
     @request.update({ status: "Approved"})
-    @collaboration = Collaboration.new ({ collaborator: @request.collab_id, project_id: @request.request_owner_id})
+    @collaboration = Collaboration.new ({ collaborator: @request.collab_id, project_id: @request.owner_id})
       if @collaboration.save!
         flash[:notice] = "Approved collaborator"
       end
@@ -46,7 +42,7 @@ class RequestsController < ApplicationController
   def approve_mix
     @request = Request.find(params[:request_id])
     @request.update({ status: "Approved"})
-    @branch = Branch.find(@request.request_owner_id)
+    @branch = Branch.find(@request.owner_id)
     @branch.tracks.each do |track|
       @project = Project.find(@branch.project_id)
       @project.tracks.each do |t|
@@ -55,17 +51,35 @@ class RequestsController < ApplicationController
         end
       end
     end
-    redirect_to projects_path
+    redirect_to @project
   end
 
   def reject_mix
     @request = Request.find(params[:request_id])
+    @branch = Branch.find(@request.owner_id)
+    @project = Project.find(@branch.project_id)
     @request.update({ status: "Rejected"})
     flash[:notice] = "Rejected mix"
-    redirect_to projects_path
+    redirect_to @project
   end
 
   private
+
+
+  def create_notification(request_owner, request)
+   if request_owner.class == Project
+     Notification.create!(owner_id: request.id,
+                          owner_type: 'Request',
+                          user_id: request_owner.user_id,
+                          notified_by: current_user.id)
+   elsif request_owner.class == Branch
+     project = Project.find(request_owner.project_id)
+     Notification.create!(owner_id: request.id,
+                          owner_type: 'Request',
+                          user_id: project.user_id,
+                          notified_by: current_user.id)
+   end
+  end
 
   def request_params
     params.require(:request).permit(:message, :collab_id, :owner_id, :status)

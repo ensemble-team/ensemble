@@ -15,7 +15,6 @@
       On:   <%= message.created_at.strftime("%m/%d/%Y") %>
       From: <%= sender.username %>
             "<%= message.body %>"<br>
-
       <% end %>
 
     <p>Reply:<p>
@@ -24,10 +23,16 @@
       <%= r.hidden_field :sender, :value => current_user.id %>
       <%= r.hidden_field :branch_id, :value => nil %>
       <%= r.hidden_field :project_id, :value => nil %>
-      <%= r.input :body, placeholder: 'Message' %>
+      <%= r.input :body, placeholder: 'Message', label: false %>
       <%= r.button :submit, 'Sent' %>
     <% end %>
+<br><br>
+<h2> Block user <h2>
+<%= link_to "Block user", action: :block_user(sender.id) %>
 
+
+  <% Blacklist.each do |blacklist| %>
+  <% if sender.id == blacklist.blocked && blacklist.owner_type == "Message" %>
 
   </body>
 </html>

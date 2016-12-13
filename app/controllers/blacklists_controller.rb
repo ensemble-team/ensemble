@@ -7,6 +7,10 @@ class BlacklistsController < ApplicationController
     redirect_to request.referrer
   end
 
+def block_user(user)
+  blacklist = Blacklist.new(blocked: user, owner_type: "Message")
+  blacklist.save!
+end
   private
 
   def blacklist_params

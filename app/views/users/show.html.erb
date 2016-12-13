@@ -81,23 +81,52 @@
 
     <div>
       <h2>My Requests</h2>
+
       <% if @requests.any? %>
-        <h3>My Collaboration Requests</h3>
+        <% @project_check = false %>
+          <% @requests.each do |req| %>
+            <% if req.owner_type == "Project" && @project_check == false  %>
+              <h3>My Collaboration Requests</h3>
+              <% @project_check = true %>
+              <% end %>
+            <% end %>
+          <% end %>
+
+      <% if @requests.any? %>
         <% @requests.each do |req| %>
           <% if req.owner_type == "Project" %>
             <% project = Project.find(req.owner_id) %>
               Project Name: <%= project.title %><br>
               Time and Date of Request: <%= req.created_at.strftime("%H:%M, %m/%d/%Y") %><br>
               Status:<%= req.status %><br><br>
-          <% elsif req.owner_type == "Branch" %>
-              <h3>My Mix Requests</h3>
+            <% end %>
+          <% end %>
+        <% end %>
+
+
+        <% if @requests.any? %>
+          <% @branch_check = false %>
+            <% @requests.each do |req| %>
+              <% if req.owner_type == "Branch" && @branch_check == false  %>
+                <h3>My Mix Requests</h3>
+                <% @branch_check = true %>
+                <% end %>
+              <% end %>
+            <% end %>
+
+        <% if @requests.any? %>
+          <% @requests.each do |req| %>
+            <% if req.owner_type == "Branch" %>
               <% branch = Branch.find(req.owner_id) %>
                 Branch Name: <%= branch.title %><br>
                 Time and Date of Request: <%= req.created_at.strftime("%H:%M, %m/%d/%Y") %><br>
                 Status:<%= req.status %><br><br>
-          <% end %>
-        <% end %>
-      <% else %>
+              <% end %>
+            <% end %>
+          <% end  %>
+
+
+    <% if @requests.any? == false %>
         You have not made any collaboration requests.
         You have not made any mix requests.
     <% end %>

@@ -1,7 +1,7 @@
 class Branch < ApplicationRecord
   belongs_to :project
   has_many :comments, as: :owner, dependent: :destroy
-  has_many :notifications, as: :owner
+  has_many :notifications, as: :owner, dependent: :destroy
   has_many :tracks, as: :owner, dependent: :destroy
   has_many :requests, as: :owner
   has_many :messages

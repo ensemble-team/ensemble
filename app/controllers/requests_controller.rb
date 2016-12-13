@@ -67,11 +67,18 @@ class RequestsController < ApplicationController
 
 
   def create_notification(request_owner, request)
-    return if request_owner.user_id == current_user.id
-    Notification.create!(owner_id: request.id,
-                         owner_type: 'Request',
-                         user_id: request_owner.user_id,
-                         notified_by: current_user.id)
+   if request_owner.class == Project
+     Notification.create!(owner_id: request.id,
+                          owner_type: 'Request',
+                          user_id: request_owner.user_id,
+                          notified_by: current_user.id)
+   elsif request_owner.class == Branch
+     project = Project.find(request_owner.project_id)
+     Notification.create!(owner_id: request.id,
+                          owner_type: 'Request',
+                          user_id: project.user_id,
+                          notified_by: current_user.id)
+   end
   end
 
   def request_params

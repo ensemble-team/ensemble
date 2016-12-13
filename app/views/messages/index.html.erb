@@ -8,24 +8,11 @@
     <br><h2>Received messages</h2>
     <% if @messages.any? %>
       <% @messages.each do |message| %>
-        <% @sender = User.find(message.sender)  %>
+        <% sender = User.find(message.sender)  %>
+        <% m = Message.find_by(sender: sender.id) %>
+        from: <%= sender.username %>
+        <%= link_to "See message", user_message_path(m) %><br>
         <% end %>
-        <% @messages.where(sender: @sender.id).each do |m| %>
-        <ul>
-          <li>from: <%= @sender.username %> on: <%= m.created_at.strftime("%m/%d/%Y") %>
-          <br><%= m.body %></li>
-        </ul>
-        <% end %>
-        <p>Reply:<p>
-        <%= simple_form_for ([current_user, current_user.messages.build]) do |r| %>
-          <%= r.hidden_field :recipient, :value => @sender.id %>
-          <%= r.hidden_field :sender, :value => current_user.id %>
-          <%= r.hidden_field :branch_id, :value => nil %>
-          <%= r.hidden_field :project_id, :value => nil %>
-          <%= r.input :body, placeholder: 'Message' %>
-          <%= r.button :submit, 'Sent' %>
-        <% end %>
-
       <% end %>
     <h2>Sent Messages</h2>
     <% if @sent_messages.any? %>

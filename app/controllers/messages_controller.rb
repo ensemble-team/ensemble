@@ -15,6 +15,11 @@ class MessagesController < ApplicationController
       end
       redirect_to request.referrer
   end
+  def show
+    @messages = Message.where(recipient: current_user.id)
+  
+    @message = Message.find(params[:id])
+  end
 
 private
 

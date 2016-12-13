@@ -18,6 +18,7 @@ class TracksController < ApplicationController
     end
     @track = @track_owner.tracks.build(track_params)
     if @track.save
+      create_notification(@track_owner, @track)
       flash[:notice] = "Track uploaded"
     else
       flash[:notice] = "Could not save the track, check the information entered"
@@ -37,6 +38,23 @@ class TracksController < ApplicationController
   end
 
   private
+
+  def create_notification(track_owner, track)
+    if params[:project_id]
+    project = Project.find(track_owner.project_id)
+    Notification.create!(notification_owner_id: track_owner.id,
+                         notification_owner_type: 'Track',
+                         user_id: project.user_id,
+                         notified_by: current_user.id)
+     elsif params[:branch_id]
+     branch = Branch.find(track_owner.track_id)
+     project = Project.find(branch.project_id)
+     Notification.create!(notification_owner_id: track_owner.id,
+                          notification_owner_type: 'Track',
+                          user_id: project.user_id,
+                          notified_by: current_user.id)
+    end
+  end
 
   def track_params
     params.require(:track).permit(:title, :text , :avatar, :user_id)

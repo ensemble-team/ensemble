@@ -5,27 +5,83 @@
     <title></title>
   </head>
   <body>
-    <%= @user.email %>
-    <br><h1>User's profile</h1>
-    <br><h2>Messages Box</h2>
-    <% Message.all.each do|message| %>
-    <% if message.recipient == current_user.id %>
-    <% user = User.find(message.sender) %>
-    <ul>
-    <li>from: <%= user.email %> on: <%= message.created_at.strftime("%m/%d/%Y") %></li>
-    <li><%= message.body %></li>
-  </ul>
-  <h2>Reply: <h2>
-    <%= simple_form_for ([current_user, current_user.messages.build]) do |m| %>
-      <%= m.hidden_field :recipient, :value => user.id %>
-      <%= m.hidden_field :sender, :value => current_user.id %>
-      <%= m.hidden_field :branch_id, :value => nil %>
-      <%= m.hidden_field :project_id, :value => nil %>
-      <%= m.input :body, placeholder: 'Message' %>
-      <%= m.button :submit, button_html: { value: 'Save' } %>
-  <% end %>
-    <% end %>
+    <div>
+      <% if @user.provider == 'facebook' %>
+        <img src="http://graph.facebook.com/v2.6/<%= @user.uid %>/picture" style="width:152px; height:152px; border-radius: 50%;"></img>
+      <% else %>
+        <img src="<%= @user.image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
+      <% end  %>
+    </div>
 
-    <% end %>
+    <div>
+      <p><%= @user.bio %></p>
+    </div>
+
+    <br><h1><%= @user.username %> profile</h1>
+    <div>
+      <% if @user.id == current_user.id %>
+        <br><h2>Messages Inbox</h2>
+        <% if @messages.any? %>
+          <% @messages.each do |message| %>
+            <% sender = find_sender(message)  %>
+            <ul>
+              <li>from: <%= sender.email %> on: <%= message.created_at.strftime("%m/%d/%Y") %></li>
+              <li><%= message.body %></li>
+            </ul>
+            <p>Reply:<p>
+            <%= simple_form_for ([current_user, current_user.messages.build]) do |m| %>
+              <%= m.hidden_field :recipient, :value => sender.id %>
+              <%= m.hidden_field :sender, :value => current_user.id %>
+              <%= m.hidden_field :branch_id, :value => nil %>
+              <%= m.hidden_field :project_id, :value => nil %>
+              <%= m.input :body, placeholder: 'Message' %>
+              <%= m.button :submit, button_html: { value: 'Save' } %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div>
+      <h2>Current Projects</h2>
+      <% if @projects.any? %>
+        <% @projects.each do |project| %>
+          <li>
+            <%= project.title %>
+            <%= project.description %>
+            Created on: <%= project.created_at.strftime("%m/%d/%Y") %>
+            <%= link_to "See the project", project_path(project) %>
+          </li>
+        <% end %>
+      <% else %>
+        <% if @user.id == current_user.id %>
+          You are not working on any projects at the moment.
+        <% else %>
+          <%= @user.username %> is not working on any projects at the moment.
+        <% end %>
+      <% end %>
+    </div>
+
+    <div>
+      <h2>Current Collaborations</h2>
+      <% if @branches.any? %>
+        <% @branches.each do |branch| %>
+          <li>
+            <%= branch.title %>
+            <%= branch.instrument %>
+            <%= branch.description %>
+            Created on: <%= branch.created_at.strftime("%m/%d/%Y") %>
+            <%= link_to "See the collaboration page", branch_path(branch) %>
+          </li>
+        <% end %>
+      <% else %>
+        <% if @user.id == current_user.id %>
+          You are not collaborating on any projects at the moment.
+        <% else %>
+          <%= @user.username %> is not collaborating on any projects at the moment.
+        <% end %>
+      <% end %>
+    </div>
+
   </body>
 </html>

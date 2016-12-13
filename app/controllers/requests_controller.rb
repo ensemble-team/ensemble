@@ -10,6 +10,7 @@ class RequestsController < ApplicationController
       @request = @request_owner.requests.build(request_params)
     end
     if @request.save
+      create_notification(@request_owner, @request)
       flash[:notice] = "Request sent successfully"
     else
       flash[:notice] = "Could not send the request, check the information entered"
@@ -35,6 +36,15 @@ class RequestsController < ApplicationController
   end
 
   private
+
+
+  def create_notification(request_owner, request)
+    return if request_owner.user_id == current_user.id
+    Notification.create!(notification_owner_id: request_owner.id,
+                         notification_owner_type: 'Request',
+                         user_id: request.owner_id,
+                         notified_by: current_user.id)
+  end
 
   def request_params
     params.require(:request).permit(:message, :collab_id, :owner_id, :status)

@@ -20,12 +20,16 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    owner = @request.owner_type.constantize
+    @owner = owner.find(@request.owner_id)
+    redirect_to @owner
   end
+
 
   def approve
     @request = Request.find(params[:request_id])
     @request.update({ status: "Approved"})
-    @collaboration = Collaboration.new ({ collaborator: @request.collab_id, project_id: @request.request_owner_id})
+    @collaboration = Collaboration.new ({ collaborator: @request.collab_id, project_id: @request.owner_id})
     @collaboration.save!
 
   end
@@ -40,8 +44,8 @@ class RequestsController < ApplicationController
 
   def create_notification(request_owner, request)
     return if request_owner.user_id == current_user.id
-    Notification.create!(notification_owner_id: request_owner.id,
-                         notification_owner_type: 'Request',
+    Notification.create!(owner_id: request_owner.id,
+                         owner_type: 'Request',
                          user_id: request.owner_id,
                          notified_by: current_user.id)
   end

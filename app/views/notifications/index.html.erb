@@ -1,33 +1,37 @@
 <ul>
   <% @notifications.each do |n| %>
   <% sender = User.find(n.notified_by) %>
-  <% if n.notification_owner_type == "Comment" %>
-    <li>
-      <% c = Comment.find(n.notification_owner_id) %>
-      <% o = c.comment_owner_type %>
-      <% l = o.constantize.find(c.comment_owner_id) %>
-      <%= sender.username %> has made a comment
-      <%= link_to "See comment", l %>
-    </li>
-
-  <% elsif n.notification_owner_type == "Message" %>
+  <% if n.owner_type == "Message" %>
     <li>
       <%= sender.username %> has send you a message
-      <%= link_to "See message", user_url %>
+      <%= link_to "See message", "/user/#{current_user.username}" %>
     </li>
-  <% elsif n.notification_owner_type == "Track" %>
-    <li>
-      <% t = Track.find(n.notification_owner_id) %>
-      <% o = t.track_owner_type.constantize.find(t.track_owner_id) %>
-      <%= sender.username %> has uploaded a new track
-      <%= link_to "Listen to the track", o %>
-    </li>
-    <% elsif n.notification_owner_type == "Branch" %>
+    <% elsif n.owner_type == "Branch" %>
+    <% branch = Branch.find(n.owner_id) %>
       <li>
-        <% b = Branch.find(n.notification_owner_id) %>
-        <%= sender.username %> has created a new branch
-        <%= link_to "See the branch", b %>
+        <%= sender.username %> has created a Branch
+        <%= link_to "See Branch", branch %>
       </li>
-      <% end %>
+  <% elsif n.owner_type == "Comment"  %>
+  <% comment = Comment.find(n.owner_id) %>
+  <% origin = comment.owner_type.constantize.find(comment.owner_id) %>
+    <li>
+      <%= sender.username %> has made a new comment
+      <%= link_to "Have a look", [origin, comment] %>
+    </li>
+  <% elsif n.owner_type == "Track"  %>
+  <% track = Track.find(n.owner_id) %>
+  <% origin = track.owner_type.constantize.find(track.owner_id) %>
+    <li>
+      <%= sender.username %> has uploaded a new track
+      <%= link_to "Listen to the track", origin %>
+    </li>
+  <% elsif n.owner_type == "Request"  %>
+  <% request = Request.find(n.owner_id) %>
+    <li>
+      <%= sender.username %> has made a new comment
+      <%= link_to "Have a look", request %>
+    </li>
+  <% end %>
   <% end %>
 </ul>

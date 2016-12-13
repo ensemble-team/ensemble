@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
    belongs_to :user
-   belongs_to :comment_owner, polymorphic: true
-   has_many :notifications, as: :notification_owner
+   belongs_to :owner, polymorphic: true
+   has_many :notifications, as: :owner
 end

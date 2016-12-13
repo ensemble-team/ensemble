@@ -56,7 +56,7 @@
       <h2>Send a Mix request </h2>
       <%= simple_form_for ([@branch, @branch.requests.build]) do |r| %>
         <%= r.hidden_field :status, :value => "In progress" %>
-        <%= r.hidden_field :owner_id, :value => @branch.user_id %>
+        <%= r.hidden_field :receiver_id, :value => @branch.user_id %>
         <%= r.hidden_field :collab_id, :value => current_user.id %>
         <%= r.input :message, placeholder: 'Message' %>
         <%= r.button :submit, button_html: { value: 'Save' } %>

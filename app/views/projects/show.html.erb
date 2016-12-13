@@ -1,27 +1,35 @@
 <body>
   <div id="page-wrapper">
 
-      <div class="container-fluid">
+    <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <div class="row">
-              <div class="col-lg-12">
-                  <h1 class="page-header">
-                      Projects <small><%= @project.title %></small>
-                  </h1>
-                  <ol class="breadcrumb">
-                      <li>
-                          <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
-                      </li>
-                      <li class="active">
-                          <i class="fa fa-fw fa-desktop"></i> <%= @project.title %>
-                      </li>
-                  </ol>
-              </div>
+        <!-- Page Heading -->
+      <div class="row">
+          <div class="col-lg-12">
+              <h1 class="page-header">
+                  Projects <small><%= @project.title %></small>
+              </h1>
+              <ol class="breadcrumb">
+                  <li>
+                      <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
+                  </li>
+                  <li class="active">
+                      <i class="fa fa-fw fa-desktop"></i> <%= @project.title %>
+                  </li>
+              </ol>
           </div>
-  <h3>Title: <%= @project.title %></h3>
-  <h3>Genre: <%= @project.genre %></h3>
-  <h3>Description: <%= @project.description %><br></h3><br>
+      </div>
+
+
+  <div class="col-lg-12 project-box">
+    <div class="col-lg-2 project-genre">
+      <h3><%= @project.genre %></h3>
+    </div>
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 project-description text-right">
+      <p><%= @project.description %><p>
+    </div>
+  </div>
 
   <%= render "projects/partials/show/projects_show_upload_master_track", local: { project: @projects } %>
 
@@ -64,4 +72,5 @@
     <%= render "projects/partials/show/projects_show_blacklist_collabs", local: { project: @projects } %> -->
 
   </div>
+</div>
 </body>

@@ -90,7 +90,7 @@ module WebHelpers
     fill_in "Instrument", with: "Trombone"
     fill_in "Description", with: "Windy"
     click_button("Create Branch")
-    @track = create(:track, track_owner_id: @project.id, track_owner_type: "Project")
+    @track = create(:track, owner_id: @project.id, owner_type: "Project")
     fill_in "Track Title", with: "Super song"
     click_button('Create Track')
   end
@@ -104,6 +104,17 @@ module WebHelpers
   def create_collab_request
     create_project
     fill_in "Message", with: "Please accept my collab request"
+    click_button "Create Request"
+  end
+
+  def create_collaboration_request
+    create_user
+    create_specific_project(2500)
+    sign_out
+    create_user_3
+    sign_in_as_user_3
+    visit('/projects/2500')
+    fill_in "request_message", with: "Please accept"
     click_button "Create Request"
   end
 

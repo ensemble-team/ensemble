@@ -1,0 +1,8 @@
+<h2>Upload Your Master Track</h2>
+<%= simple_form_for ([@project, @project.tracks.build]) do |t| %>
+  <%= t.hidden_field :user_id, :value => current_user.id %>
+  <%= t.input :title, placeholder: 'Track Title' %>
+  <%= t.input :text, placeholder: 'Track Description' %>
+  <%= t.file_field :avatar %>
+  <%= t.button :submit, button_html: { value: 'Upload Track' } %><br><br>
+<% end %>

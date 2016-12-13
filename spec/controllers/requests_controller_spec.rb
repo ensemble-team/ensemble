@@ -13,11 +13,13 @@ RSpec.describe RequestsController, type: :controller do
     end
     let!(:branch ) { create :branch, project_id: project.id}
     it "shows flash message and redirect to branch page" do
+      request.env['HTTP_REFERER'] = 'http://example.com'
       post :create, branch_id: branch.id, request: FactoryGirl.attributes_for(:request, request_owner_id: branch.id)
       expect(flash[:notice]).to match(/^Request sent successfully/)
     end
 
     it "shows flash message for failure " do
+      request.env['HTTP_REFERER'] = 'http://example.com'
       post :create, branch_id: branch.id, request: FactoryGirl.attributes_for(:request, request_owner_id: branch.id, message: nil)
       expect(flash[:notice]).to match(/^Could not send the request, check the information entered/)
     end
@@ -30,6 +32,7 @@ RSpec.describe RequestsController, type: :controller do
     end
 
     it "shows flash message for failure " do
+      request.env['HTTP_REFERER'] = 'http://example.com'
       post :create, project_id: project.id, request: FactoryGirl.attributes_for(:request, request_owner_id: project.id, message: nil)
       expect(flash[:notice]).to match(/^Could not send the request, check the information entered/)
     end

@@ -51,6 +51,7 @@ class TracksController < ApplicationController
      project = Project.find(track_owner.project_id)
      Notification.create!(owner_id: track_owner.id,
                           owner_type: 'Track',
+
                           user_id: project.user_id,
                           notified_by: current_user.id)
     end

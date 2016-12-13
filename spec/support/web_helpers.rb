@@ -1,9 +1,17 @@
 module WebHelpers
+
+  def create_user
+    create(:user)
+  end
+
+  def create_user_3
+    create(:user, email: "berrydingle@email.com", password: "password", password_confirmation: "password", id: 3)
+  end
+
   def sign_in
-    @user = create(:user)
     visit new_user_session_path
-    fill_in 'Email', with: @user.email
-    fill_in 'Password', with: @user.password
+    fill_in 'Email', with: 'test@test.com'
+    fill_in 'Password', with: 'password'
     click_button 'Log in'
   end
 
@@ -24,22 +32,21 @@ module WebHelpers
 
   def sign_in_again
     visit "/users/sign_in"
-    fill_in "user_email",  with: @user.email
-    fill_in "user_password",  with: @user.password
+    fill_in "user_email",  with: 'test@test.com'
+    fill_in "user_password",  with: 'password'
     click_button "Log in"
   end
 
-  def sign_in_as_different_user
-    @another_user = create(:user, email: "test2@test.com", password: "password", password_confirmation: "password", id: 2)
-    visit new_user_session_path
-    fill_in 'Email', with: @another_user.email
-    fill_in 'Password', with: @another_user.password
-    click_button 'Log in'
-    visit "/projects/#{@project.id}" #specific for track_delete_spec
+  def sign_in_as_user_3
+    visit 'users/sign_in'
+    fill_in 'Email', with: 'berrydingle@email.com'
+    fill_in 'Password', with: 'password'
+    click_link_or_button 'Log in'
+    # visit "/projects/#{@project.id}" #specific for track_delete_spec
   end
 
   def sign_out
-    click_link ("Logout")
+    click_link_or_button ("Logout")
   end
 
   def create_project
@@ -63,12 +70,29 @@ module WebHelpers
   end
 
 
-  def create_branch
-    create_project
+  def create_branch_as_user_3
+    create_user
+    create_specific_project(1000)
+    sign_out
+    create_user_3
+    sign_in_as_user_3
+    visit('projects/1000')
+    fill_in "Message", with: "Please accept"
+    click_button "Create Request"
+    sign_out
+    sign_in
+    visit('projects/1000')
+    click_link_or_button('Accept Request')
+    sign_out
+    sign_in_as_user_3
+    visit('projects/1000')
     fill_in "branch_title", with: "New branch"
     fill_in "Instrument", with: "Trombone"
     fill_in "Description", with: "Windy"
-    click_button "Create Branch"
+    click_button("Create Branch")
+    @track = create(:track, track_owner_id: @project.id, track_owner_type: "Project")
+    fill_in "Track Title", with: "Super song"
+    click_button('Create Track')
   end
 
   def create_branch_request
@@ -82,4 +106,5 @@ module WebHelpers
     fill_in "Message", with: "Please accept my collab request"
     click_button "Create Request"
   end
+
 end

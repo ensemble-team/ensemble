@@ -1,5 +1,10 @@
 class MessagesController < ApplicationController
 
+
+  def index
+    @messages = Message.where(recipient: current_user.id)
+    @sent_messages = Message.where(sender: current_user.id)
+  end
   def create
       @message = current_user.messages.build(message_params)
       if @message.save

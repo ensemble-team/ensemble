@@ -35,8 +35,8 @@
               <%= render "layouts/partials/layouts_notifications_dropdown" %>
               <%= render "layouts/partials/layouts_profile_dropdown", locals: { users: @users} %>
                 <% else %>
-                  <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li> |
-                  <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li> |
+                  <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+                  <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
                   <li><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></li>
                 <% end %>
             </ul>

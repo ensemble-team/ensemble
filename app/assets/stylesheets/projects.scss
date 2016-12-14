@@ -6,7 +6,7 @@
   border-radius: 4px;
   .project-genre {
     height: 100%;
-    text-align: center;
+    text-align: left;
     h3 {
       margin-top: 10px;
     }
@@ -25,7 +25,7 @@
     margin-top: 0px;
   }
   .download {
-    position: absolute;
+    position: relative;
     bottom: 0px;
     left: 0px;
   }
@@ -77,6 +77,14 @@
   padding: 0px;
 }
 
+#new_comment {
+  padding-right: 15px;
+}
+
+.comment-show {
+  border-left: 1px solid #f5f5f5;
+}
+
 .comment-input {
   padding: 0px;
 }
@@ -89,6 +97,20 @@
 .private-messages {
   padding-left: 0px;
   #new_message {
+    max-width: 50%;
+  }
+}
+
+.branches {
+  padding-left: 0px;
+  #new_branch {
+    max-width: 50%;
+  }
+}
+
+.collab-requests {
+  padding-left: 0px;
+  #new_request {
     max-width: 50%;
   }
 }

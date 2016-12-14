@@ -9,7 +9,7 @@
     <% end %>
   </div>
 
-  <div class="col-lg-6">
+  <div class="col-lg-6 comment-show">
     <% @project.comments.each do |comment|%>
       <% if comment.user_id != nil %>
         <% user = User.find(comment.user_id) %>

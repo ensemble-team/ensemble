@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   helper_method :find_sender
   helper :all
-  before_action :user_messages, :user_projects, :user_collaborations
+  before_action :user_messages, :user_projects, :user_collaborations, :user_requests
 
   def show
     @user = User.find_by(username: params[:username])
@@ -34,6 +34,11 @@ class UsersController < ApplicationController
   def user_collaborations
     find_user
     @branches = Branch.where(user_id: @user.id)
+  end
+
+  def user_requests
+    find_user
+    @requests = Request.where(collab_id: @user.id)
   end
 
   def find_user

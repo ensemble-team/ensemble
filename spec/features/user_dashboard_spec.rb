@@ -2,13 +2,13 @@ require "rails_helper"
 
 RSpec.feature "User dashboard", type: :feature do
 
-scenario "User makes collaboration request," do
+scenario "User makes collaboration request,", focus: true do
     create_collaboration_request
     visit('/user/berrydingle')
     expect(page).to have_content('My Collaboration Requests')
   end
 
-  scenario "User collaboration status changes" do
+  scenario "User collaboration status changes", focus: true do
     create_collaboration_request
     sign_out
     sign_in

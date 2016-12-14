@@ -9,7 +9,7 @@
       <% if @user.fb_image %>
         <img src="<%= @user.fb_image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
       <% else %>
-      <img src="<%= @user.image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
+        <img src="<%= @user.image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
       <% end %>
     </div>
 
@@ -18,29 +18,6 @@
     </div>
 
     <br><h1><%= @user.username %> profile</h1>
-    <div>
-      <% if @user.id == current_user.id %>
-        <br><h2>Messages Inbox</h2>
-        <% if @messages.count != 0 %>
-          <% @messages.each do |message| %>
-            <% sender = find_sender(message)  %>
-            <ul>
-              <li>from: <%= sender.email %> on: <%= message.created_at.strftime("%m/%d/%Y") %></li>
-              <li><%= message.body %></li>
-            </ul>
-            <p>Reply:<p>
-            <%= simple_form_for ([current_user, current_user.messages.build]) do |m| %>
-              <%= m.hidden_field :recipient, :value => sender.id %>
-              <%= m.hidden_field :sender, :value => current_user.id %>
-              <%= m.hidden_field :branch_id, :value => nil %>
-              <%= m.hidden_field :project_id, :value => nil %>
-              <%= m.input :body, placeholder: 'Message' %>
-              <%= m.button :submit, button_html: { value: 'Save' } %>
-            <% end %>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
 
     <div>
       <h2>Current Projects</h2>
@@ -93,8 +70,8 @@
               <h3>My Collaboration Requests</h3>
               <% @project_check = true %>
               <% end %>
-            <% end %>
           <% end %>
+      <% end %>
 
       <% if @requests.count != 0 %>
         <% @requests.each do |req| %>
@@ -119,6 +96,7 @@
               <% end %>
             <% end %>
 
+
         <% if @requests.count != 0 %>
           <% @requests.each do |req| %>
             <% if req.owner_type == "Branch" %>
@@ -131,18 +109,17 @@
             <% end %>
           <% end  %>
 
+
           <% if @requests.count != 0 %>
            <% req = @requests[0]%>
             <%= button_to "Delete all requests", request_kill_all_requests_path(req), method: :post %>
           <% end %>
 
 
-    <% if @requests.count != 0 == false %>
+    <% if @requests.count == 0 %>
         You have not made any collaboration requests.
         You have not made any mix requests.
-    <% end %>
-
-    <% %>
+      <% end %>
 
   </body>
 </html>

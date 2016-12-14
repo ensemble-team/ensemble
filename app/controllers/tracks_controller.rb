@@ -1,5 +1,6 @@
 class TracksController < ApplicationController
 
+include TracksHelper
   def new
     @track = Track.new
   end
@@ -12,18 +13,9 @@ class TracksController < ApplicationController
   end
 
   def create
-    if params[:project_id]
-      @track_owner = Project.find(params[:project_id])
-      @track = @track_owner.tracks.build(track_params)
-      @track.save
-      create_notification(@track_owner, @track)
-    elsif params[:branch_id]
-      @track_owner = Branch.find(params[:branch_id])
-      @track = @track_owner.tracks.build(track_params)
-      @track.save
-      create_notification(@track_owner, @track)
-    end
+    track_origin
     if @track.save
+      create_notification(@track_owner, @track)
       flash[:notice] = "Track uploaded"
     else
       flash[:notice] = "Could not save the track, check the information entered"
@@ -43,27 +35,11 @@ class TracksController < ApplicationController
   end
 
   private
-
-  def create_notification(track_owner, track)
-    if track_owner.class == Project
-      Notification.create!(owner_id: track_owner.id,
-                           owner_type: "Track",
-                           user_id: track_owner.user_id,
-                           notified_by: current_user.id)
-    elsif track_owner.class == Branch
-      project = Project.find(track_owner.project_id)
-      Notification.create!(owner_id: track.id,
-                           owner_type: "Track",
-                           user_id: project.user_id,
-                           notified_by: current_user.id)
-    end
-  end
-
   def track_params
     params.require(:track).permit(:title, :text , :avatar, :user_id)
   end
 
-  def set_project
-    @project = Project.find(params[:project_id])
-  end
+  # def set_project
+  #   @project = Project.find(params[:project_id])
+  # end
 end

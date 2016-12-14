@@ -9,13 +9,13 @@
 
       <% sender = User.find(@message.sender) %>
         From: <%= sender.username %><br> <br>
-          <% @all_messages = Message.where(["recipient = :recipient and sender = :sender", { recipient: current_user.id, sender: sender.id }]) + Message.where(["recipient = :recipient and sender = :sender", { recipient: sender.id , sender: current_user.id }]) %>
-      <% @all_messages.sort.each do |message| %>
-      <% sender = User.find(message.sender) %>
-      On:   <%= message.created_at.strftime("%m/%d/%Y") %>
-      From: <%= sender.username %>
-            "<%= message.body %>"<br>
-      <% end %>
+        <% @all_messages = Message.where({ recipient: current_user.id, sender: sender.id }) + Message.where({ recipient: sender.id , sender: current_user.id }) %>
+        <% @all_messages.sort.each do |message| %>
+          <% sender = User.find(message.sender) %>
+          On:   <%= message.created_at.strftime("%m/%d/%Y") %>
+          From: <%= sender.username %>
+                "<%= message.body %>"<br>
+        <% end %>
 
     <p>Reply:<p>
     <%= simple_form_for ([current_user, current_user.messages.build]) do |r| %>

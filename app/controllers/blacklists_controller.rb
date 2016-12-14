@@ -7,9 +7,7 @@ class BlacklistsController < ApplicationController
     redirect_to request.referrer
   end
 
-
   private
-
   def blacklist_params
     params.require(:blacklist).permit(:blocked)
   end

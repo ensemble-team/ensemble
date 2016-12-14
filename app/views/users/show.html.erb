@@ -21,7 +21,7 @@
 
     <div>
       <h2>Current Projects</h2>
-      <% if @projects.any? %>
+      <% if @projects.count != 0 %>
         <% @projects.each do |project| %>
           <li>
             <%= project.title %>
@@ -41,7 +41,7 @@
 
     <div>
       <h2>Current Collaborations</h2>
-      <% if @branches.any? %>
+      <% if @branches.count != 0 %>
         <% @branches.each do |branch| %>
           <li>
             <%= branch.title %>
@@ -62,7 +62,8 @@
 
     <div>
       <h2>My Requests</h2>
-      <% if @requests.any? %>
+
+      <% if @requests.count != 0 %>
         <% @project_check = false %>
           <% @requests.each do |req| %>
             <% if req.owner_type == "Project" && @project_check == false  %>
@@ -72,7 +73,7 @@
           <% end %>
       <% end %>
 
-      <% if @requests.any? %>
+      <% if @requests.count != 0 %>
         <% @requests.each do |req| %>
           <% if req.owner_type == "Project" %>
             <% project = Project.find(req.owner_id) %>
@@ -85,7 +86,7 @@
         <% end %>
 
 
-      <% if @requests.any? %>
+        <% if @requests.count != 0 %>
           <% @branch_check = false %>
             <% @requests.each do |req| %>
               <% if req.owner_type == "Branch" && @branch_check == false  %>
@@ -95,7 +96,8 @@
               <% end %>
             <% end %>
 
-      <% if @requests.any? %>
+
+        <% if @requests.count != 0 %>
           <% @requests.each do |req| %>
             <% if req.owner_type == "Branch" %>
               <% branch = Branch.find(req.owner_id) %>
@@ -107,7 +109,14 @@
             <% end %>
           <% end  %>
 
-      <% if @requests.any? == false %>
+
+          <% if @requests.count != 0 %>
+           <% req = @requests[0]%>
+            <%= button_to "Delete all requests", request_kill_all_requests_path(req), method: :post %>
+          <% end %>
+
+
+    <% if @requests.count == 0 %>
         You have not made any collaboration requests.
         You have not made any mix requests.
       <% end %>

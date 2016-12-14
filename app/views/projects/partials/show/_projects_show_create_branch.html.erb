@@ -1,4 +1,4 @@
-<% if @project.collaborations.any? %>
+<% if @project.collaborations.count != 0 %>
   <% @project.collaborations.each do |collaboration| %>
     <% if current_user.id == collaboration.collaborator  %>
       <h2>Create a branch</h2>

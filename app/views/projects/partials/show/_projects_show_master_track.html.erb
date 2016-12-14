@@ -1,4 +1,4 @@
-<% if @project.tracks.any?%>
+<% if @project.tracks.count != 0%>
   <% @project.tracks.each do |track| %>
     <% if track.title != nil %>
       <audio src="<%=audio_path track.avatar%>" type="audio/mpeg" controls></audio>

@@ -1,4 +1,4 @@
-<% if @project.collaborations.any?  && @project.user_id == current_user.id %>
+<% if @project.collaborations.count != 0  && @project.user_id == current_user.id %>
   <% @project.collaborations.each do |collaboration| %>
     <%user = User.find(collaboration.collaborator) %>
     <a>From: <%= user.email %><a>

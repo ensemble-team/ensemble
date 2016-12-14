@@ -28,6 +28,10 @@ Rails.application.routes.draw do
     post :reject_mix
   end
 
+  resources :requests do
+    post :kill_all_requests
+  end
+
   resources :projects do
     resources :requests
   end

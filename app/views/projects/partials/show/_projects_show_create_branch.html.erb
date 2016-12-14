@@ -1,0 +1,14 @@
+<% if @project.collaborations.any? %>
+  <% @project.collaborations.each do |collaboration| %>
+    <% if current_user.id == collaboration.collaborator  %>
+      <h2>Create a branch</h2>
+      <%= simple_form_for ([@project, @project.branches.build]) do |b| %>
+      <%= b.hidden_field :user_id, :value => current_user.id %>
+      <%= b.input :title, placeholder: 'Title', wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+      <%= b.input :instrument, placeholder: 'Instrument', wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+      <%= b.input :description, placeholder: 'Description', wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+      <%= b.button :submit, button_html: { value: 'Upload Track' } %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

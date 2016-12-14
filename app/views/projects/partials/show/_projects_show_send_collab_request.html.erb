@@ -1,0 +1,10 @@
+<%if current_user.id != @project.user_id %>
+  <h2>Send a Collaboration request </h2>
+  <%= simple_form_for ([@project, @project.requests.build]) do |r| %>
+    <%= r.hidden_field :status, :value => "In progress" %>
+    <%= r.hidden_field :receiver_id, :value => @project.user_id %>
+    <%= r.hidden_field :collab_id, :value => current_user.id %>
+    <%= r.input :message, placeholder: 'Message', wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' } %>
+    <%= r.button :submit, button_html: { value: 'Save' } %>
+  <% end %>
+<% end %>

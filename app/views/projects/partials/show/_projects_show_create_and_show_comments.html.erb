@@ -1,0 +1,16 @@
+
+<%= simple_form_for ([@project, @project.comments.build]) do |c| %>
+  <%= c.hidden_field :user_id, :value => current_user.id %>
+  <%= c.input :body, placeholder: 'Comment', wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' }, label: false %>
+  <%= c.button :submit, button_html: { value: 'Save' } %>
+<% end %>
+
+<%if @project.comments.any? %>
+  <% @project.comments.each do |comment|%>
+    <% if comment.user_id != nil %>
+      <% user = User.find(comment.user_id) %>
+      <%= user.email + " said:" %>
+      <%= comment.body %>
+    <% end %>
+  <% end %>
+<% end %>

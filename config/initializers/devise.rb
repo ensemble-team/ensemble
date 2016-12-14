@@ -15,7 +15,7 @@ Devise.setup do |config|
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
   config.omniauth :facebook, ENV["facebook_APP_ID"], ENV["facebook_APP_SECRET"],
                 callback_url: "http://localhost:3000/users/auth/facebook/callback",
-                scope: 'email',
+                scope: 'email', image_size: 'large',
                 info_fields: 'email,name',
                 secure_image_url: true
 

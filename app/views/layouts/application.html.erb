@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <title>EnsembleApp</title>
     <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
   </head>
 
   <body>
-    <p class="navbar-text pull-right">
-      <a href="/">Home</a> |
+
     <% if user_signed_in? %>
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :get, :class => 'navbar-link'  %> |
-      <%= link_to "#{current_user.notifications.count}", user_notifications_path, method: :get %><br>
-      Logged in as <strong><%= current_user.email %></strong>.
+      <%= render "layouts/partials/signed_in_or_out/signed_in_layout" %>
     <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> |
-      <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+      <%= render "layouts/partials/signed_in_or_out/signed_out_layout" %>
     <% end %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= yield %>
   </body>
 </html>

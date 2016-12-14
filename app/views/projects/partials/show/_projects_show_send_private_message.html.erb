@@ -1,0 +1,8 @@
+<%= simple_form_for ([current_user, current_user.messages.build]) do |m| %>
+  <%= m.hidden_field :recipient, :value => @project.user_id %>
+  <%= m.hidden_field :sender, :value => current_user.id %>
+  <%= m.hidden_field :branch_id, :value => nil %>
+  <%= m.hidden_field :project_id, :value => @project.id %>
+  <%= m.input :body, placeholder: 'Private Message', wrapper_html: { class: 'form-group' }, input_html: { class: 'form-control' }, label: false %>
+  <%= m.button :submit, button_html: { value: 'Save' } %>
+<% end %>

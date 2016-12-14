@@ -1,0 +1,45 @@
+<% @projects.each do |project| %>
+  <% if project.blacklists.count != 0 %>
+    <% project.blacklists.each do |blacklist| %>
+      <% if blacklist.blocked != current_user.id %>
+      <div class="col-lg-3 col-md-6">
+          <div class="panel panel-primary">
+              <div class="panel-heading">
+                  <div class="row">
+                      <div class="col-xs-12 text-center">
+                        <div class="huge"><%= project.title %></div>
+                      </div>
+                  </div>
+              </div>
+              <a href="#">
+                  <div class="panel-footer">
+                      <span class="pull-left"><%= link_to "See project", project_path(project) %></span>
+                      <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                      <div class="clearfix"></div>
+                  </div>
+              </a>
+          </div>
+      </div>
+      <% end %>
+    <% end %>
+  <% else %>
+  <div class="col-lg-3 col-md-6">
+      <div class="panel panel-primary">
+          <div class="panel-heading">
+              <div class="row">
+                  <div class="col-xs-12 text-center">
+                    <div class="huge"><%= project.title %></div>
+                  </div>
+              </div>
+          </div>
+          <a href="/projects/<%= project.id %>">
+              <div class="panel-footer">
+                  <span class="pull-left">See project</span>
+                  <span class="pull-right"><i  class="fa fa-arrow-circle-right"></i></span>
+                  <div class="clearfix"></div>
+              </div>
+          </a>
+      </div>
+  </div>
+  <% end %>
+<% end %>

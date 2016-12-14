@@ -22,8 +22,8 @@ module RequestsHelper
     @request = Request.find(params[:request_id])
     @request.update({ status: "Approved"})
     @branch = Branch.find(@request.owner_id)
+    @project = Project.find(@branch.project_id)
     @branch.tracks.each do |track|
-      @project = Project.find(@branch.project_id)
       @project.tracks.each do |t|
         if t.update ({ avatar: track.avatar })
           notify_mix(@request)

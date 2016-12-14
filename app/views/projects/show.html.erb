@@ -9,6 +9,9 @@
               <h1 class="page-header">
                   Projects <small><%= @project.title %></small>
               </h1>
+              <% if @project.user_id == current_user.id %>
+                <%= button_to 'Delete Project', project_path(@project), method: :delete, data: {confirm: 'Are you sure you want to delete this project?'}, class: 'btn btn-default delete-button' %>
+              <% end %>
               <ol class="breadcrumb">
                   <li>
                       <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
@@ -22,18 +25,24 @@
 
 
       <div class="col-lg-12 project-box">
-         <div class="col-lg-2 project-genre">
-           <h3><%= @project.genre %></h3>
-         </div>
-         <div class="col-lg-2"></div>
-         <div class="col-lg-8 project-description text-right">
-           <p><%= @project.description %><p>
-         </div>
-       </div>
+        <div class="col-lg-4 project-genre text-center">
+          <h4><%= @project.genre %></h4>
+        </div>
+        <div class="col-lg-8 project-description text-center">
+          <p><%= @project.description %><p>
+        </div>
+      </div>
 
-  <%= render "projects/partials/show/projects_show_upload_master_track", local: { project: @projects } %>
+      <% if @project.user_id == current_user.id %>
+      <h3>Upload Master Track</h3>
+      <div class="col-lg-12 master_track">
+        <%= render "projects/partials/show/projects_show_upload_master_track", local: { project: @projects } %>
+      </div>
+      <% end  %>
 
-  <%= render "projects/partials/show/projects_show_master_track", local: { project: @projects } %>
+      <div class="col-lg-12 track-show">
+        <%= render "projects/partials/show/projects_show_master_track", local: { project: @projects } %>
+      </div>
 
   <h2>Comment</h2>
 

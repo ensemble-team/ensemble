@@ -1,8 +1,6 @@
 <body>
   <div id="page-wrapper">
-
     <div class="container-fluid">
-
         <!-- Page Heading -->
       <div class="row">
           <div class="col-lg-12">
@@ -20,7 +18,6 @@
           </div>
       </div>
 
-
       <div class="col-lg-12 project-box">
          <div class="col-lg-2 project-genre">
            <h3><%= @project.genre %></h3>
@@ -36,7 +33,6 @@
   <%= render "projects/partials/show/projects_show_master_track", local: { project: @projects } %>
 
   <h2>Comment</h2>
-
   <%= render "projects/partials/show/projects_show_create_and_show_comments", local: { project: @projects } %>
 
   <%= render "projects/partials/show/projects_show_create_branch", local: { project: @projects } %>
@@ -47,29 +43,24 @@
   <%= render "projects/partials/show/projects_show_send_private_message", local: { project: @projects } %>
 
   <%if current_user.id == @project.user_id %>
-  <div class="col-lg-12">
-    <div class="col-lg-4 col-md-6 col-xs-12">
-      <h2> Mix requests </h2>
-      <%= render "projects/partials/show/projects_show_show_mix_requests", local: { project: @projects } %>
+    <div class="col-lg-12">
+      <div class="col-lg-4 col-md-6 col-xs-12">
+        <h2> Mix requests </h2>
+        <%= render "projects/partials/show/projects_show_show_mix_requests", local: { project: @projects } %>
+      </div>
+      <div class="col-lg-4 col-md-6 col-xs-12">
+      <h2> Collab requests </h2>
+      <%= render "projects/partials/show/projects_show_show_collab_requests", local: { project: @projects } %>
+      </div>
+      <div class="col-lg-4 col-md-6 col-xs-12">
+      <h2> Collaborators </h2>
+      <%= render "projects/partials/show/projects_show_existing_collabs", local: { project: @projects } %>
+      </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-xs-12">
-    <h2> Collab requests </h2>
-    <%= render "projects/partials/show/projects_show_show_collab_requests", local: { project: @projects } %>
-    </div>
-    <div class="col-lg-4 col-md-6 col-xs-12">
-    <h2> Collaborators </h2>
-    <%= render "projects/partials/show/projects_show_existing_collabs", local: { project: @projects } %>
-    </div>
-
-  </div>
-
   <% end %>
 
-  <!-- <h2> Messages </h2>
-    <%= render "projects/partials/show/projects_show_project_messages", local: { project: @projects } %> -->
-
-  <!-- <h2> Blacklist </h2>
-    <%= render "projects/partials/show/projects_show_blacklist_collabs", local: { project: @projects } %> -->
+  <h2>Active branches </h2>
+  <%= render "projects/partials/show/projects_show_branches", local: { project: @projects } %>
 
   </div>
 </div>

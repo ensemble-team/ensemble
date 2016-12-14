@@ -69,8 +69,6 @@ module WebHelpers
     @branch = create(:branch, project_id: @project.id, id: 2)
   end
 
-
-
   def create_branch_as_user_3
     create_user
     create_specific_project(1000)
@@ -97,9 +95,9 @@ module WebHelpers
   end
 
   def create_branch_request
-    create_branch
+    create_branch_as_user_3
     fill_in "Message", with: "Please accept"
-    click_button "Create Request"
+    click_button "Send Request"
   end
 
   def create_collab_request

@@ -21,7 +21,7 @@
         <% sender = User.find(n.notified_by) %>
         <% if n.owner_type == "Message" %>
           <li>
-            <%= sender.username %> has send you a message
+            <%= sender.username %> has sent you a message
             <%= link_to "See message", notification_link_through_path(n) %>
           </li>
         <% elsif n.owner_type == "Branch" %>

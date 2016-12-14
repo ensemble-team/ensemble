@@ -3,17 +3,21 @@
 
     <ul class="dropdown-menu message-dropdown">
         <li class="message-preview">
-            <a href="#">
+            <a href="/user/messages/<%= @messages.last.id %>">
                 <div class="media">
                   <!-- Drop down message -->
                     <span class="pull-left">
                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                     </span>
                     <div class="media-body">
-                        <h5 class="media-heading"><strong>John Smith</strong>
+                      <% if @messages.any? %>
+                        <% message = @messages.last %>
+                        <% sender = User.where(id: message.sender).last %>
+                        <h5 class="media-heading"><strong><%= sender.username %></strong>
                         </h5>
-                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                        <p class="small text-muted"><i class="fa fa-clock-o"></i> <%= message.created_at.strftime("%d/%m/%Y") %></p>
+                        <p><%= message.body[0..20] %></p>
+                        <% end %>
                     </div>
                 </div>
             </a>

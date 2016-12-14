@@ -25,7 +25,7 @@
           <% @messages.each do |message| %>
             <% sender = find_sender(message)  %>
             <ul>
-              <li>from: <%= sender.email %> on: <%= message.created_at.strftime("%m/%d/%Y") %></li>
+              <li>from: <%= sender.email %> on: <%= message.created_at.strftime("%d/%m/%Y") %></li>
               <li><%= message.body %></li>
             </ul>
             <p>Reply:<p>
@@ -49,7 +49,7 @@
           <li>
             <%= project.title %>
             <%= project.description %>
-            Created on: <%= project.created_at.strftime("%m/%d/%Y") %>
+            Created on: <%= project.created_at.strftime("%d/%m/%Y") %>
             <%= link_to "See the project", project_path(project) %>
           </li>
         <% end %>
@@ -70,7 +70,7 @@
             <%= branch.title %>
             <%= branch.instrument %>
             <%= branch.description %>
-            Created on: <%= branch.created_at.strftime("%m/%d/%Y") %>
+            Created on: <%= branch.created_at.strftime("%d/%m/%Y") %>
             <%= link_to "See the collaboration page", branch_path(branch) %>
           </li>
         <% end %>
@@ -101,7 +101,7 @@
           <% if req.owner_type == "Project" %>
             <% project = Project.find(req.owner_id) %>
               Project Name: <%= project.title %><br>
-              Time and Date of Request: <%= req.created_at.strftime("%H:%M, %m/%d/%Y") %><br>
+              Time and Date of Request: <%= req.created_at.strftime("%H:%M, %d/%m/%Y") %><br>
               Status:<%= req.status %><br><br>
               <%= button_to "Delete", request_path(req), method: :delete %>
             <% end %>
@@ -124,7 +124,7 @@
             <% if req.owner_type == "Branch" %>
               <% branch = Branch.find(req.owner_id) %>
                 Branch Name: <%= branch.title %><br>
-                Time and Date of Request: <%= req.created_at.strftime("%H:%M, %m/%d/%Y") %><br>
+                Time and Date of Request: <%= req.created_at.strftime("%H:%M, %d/%m/%Y") %><br>
                 Status: <%= req.status %><br><br>
                 <%= button_to "Delete", request_path(req), method: :delete %>
               <% end %>

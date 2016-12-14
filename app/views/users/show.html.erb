@@ -131,7 +131,10 @@
             <% end %>
           <% end  %>
 
-
+          <% if @requests.any? %>
+           <% req = @requests[0]%>
+            <%= button_to "Delete all requests", request_kill_all_requests_path(req), method: :post %>
+          <% end %>
 
 
     <% if @requests.any? == false %>

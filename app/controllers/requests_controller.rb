@@ -69,6 +69,16 @@ class RequestsController < ApplicationController
     redirect_to request.referrer
   end
 
+  def kill_all_requests
+    @request = Request.find(params[:request_id])
+    collab = @request.collab_id
+    @list = Request.where({collab_id: collab})
+    @list.each do |r|
+      r.destroy
+    end
+    redirect_to request.referrer
+  end
+
   private
 
 

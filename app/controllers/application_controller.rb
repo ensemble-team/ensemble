@@ -2,7 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!, except: [:index]
   before_action :navbar_message
-  before_filter :configure_permitted_parameters, if: :devise_controller?
+  skip_before_action :navbar_message, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
 
@@ -12,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def navbar_message
-    @messages = Message.where(recipient: current_user.id)
+      @messages = Message.where(recipient: current_user.id)
   end
 
 

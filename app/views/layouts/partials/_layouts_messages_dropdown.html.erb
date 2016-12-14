@@ -10,7 +10,7 @@
                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                     </span>
                     <div class="media-body">
-                      <% if @messages.any? %>
+                      <% if @messages.count != nil %>
                         <% message = @messages.last %>
                         <% sender = User.find(message.sender) %>
                         <h5 class="media-heading"><strong><%= sender.username %></strong>

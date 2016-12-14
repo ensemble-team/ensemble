@@ -1,0 +1,33 @@
+
+<% if @branches.any? %>
+  <% @branches.each do |branch| %>
+    <div class="col-lg-12 col-md-12 col-sm-12" style="padding-left:0px;">
+      <div class="panel panel-green">
+        <div class="panel-heading">
+          <div class="row">
+            <ul style="list-style:none;padding-left:10px;">
+                  <li><%= branch.title %><br>
+                  <%= branch.instrument %><br>
+                  <%= branch.description %><br>
+                  <small style="color:grey;">Created: <%= project.created_at.strftime("%d/%m/%Y") %></small>
+          </div>
+        </div>
+                    <a href="/user/projects/<%= branch.id%>">
+                      <div class="panel-footer">
+                        <span class="pull-left">View Branch</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                      </div>
+                    </a>
+                  </li>
+            </ul>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <% if @user.id == current_user.id %>
+    You are not collaborating on any projects at the moment.
+  <% else %>
+    <%= @user.username %> is not collaborating on any projects at the moment.
+  <% end %>
+<% end %>

@@ -1,5 +1,5 @@
 <%if @project.comments.any? %>
-  <h3>Comments</h3><hr />
+  <hr /><h3>Comments</h3>
 
   <div class="col-lg-6 comment-input">
     <%= simple_form_for ([@project, @project.comments.build]) do |c| %>

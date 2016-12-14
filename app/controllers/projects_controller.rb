@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @project_owner = User.find(@project.user_id)
   end
 
   def destroy

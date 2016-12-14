@@ -13,8 +13,7 @@
     <% @project.comments.each do |comment|%>
       <% if comment.user_id != nil %>
         <% user = User.find(comment.user_id) %>
-        <%= user.username + " :" %>
-        <%= comment.body %>
+        <strong><%= user.username + " : " %></strong><%= comment.body %><br>
       <% end %>
     <% end %>
   </div>

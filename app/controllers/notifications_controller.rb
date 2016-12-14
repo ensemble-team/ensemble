@@ -12,7 +12,7 @@ class NotificationsController < ApplicationController
     @notification.update({ read: true })
     case @notification.owner_type
     when "Message"
-      redirect_to "/user/#{current_user.username}"
+      redirect_to "/user/messages"
     when "Branch"
       find_branch
       redirect_to @branch
@@ -30,6 +30,14 @@ class NotificationsController < ApplicationController
       elsif @origin.class == Project
         redirect_to @origin
       end
+    when "Approve Collab"
+      redirect_to "/user/#{current_user.username}"
+    when "Approve Mix"
+      redirect_to "/user/#{current_user.username}"
+    when "Reject Collab"
+        redirect_to "/user/#{current_user.username}"
+    when "Reject Mix"
+        redirect_to "/user/#{current_user.username}"
     end
   end
 end

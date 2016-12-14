@@ -4,6 +4,7 @@ module RequestsHelper
     @request.update({ status: "Approved"})
     @collaboration = Collaboration.new ({ collaborator: @request.collab_id, project_id: @request.owner_id})
       if @collaboration.save!
+        notify_collab(@request)
         flash[:notice] = "Approved collaborator"
       end
     redirect_to request.referrer
@@ -12,6 +13,7 @@ module RequestsHelper
   def reject_collab
     @request = Request.find(params[:request_id])
     @request.update({ status: "Rejected"})
+      notify_reject_collab(@request)
       flash[:notice] = "Rejected collaborator"
       redirect_to request.referrer
   end
@@ -24,6 +26,7 @@ module RequestsHelper
       @project = Project.find(@branch.project_id)
       @project.tracks.each do |t|
         if t.update ({ avatar: track.avatar })
+          notify_mix(@request)
           flash[:notice] = "Approved mix"
         end
       end
@@ -36,6 +39,7 @@ module RequestsHelper
     @branch = Branch.find(@request.owner_id)
     @project = Project.find(@branch.project_id)
     @request.update({ status: "Rejected"})
+    notify_reject_mix(@request)
     flash[:notice] = "Rejected mix"
     redirect_to @project
   end
@@ -64,5 +68,35 @@ module RequestsHelper
     end
     redirect_to request.referrer
   end
-  
+
+  def notify_collab(request)
+    Notification.create!(owner_id: request.id,
+                         owner_type: 'Approve Collab',
+                         user_id: request.collab_id,
+                         notified_by: current_user.id)
+  end
+
+  def notify_mix(request)
+    Notification.create!(owner_id: request.id,
+                         owner_type: 'Approve Mix',
+                         user_id: request.collab_id,
+                         notified_by: current_user.id)
+
+  end
+
+  def notify_reject_collab(request)
+    Notification.create!(owner_id: request.id,
+                         owner_type: 'Reject Collab',
+                         user_id: request.collab_id,
+                         notified_by: current_user.id)
+  end
+
+  def notify_reject_mix(request)
+    Notification.create!(owner_id: request.id,
+                         owner_type: 'Reject Mix',
+                         user_id: request.collab_id,
+                         notified_by: current_user.id)
+
+  end
+
 end

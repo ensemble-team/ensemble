@@ -1,10 +1,11 @@
 .project-box {
-  background-color: #f5f5f5;
   display: flex;
   height: 100%;
   margin-bottom: 1em;
-  border-radius: 4px;
+  padding-left: 0px;
   .project-genre {
+    background-color: #f5f5f5;
+    border-radius: 5px;
     height: 100%;
     text-align: left;
     h3 {
@@ -12,6 +13,27 @@
     }
   }
 
+  .track-player {
+    position: relative;
+    padding-right: 0px;
+    right: 0px;
+    top: 50%;
+    #track_avatar {
+      position: absolute;
+      margin-right: 15px;
+      bottom: 0px;
+    }
+    .upload-track {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+    }
+    h3 {
+      margin-top: 0px;
+    }
+
+  }
+  
   .project-description {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -39,27 +61,6 @@
   background-color: red;
 }
 
-.track-player {
-  position: relative;
-  padding-right: 0px;
-  right: 0px;
-  top: 50%;
-  border-left: 1px solid #f5f5f5;
-  #track_avatar {
-    position: absolute;
-    margin-right: 15px;
-    bottom: 0px;
-  }
-  .upload-track {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-  }
-  h3 {
-    margin-top: 0px;
-  }
-
-}
 
 .track-show {
   position: relative;

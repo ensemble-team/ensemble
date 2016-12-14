@@ -1,9 +1,15 @@
-<div class="new-project-form">
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 new-project-form">
   <%= simple_form_for current_user.projects.build do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.input :title, placeholder: 'Project Title', class: 'new-project-title' %>
-  <%= f.input :genre, placeholder: 'Project Genre', class: 'new-project-genre' %>
-  <%= f.input :description, placeholder: 'Project Description', class: 'new-project-description' %>
-  <%= f.button :submit, button_html: { value: 'Create Project' }, class: 'new-project-submit' %>
+  <%= f.input :genre, placeholder: 'Project Genre', class: 'new-project-genre', label: false %>
+  <%= f.input :description, placeholder: 'Project Description', class: 'new-project-description', label: false %>
+  <div class="button-holder" style="text-align:center;">
+    <%= f.button :submit, button_html: { value: 'Create Project' }, class: 'new-project-submit' %>
+  </div>
   <% end %>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
 </div>

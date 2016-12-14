@@ -1,9 +1,22 @@
-<h1>New Project</h1>
-
-<%= simple_form_for current_user.projects.build do |f| %>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.input :title, placeholder: 'Project Title' %>
-  <%= f.input :genre, placeholder: 'Project Genre' %>
-  <%= f.input :description, placeholder: 'Project Description' %>
-  <%= f.button :submit, button_html: { value: 'Create Project' } %>
-<% end %>
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">
+          Projects <small>New Project</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li>
+            <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
+          </li>
+          <li class="active">
+            <i class="fa fa-fw fa-desktop"></i> New Project
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
+      <%= render "projects/partials/projects_new" %>
+    </div>
+  </div>
+</div>

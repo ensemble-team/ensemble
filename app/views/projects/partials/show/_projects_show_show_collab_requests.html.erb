@@ -1,0 +1,13 @@
+<%if @project.requests.any? %>
+  <% @project.requests.each do |request| %>
+    <%if request.id != nil && request.status == "In progress" %>
+      <% user = User.find(request.collab_id) %>
+      From: <%= user.email %>
+      Message: <%= request.message %>
+      <%= button_to 'Accept Request', request_approve_collab_path(request), method: :post%>
+      <%= button_to 'Reject Request', request_reject_collab_path(request), method: :post%>
+    <% else %>
+      No current requests
+    <% end %>
+  <% end %>
+<% end %>

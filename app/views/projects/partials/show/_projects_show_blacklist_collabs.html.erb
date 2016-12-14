@@ -1,0 +1,22 @@
+<%if @project.branches.any? %>
+  <% if @project.blacklists.count == 0 %>
+    <% @project.branches.each do |branch| %>
+      <% if branch.id != nil %>
+        <%= branch.title %>
+        <%= link_to "See Branch", branch_path() %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% if @project.blacklists.any? %>
+    List of current branches
+    <% @project.blacklists.each do |blacklist| %>
+      <% @project.branches.each do |branch| %>
+        <% if blacklist.blocked != current_user.id %>
+          <br><%= branch.title %>
+          <%= link_to "See Branch", branch_path(branch) %>
+        <%end%>
+      <%end%>
+    <%end%>
+  <%end%>
+<%end%>

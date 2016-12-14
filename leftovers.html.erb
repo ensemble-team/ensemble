@@ -1,0 +1,31 @@
+<h2> Messages <h2>
+  <% if current_user.id == @project.user_id%>
+  <% @project.branches.each do |branch| %>
+    <a>Branch :<%= branch.title %>
+  <br>Message received
+  <% Message.all.each do|message| %>
+  <% if message.branch_id == branch.id && message.recipient == current_user.id %>
+  <% user = User.find(message.sender) %>
+  <br>from: <%= user.email %>
+  <br><%= message.body %>
+  <% end %>
+  <% end %>
+  <h2>Reply: <h2>
+    <%= simple_form_for ([current_user, current_user.messages.build]) do |m| %>
+      <%= m.hidden_field :recipient, :value => branch.user_id %>
+      <%= m.hidden_field :sender, :value => current_user.id %>
+      <%= m.hidden_field :branch_id, :value => branch.id %>
+      <%= m.hidden_field :project_id, :value => @project.id %>
+      <%= m.input :body, placeholder: 'Message' %>
+      <%= m.button :submit, button_html: { value: 'Save' } %>
+  <% end %>
+  <br>Message sent
+  <% current_user.messages.each do |message| %>
+  <% if message.branch_id == branch.id %>
+  <% user = User.find(message.recipient) %>
+  from: <%= user.email %>
+  <br><%= message.body %>
+  <% end %>
+  <% end %><br>
+  <% end %>
+<% end %>

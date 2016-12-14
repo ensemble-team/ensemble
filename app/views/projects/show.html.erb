@@ -30,15 +30,15 @@
         </div>
         <div class="col-lg-8 project-description text-center">
           <p><%= @project.description %><p>
-        </div><hr />
+        </div>
       </div>
 
       <div class="col-lg-12 track-show">
         <div class="col-lg-6 col-md-6 col-sm-6 upload-button" >
-          <%= render "projects/partials/show/projects_show_upload_master_track", local: { project: @projects } %>
+          <%= render "projects/partials/show/projects_show_master_track", local: { project: @projects } %>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 track-player">
-          <%= render "projects/partials/show/projects_show_master_track", local: { project: @projects } %>
+          <%= render "projects/partials/show/projects_show_upload_master_track", local: { project: @projects } %>
         </div>
       </div>
 

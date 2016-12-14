@@ -1,5 +1,5 @@
 <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-  <% if user_signed_in? %>
+
 <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav side-nav">
         <li class="active">
@@ -20,13 +20,11 @@
           </li>
         </li>
         <div class="" style="position:absolute;bottom:2em;left:1em;color:white;letter-spacing:0.8px;">
-          <% if user_signed_in? %>
+          <% if user_signed_in?  %>
           <li> Welcome <strong><%= current_user.username %></strong></li>
-          <% end  %>
-
+          <% end %>
         </div>
     </ul>
 </div>
 
 <!-- /.navbar-collapse -->
-<% end %>

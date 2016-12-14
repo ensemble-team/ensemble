@@ -30,6 +30,11 @@ class NotificationsController < ApplicationController
       elsif @origin.class == Project
         redirect_to @origin
       end
+    when "Approve Collab"
+      redirect_to "/user/#{current_user.username}"
+    end
+    when "Approve Mix"
+      redirect_to "/user/#{current_user.username}"
     end
   end
 end

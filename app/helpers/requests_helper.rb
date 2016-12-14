@@ -4,6 +4,7 @@ module RequestsHelper
     @request.update({ status: "Approved"})
     @collaboration = Collaboration.new ({ collaborator: @request.collab_id, project_id: @request.owner_id})
       if @collaboration.save!
+        notify_collab(@request)
         flash[:notice] = "Approved collaborator"
       end
     redirect_to request.referrer
@@ -24,6 +25,7 @@ module RequestsHelper
       @project = Project.find(@branch.project_id)
       @project.tracks.each do |t|
         if t.update ({ avatar: track.avatar })
+          notify_mix(@request)
           flash[:notice] = "Approved mix"
         end
       end
@@ -64,5 +66,20 @@ module RequestsHelper
     end
     redirect_to request.referrer
   end
-  
+
+  def notify_collab(request)
+    Notification.create!(owner_id: request.id,
+                         owner_type: 'Approve Collab',
+                         user_id: request.collab_id,
+                         notified_by: current_user.id)
+  end
+
+  def notify_mix(request)
+    Notification.create!(owner_id: request.id,
+                         owner_type: 'Request',
+                         user_id: request.collab_id,
+                         notified_by: current_user.id)
+
+  end
+
 end

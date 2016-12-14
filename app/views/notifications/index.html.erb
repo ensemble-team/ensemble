@@ -26,6 +26,16 @@
         <%= sender.username %> has sent a new request
         <%= link_to "Have a look", notification_link_through_path(n) %>
       </li>
+      <% elsif n.owner_type == "Approve Collab"  %>
+        <li>
+          <%= sender.username %> has approved your collaboration request
+          <%= link_to "Have a look", notification_link_through_path(n) %>
+        </li>
+      <% elsif n.owner_type == "Approve Mix"  %>
+        <li>
+          <%= sender.username %> has approved your mix request
+          <%= link_to "Have a look", notification_link_through_path(n) %>
+        </li>
     <% end %>
   <% end %>
 </ul>

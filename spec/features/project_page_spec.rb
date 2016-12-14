@@ -39,7 +39,6 @@ RSpec.feature 'User creates new project', :type => :feature do
     fill_in 'project_genre', with: 'Jazz'
     fill_in 'project_description', with: 'Free flowing funk'
     click_button 'Create Project'
-
     expect(page).to have_content 'Please enter a project title'
   end
 
@@ -60,7 +59,7 @@ RSpec.feature 'User creates new project', :type => :feature do
     it 'button is present on page after contributing user sends request' do
       create_branch_as_user_3
       fill_in 'Mix Request', with: "Please Accept"
-      click_link_or_button("Create Request")
+      click_link_or_button("Send Request")
       sign_out
       sign_in
       visit('projects/1000')
@@ -70,7 +69,7 @@ RSpec.feature 'User creates new project', :type => :feature do
     it 'project owner see master and branch tracks' do
       create_branch_as_user_3
       fill_in 'Mix Request', with: "Please Accept"
-      click_link_or_button("Create Request")
+      click_link_or_button("Send Request")
       sign_out
       sign_in
       visit('projects/1000')
@@ -81,28 +80,30 @@ RSpec.feature 'User creates new project', :type => :feature do
     it 'project owner can merge tracks' do
       create_branch_as_user_3
       fill_in 'Mix Request', with: "Please Accept"
-      click_link_or_button("Create Request")
+      click_link_or_button("Send Request")
       sign_out
       sign_in
       visit('projects/1000')
       click_link_or_button("View Mix Request")
       click_button('Approve Mix Request')
-      expect(page).to have_content('Approved mix')
-      expect(current_path).to eq('/projects/1000')
+      sign_out
+      sign_in_as_user_3
+      visit('/user/berrydingle')
+      expect(page).to have_content('Status: Approved')
     end
 
 
     it 'project owner can merge tracks' do
       create_branch_as_user_3
       fill_in 'Mix Request', with: "Please Accept"
-      click_link_or_button("Create Request")
+      click_link_or_button("Send Request")
       sign_out
       sign_in
       visit('projects/1000')
       click_link_or_button("View Mix Request")
       click_button('Reject Mix Request')
       expect(page).to have_content('Rejected mix')
-      expect(current_path).to eq('/projects')
+      expect(current_path).to eq('/projects/1000')
     end
 
   end

@@ -5,7 +5,7 @@ RSpec.describe TracksController, type: :controller do
 
   login_user
   let(:project) { create(:project) }
-  let(:track) {create(:track, track_owner_id: project.id, track_owner_type: "Project")}
+  let(:track) {create(:track, owner_id: project.id, owner_type: "Project")}
 
 
   before do

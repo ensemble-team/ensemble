@@ -1,4 +1,4 @@
-<%if @project.branches.any? %>
+<%if @project.branches.count != 0 %>
   <% if @project.blacklists.count == 0 %>
     <% @project.branches.each do |branch| %>
       <% if branch.id != nil %>
@@ -8,7 +8,7 @@
     <% end %>
   <% end %>
 
-  <% if @project.blacklists.any? %>
+  <% if @project.blacklists.count != 0 %>
     List of current branches
     <% @project.blacklists.each do |blacklist| %>
       <% @project.branches.each do |branch| %>

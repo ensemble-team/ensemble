@@ -1,4 +1,4 @@
-<%if @project.requests.any? %>
+<%if @project.requests.count != 0 %>
   <% @project.requests.each do |request| %>
     <%if request.id != nil && request.status == "In progress" %>
       <% user = User.find(request.collab_id) %>

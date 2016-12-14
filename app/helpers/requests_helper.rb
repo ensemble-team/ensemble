@@ -13,6 +13,7 @@ module RequestsHelper
   def reject_collab
     @request = Request.find(params[:request_id])
     @request.update({ status: "Rejected"})
+      notify_reject_collab(@request)
       flash[:notice] = "Rejected collaborator"
       redirect_to request.referrer
   end
@@ -38,6 +39,7 @@ module RequestsHelper
     @branch = Branch.find(@request.owner_id)
     @project = Project.find(@branch.project_id)
     @request.update({ status: "Rejected"})
+    notify_reject_mix(@request)
     flash[:notice] = "Rejected mix"
     redirect_to @project
   end
@@ -76,7 +78,22 @@ module RequestsHelper
 
   def notify_mix(request)
     Notification.create!(owner_id: request.id,
-                         owner_type: 'Request',
+                         owner_type: 'Approve Mix',
+                         user_id: request.collab_id,
+                         notified_by: current_user.id)
+
+  end
+
+  def notify_reject_collab(request)
+    Notification.create!(owner_id: request.id,
+                         owner_type: 'Reject Collab',
+                         user_id: request.collab_id,
+                         notified_by: current_user.id)
+  end
+
+  def notify_reject_mix(request)
+    Notification.create!(owner_id: request.id,
+                         owner_type: 'Reject Mix',
                          user_id: request.collab_id,
                          notified_by: current_user.id)
 

@@ -1,3 +1,19 @@
-// Place all the styles related to the Projects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.project-box {
+  border: 1px black solid;
+  display: flex;
+  height: 100%;
+  margin-bottom: 1em;
+  .project-genre {
+    height: 100%;
+    background-color: grey;
+    text-align: center;
+    h3 {
+      margin-top: 10px;
+    }
+  }
+
+  .project-description {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}

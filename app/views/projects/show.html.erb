@@ -19,9 +19,15 @@
                   </ol>
               </div>
           </div>
-  <h3>Title: <%= @project.title %></h3>
-  <h3>Genre: <%= @project.genre %></h3>
-  <h3>Description: <%= @project.description %><br></h3><br>
+          <div class="col-lg-12 project-box">
+             <div class="col-lg-2 project-genre">
+               <h3><%= @project.genre %></h3>
+             </div>
+             <div class="col-lg-2"></div>
+             <div class="col-lg-8 project-description text-right">
+               <p><%= @project.description %><p>
+             </div>
+           </div>
 
   <%= render "projects/partials/show/projects_show_upload_master_track", local: { project: @projects } %>
 

@@ -13,7 +13,7 @@
               From: <%= sender.username %>,
               on :  <%= message.created_at.strftime("%m/%d/%Y") %><br>
                     <%= message.body[0..20] %><br>
-                    <%= link_to "See message full message and reply", user_message_path(message) %>
+                    <%= link_to "See full message and reply", user_message_path(message) %>
             </div><br>
         <% end %>
       <% end %>

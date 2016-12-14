@@ -27,12 +27,6 @@
       <%= r.button :submit, 'Sent' %>
     <% end %>
 <br><br>
-<h2> Block user <h2>
-<%= link_to "Block user", action: :block_user(sender.id) %>
-
-
-  <% Blacklist.each do |blacklist| %>
-  <% if sender.id == blacklist.blocked && blacklist.owner_type == "Message" %>
 
   </body>
 </html>

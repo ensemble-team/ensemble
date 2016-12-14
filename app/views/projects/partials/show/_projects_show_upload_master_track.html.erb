@@ -1,9 +1,10 @@
-<%= simple_form_for ([@project, @project.tracks.build]) do |t| %>
-  <%= t.hidden_field :user_id, :value => current_user.id %>
-  <%= t.input :title, placeholder: 'Track Title', label: false %>
-  <%= t.input :text, placeholder: 'Track Description', wrapper_html: { class: 'form-group' }, label: false %>
-  <div class="col-lg-12 upload-button" >
+<% if @project.user_id == current_user.id %>
+  <h3>Master Track</h3><hr />
+  <%= simple_form_for ([@project, @project.tracks.build]) do |t| %>
+    <%= t.hidden_field :user_id, :value => current_user.id %>
+    <%= t.input :title, placeholder: 'Track Title', label: false %>
+    <%= t.input :text, placeholder: 'Track Description', wrapper_html: { class: 'form-group' }, label: false %>
     <%= t.file_field :avatar %><br>
     <%= t.button :submit, value: "Upload Track", class: 'upload-track' %><br>
-  </div>
-<% end %>
+  <% end %>
+<% end  %>

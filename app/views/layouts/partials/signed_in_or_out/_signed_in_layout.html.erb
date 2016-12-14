@@ -15,8 +15,8 @@
 
         <ul class="nav navbar-right top-nav">
           <% if user_signed_in? %>
-            <%= render "layouts/partials/layouts_messages_dropdown" %>
-            <%= render "layouts/partials/layouts_notifications_dropdown" %>
+            <%= render "layouts/partials/layouts_messages_dropdown", locals: { messages: @messages } %>
+            <%= render "layouts/partials/layouts_notifications_dropdown", locals: { messages: @messages } %>
             <%= render "layouts/partials/layouts_profile_dropdown", locals: { users: @users} %>
           <% else %>
             <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>

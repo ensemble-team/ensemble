@@ -1,6 +1,5 @@
 class MessagesController < ApplicationController
 
-
   def index
     @messages = Message.where(recipient: current_user.id)
     @sent_messages = Message.where(sender: current_user.id)
@@ -17,7 +16,7 @@ class MessagesController < ApplicationController
   end
   def show
     @messages = Message.where(recipient: current_user.id)
-  
+
     @message = Message.find(params[:id])
   end
 

@@ -12,7 +12,7 @@
                     <div class="media-body">
                       <% if @messages.any? %>
                         <% message = @messages.last %>
-                        <% sender = User.where(id: message.sender).last %>
+                        <% sender = User.find(message.sender) %>
                         <h5 class="media-heading"><strong><%= sender.username %></strong>
                         </h5>
                         <p class="small text-muted"><i class="fa fa-clock-o"></i> <%= message.created_at.strftime("%d/%m/%Y") %></p>

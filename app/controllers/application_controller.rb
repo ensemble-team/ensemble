@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!, except: [:index]
+  before_action :navbar_message
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -9,5 +10,10 @@ class ApplicationController < ActionController::Base
     added_attrs = [:username, :email, :password, :password_confirmation, :remember_me]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
   end
+
+  def navbar_message
+    @messages = Message.where(recipient: current_user.id)
+  end
+
 
 end

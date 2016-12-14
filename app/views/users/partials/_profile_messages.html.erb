@@ -1,0 +1,23 @@
+<div>
+  <% if @user.id == current_user.id %>
+    <br><h2>Messages Inbox</h2>
+    <% if @messages.any? %>
+      <% @messages.each do |message| %>
+        <% sender = find_sender(message)  %>
+        <ul>
+          <li>from: <%= sender.email %> on: <%= message.created_at.strftime("%d/%m/%Y") %></li>
+          <li><%= message.body %></li>
+        </ul>
+        <p>Reply:<p>
+        <%= simple_form_for ([current_user, current_user.messages.build]) do |m| %>
+          <%= m.hidden_field :recipient, :value => sender.id %>
+          <%= m.hidden_field :sender, :value => current_user.id %>
+          <%= m.hidden_field :branch_id, :value => nil %>
+          <%= m.hidden_field :project_id, :value => nil %>
+          <%= m.input :body, placeholder: 'Message' %>
+          <%= m.button :submit, button_html: { value: 'Save' } %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

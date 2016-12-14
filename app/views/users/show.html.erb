@@ -1,46 +1,30 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<body>
     <div>
+      <div id="page-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <h1 class="page-header">
+                <%= @user.username %> profile
+              </h1>
+            </div>
+          </div>
+
       <% if @user.fb_image %>
         <img src="<%= @user.fb_image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
+      <% elsif @user.image && !@user.fb_image %>
+        <img src="<%= @user.image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
       <% else %>
-      <img src="<%= @user.image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
+        <img src="http://edst-educ.sites.olt.ubc.ca/files/2014/08/cropped-icon_16571-grey11.png"style="width:152px; height:152px; border-radius: 50%;"></img>
       <% end %>
-    </div>
+
 
     <div>
       <p><%= @user.bio %></p>
     </div>
 
-    <br><h1><%= @user.username %> profile</h1>
-    <div>
-      <% if @user.id == current_user.id %>
-        <br><h2>Messages Inbox</h2>
-        <% if @messages.any? %>
-          <% @messages.each do |message| %>
-            <% sender = find_sender(message)  %>
-            <ul>
-              <li>from: <%= sender.email %> on: <%= message.created_at.strftime("%d/%m/%Y") %></li>
-              <li><%= message.body %></li>
-            </ul>
-            <p>Reply:<p>
-            <%= simple_form_for ([current_user, current_user.messages.build]) do |m| %>
-              <%= m.hidden_field :recipient, :value => sender.id %>
-              <%= m.hidden_field :sender, :value => current_user.id %>
-              <%= m.hidden_field :branch_id, :value => nil %>
-              <%= m.hidden_field :project_id, :value => nil %>
-              <%= m.input :body, placeholder: 'Message' %>
-              <%= m.button :submit, button_html: { value: 'Save' } %>
-            <% end %>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
+    <%= render "users/partials/profile_messages", local: { message: @messages, user: @users } %>
+    <%= render "users/partials/profile_messages", local: { project: @projects, user: @users } %>
 
     <div>
       <h2>Current Projects</h2>
@@ -140,6 +124,6 @@
     <% end %>
 
     <% %>
-
-  </body>
-</html>
+  </div>
+  </div>
+</body>

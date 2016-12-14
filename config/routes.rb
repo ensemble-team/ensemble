@@ -47,7 +47,7 @@ Rails.application.routes.draw do
   resources :branches do
     resources :requests
   end
-  
+
   resources :branches do
     resources :tracks
   end
@@ -60,19 +60,18 @@ Rails.application.routes.draw do
     resources :blacklists
   end
 
+  resources :notifications do
+    get :link_through
+  end
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resource :user do
     resources :notifications
-    get 'notification/:id/link_through', to: 'notifications#link_through', as: :link_through
     resources :messages
     resources :users, :only => [:show, :update]
     get ":username", to: "users#show"
   end
-
-
-
-
 
   root 'ensemble#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

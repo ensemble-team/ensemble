@@ -8,6 +8,5 @@ class Project < ApplicationRecord
   has_many :messages
   has_many :collaborations, dependent: :destroy
   has_many :blacklists, as: :owner
-
   validates :title, presence: true
 end

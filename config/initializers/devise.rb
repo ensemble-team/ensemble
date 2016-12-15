@@ -13,12 +13,20 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+
+  if Rails.env == "production"
+    config.omniauth :facebook, ENV["facebook2_APP_ID"], ENV["facebook2_APP_SECRET"],
+                  callback_url: "http://ensemble-app.herokuapp.com/users/auth/facebook/callback",
+                  scope: 'email', image_size: 'large',
+                  info_fields: 'email,name',
+                  secure_image_url: true
+  else
   config.omniauth :facebook, ENV["facebook_APP_ID"], ENV["facebook_APP_SECRET"],
                 callback_url: "http://localhost:3000/users/auth/facebook/callback",
                 scope: 'email', image_size: 'large',
                 info_fields: 'email,name',
                 secure_image_url: true
-
+  end
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

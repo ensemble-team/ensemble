@@ -9,11 +9,15 @@
             </div>
           </div>
 
-      <% if @user.fb_image %>
+      <% if @user.fb_image != nil && @user.image.read == nil %>
         <img src="<%= @user.fb_image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
-      <% else %>
+      <% elsif @user.image.read != nil %>
         <img src="<%= @user.image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
-      <% end %>
+      <% else%>
+            <img src="https://s28.postimg.org/s7zoetr65/default_avatar.jpg" style="width:152px; height:152px; border-radius: 50%;"></img>
+      <%end %>
+
+
 
 
     <div>

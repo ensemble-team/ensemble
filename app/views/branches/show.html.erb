@@ -51,7 +51,7 @@
       <% end %>
     <% end %>
 
-    <% if current_user.id == @branch.user_id %>
+    <% if (current_user.id == @branch.user_id) && (@branch.tracks.count != 0) %>
       <h2>Send a Mix request </h2>
       <%= simple_form_for ([@branch, @branch.requests.build]) do |r| %>
         <%= r.hidden_field :status, :value => "In progress" %>

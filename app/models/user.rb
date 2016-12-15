@@ -2,11 +2,11 @@ class User < ApplicationRecord
   mount_uploader :image, AvatarUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  has_many :comments
-  has_many :notifications
-  has_many :tracks
-  has_many :projects
-  has_many :messages
+  has_many :comments, dependent: :destroy
+  has_many :notifications, dependent: :destroy
+  has_many :tracks, dependent: :destroy
+  has_many :projects, dependent: :destroy
+  has_many :messages, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]

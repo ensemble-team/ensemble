@@ -169,3 +169,16 @@
 
   }
 }
+
+.final-delete {
+  position: absolute;
+  right: 30px;
+  bottom: 10px;
+  .delete-btn {
+    position: absolute;
+    right: 0px;
+    top: 15px;
+    margin-right: 15px;
+    background-color: red;
+  }
+}

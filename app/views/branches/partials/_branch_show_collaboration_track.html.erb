@@ -1,0 +1,11 @@
+<% if @branch.tracks.count != 0 %>
+  <% @branch.tracks.each do |track| %>
+    <% if track.title != nil %>
+      <audio src="<%=audio_path track.avatar%>" type="audio/mpeg" controls></audio><br/>
+    <% if current_user.id == @branch.user_id %>
+      <a href="<%=track.avatar%>" download="Song">Download</a>
+      <%= button_to 'Remove track', [@branch, track], method: :delete, data: {confirm: 'Are you sure you would like to delete this track?'}, class: 'btn btn-default delete-button' %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

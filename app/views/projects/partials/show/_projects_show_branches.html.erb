@@ -1,25 +1,57 @@
 <%if @project.branches.count != 0 %>
   <% if @project.blacklists.count == 0 %>
-    List of current branches
     <% @project.branches.each do |branch| %>
       <% if branch.id != nil %>
-        <%= branch.title %>
-        <%= link_to "See Branch", branch_path(branch) %>
+        <div class="col-lg-3 col-md-6">
+          <div class="panel panel-info">
+              <div class="panel-heading">
+                  <div class="row">
+                      <div class="col-xs-12 text-center">
+                        <div><h3><%= branch.title %></h3></div>
+                      </div>
+                  </div>
+              </div>
+              <a href="<%= branch_path(branch) %>">
+                  <div class="panel-footer">
+                      <span class="pull-left">See collaboration</span>
+                      <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                      <div class="clearfix"></div>
+                  </div>
+              </a>
+          </div>
+        </div>
       <% end %>
     <% end %>
   <% end %>
 
   <% if @project.blacklists.count != 0 %>
-    List of current branches
     <% @project.blacklists.each do |blacklist| %>
       <% @project.branches.each do |branch| %>
         <% if blacklist.blocked != current_user.id %>
-        <% if branch.id != nil %>
-          <br><%= branch.title %>
-          <%= link_to "See Branch", branch_path(branch) %>
-        <%end%>
+          <% if branch.id != nil %>
+          <div class="col-lg-3 col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                          <div class="huge"><h3><%= branch.title %></h3></div>
+                        </div>
+                    </div>
+                </div>
+                <a href="<%= branch_path(branch) %>">
+                    <div class="panel-footer">
+                        <span class="pull-left">See collaboration</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+          </div>
+          <%end%>
         <%end%>
       <%end%>
     <%end%>
   <%end%>
-<%end%>
+
+
+  <%end%>

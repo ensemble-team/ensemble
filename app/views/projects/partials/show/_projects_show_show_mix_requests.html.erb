@@ -1,16 +1,18 @@
-<%if @project.branches.count != 0 %>
-  <% @project.branches.each do |branch| %>
-    <%if branch.requests.count != 0 %>
-      <% branch.requests.each do |request| %>
-        <%if request.id != nil && request.status == "In progress" %>
-          <% user = User.find(request.collab_id) %>
-          <%= user.username %>
-          <%= request.message %>
-          <%= button_to 'View Mix Request', request_path(request), method: :get%><br>
-        <% else %>
-          No current requests
+<div class="notice text-center">
+  <%if @project.branches.count != 0 %>
+    <% @project.branches.each do |branch| %>
+      <%if branch.requests.count != 0 %>
+        <% branch.requests.each do |request| %>
+          <%if request.id != nil && request.status == "In progress" %>
+            <% user = User.find(request.collab_id) %>
+            <%= user.username %>
+            <%= request.message %>
+            <%= button_to 'View Mix Request', request_path(request), method: :get%><br>
+          <% end %>
         <% end %>
+        <% else %>
+        No current requests
       <% end %>
     <% end %>
   <% end %>
-<% end %>
+</div>

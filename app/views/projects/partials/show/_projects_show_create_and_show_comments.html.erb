@@ -1,21 +1,18 @@
-<%if @project.comments.any? %>
-  <hr /><h3>Comments</h3>
+<h3>Comments</h3>
 
-  <div class="col-lg-6 comment-input">
-    <%= simple_form_for ([@project, @project.comments.build]) do |c| %>
-      <%= c.hidden_field :user_id, :value => current_user.id %>
-      <%= c.input :body, placeholder: 'Comment', class: 'comment-box', label: false %>
-      <%= c.button :submit, value: 'Save Comment', class: 'comment-button' %>
+<div class="col-lg-6 comment-input">
+  <%= simple_form_for ([@project, @project.comments.build]) do |c| %>
+    <%= c.hidden_field :user_id, :value => current_user.id %>
+    <%= c.input :body, placeholder: 'Comment', class: 'comment-box', label: false %>
+    <%= c.button :submit, value: 'Save Comment', class: 'comment-button' %>
+  <% end %>
+</div>
+
+<div class="col-lg-6 comment-show">
+  <% @project.comments.each do |comment|%>
+    <% if comment.user_id != nil %>
+      <% user = User.find(comment.user_id) %>
+      <strong><%= user.username + " : " %></strong><%= comment.body %><br>
     <% end %>
-  </div>
-
-  <div class="col-lg-6 comment-show">
-    <% @project.comments.each do |comment|%>
-      <% if comment.user_id != nil %>
-        <% user = User.find(comment.user_id) %>
-        <strong><%= user.username + " : " %></strong><%= comment.body %><br>
-      <% end %>
-    <% end %>
-  </div>
-
-<% end %>
+  <% end %>
+</div>

@@ -32,7 +32,7 @@
       </div>
 
       <div class="col-lg-12 track-show">
-        <div class="col-lg-6 col-md-6 col-sm-6 upload-button" >
+        <div class="col-lg-12 col-md-12 col-sm-12 upload-button" >
           <%= render "projects/partials/show/projects_show_master_track", local: { project: @projects } %>
         </div>
       </div>
@@ -41,39 +41,47 @@
         <%= render "projects/partials/show/projects_show_create_and_show_comments", local: { project: @projects } %>
       </div>
 
+      <% if @project.collaborations.count != 0 %>
       <div class="col-lg-12 branches">
         <%= render "projects/partials/show/projects_show_create_branch", local: { project: @projects } %>
       </div>
+      <% end %>
 
+      <%if current_user.id != @project.user_id %>
       <div class="col-lg-12 collab-requests">
         <%= render "projects/partials/show/projects_show_send_collab_request", local: { project: @projects } %>
       </div>
+      <% end  %>
 
+      <% if @project_owner.id != current_user.id  %>
       <div class="col-lg-12 private-messages">
         <%= render "projects/partials/show/projects_show_send_private_message", local: { project: @projects, project_owner: @project_owner } %>
       </div>
+      <% end  %>
 
+      <div class="col-lg-12 col-md-12 col-xs-12 active-branches">
+        <h3>Active Collaborations</h3>
+        <%= render "projects/partials/show/projects_show_branches", local: { project: @projects } %>
+      </div>
 
       <%if current_user.id == @project.user_id %>
-        <div class="col-lg-12">
-          <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="col-lg-12 dropdowns text-center">
+          <div class="col-lg-4 col-md-6 col-xs-12 mixes">
             <h2> Mix requests </h2>
             <%= render "projects/partials/show/projects_show_show_mix_requests", local: { project: @projects } %>
           </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-          <h2> Collab requests </h2>
-          <%= render "projects/partials/show/projects_show_show_collab_requests", local: { project: @projects } %>
+          <div class="col-lg-4 col-md-6 col-xs-12 collabs">
+            <h2> Collab requests </h2>
+            <%= render "projects/partials/show/projects_show_show_collab_requests", local: { project: @projects } %>
           </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-          <h2> Collaborators </h2>
-          <%= render "projects/partials/show/projects_show_existing_collabs", local: { project: @projects } %>
+          <div class="col-lg-4 col-md-6 col-xs-12 members">
+            <h2> Collaborators </h2>
+            <%= render "projects/partials/show/projects_show_existing_collabs", local: { project: @projects } %>
           </div>
         </div>
       <% end %>
 
 
-  <h2>Active branches </h2>
-  <%= render "projects/partials/show/projects_show_branches", local: { project: @projects } %>
 
   </div>
 </div>

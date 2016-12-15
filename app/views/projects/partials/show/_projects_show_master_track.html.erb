@@ -9,7 +9,6 @@
       <% end %>
       <% if current_user.id == @project.user_id%>
         <%= button_to 'Remove track', project_track_path(@project, track), method: :delete, class: 'btn btn-default delete-button', data: {confirm: 'Are you sure you would like to delete this track?'} %>
-        <br><br>
       <% end %>
     <% end %>
   <% end %>

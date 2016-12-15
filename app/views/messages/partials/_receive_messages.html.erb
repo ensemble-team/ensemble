@@ -2,7 +2,7 @@
   <% @messages.sort.reverse.each do |message| %>
   <% if message.sender != current_user.id %>
   <% sender = User.find(message.sender) %>
-  <% if message.read == "read" %>
+  <% if message.read == nil %>
   <div class="received-messages text-left">
   <% else %>
   <div class="read-messages text-left">

@@ -149,9 +149,17 @@
   border-top: 1px solid #f5f5f5;
   margin-top: 10px;
   .mixes, .collabs, .members {
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    border-color: white;
+    border-style: solid;
+    border-width: 10px 5px;
+    border-radius: 5px;
+    h2 {
+      margin-top: 10px;
+    }
     .notice {
-      background-color: #f5f5f5;
-      border-radius: 5px;
+      min-height: 0px;
       padding: 10px;
       .arbutton {
         padding: 2px 8px;

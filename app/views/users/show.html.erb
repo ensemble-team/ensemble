@@ -1,5 +1,4 @@
 <body>
-    <div>
       <div id="page-wrapper">
         <div class="container-fluid">
           <div class="row">
@@ -12,10 +11,8 @@
 
       <% if @user.fb_image %>
         <img src="<%= @user.fb_image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
-      <% elsif @user.image && !@user.fb_image %>
-        <img src="<%= @user.image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
       <% else %>
-        <img src="http://edst-educ.sites.olt.ubc.ca/files/2014/08/cropped-icon_16571-grey11.png"style="width:152px; height:152px; border-radius: 50%;"></img>
+        <img src="<%= @user.image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
       <% end %>
 
 
@@ -39,5 +36,6 @@
         </h2>
         <%= render "users/partials/profile_user_user_requests", local: { branch: @branches, user: @users, project: @projects, request: @requests, project_check: @project_check, branch_check: @branch_check } %>
     </div>
+  </div>
   </div>
 </body>

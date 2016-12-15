@@ -1,4 +1,4 @@
-<% if @projects.count != nil %>
+<% if @projects.count != 0 %>
   <% @projects.each do |project| %>
     <div class="col-lg-12 col-md-12 col-sm-12" style="padding-left:0px;">
       <div class="panel panel-primary">
@@ -10,7 +10,7 @@
                   <small style="color:grey;">Created: <%= project.created_at.strftime("%d/%m/%Y") %></small>
           </div>
         </div>
-                    <a href="/user/projects/<%= project.id%>">
+                    <a href="/projects/<%= project.id%>">
                       <div class="panel-footer">
                         <span class="pull-left">View Project</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -22,10 +22,10 @@
       </div>
     </div>
   <% end %>
+<% else %>
+  <% if @user.id == current_user.id %>
+    You are not working on any projects at the moment.
   <% else %>
-    <% if @user.id == current_user.id %>
-      You are not working on any projects at the moment.
-    <% else %>
-      <%= @user.username %> is not working on any projects at the moment.
-    <% end %>
+    <%= @user.username %> is not working on any projects at the moment.
+  <% end %>
 <% end %>

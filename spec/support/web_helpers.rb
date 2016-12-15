@@ -26,7 +26,7 @@ module WebHelpers
   def upload_track
     sign_in
     @project = create(:project)
-    @track = create(:track, track_owner_id: @project.id, track_owner_type: "Project")
+    @track = create(:track, owner_id: @project.id, owner_type: "Project")
     visit "/projects/#{@project.id}"
   end
 
@@ -46,12 +46,12 @@ module WebHelpers
   end
 
   def sign_out
-    click_link_or_button ("Logout")
+    visit destroy_user_session_path
   end
 
   def create_project
     sign_in
-    click_button "New Project"
+    visit ("projects/new")
     fill_in "Title", with: "New project"
     fill_in "Genre", with: "Funk"
     fill_in "Description", with: "Great new song"
@@ -68,7 +68,6 @@ module WebHelpers
     @project = create(:project, id: id)
     @branch = create(:branch, project_id: @project.id, id: 2)
   end
-
 
   def create_branch_as_user_3
     create_user
@@ -96,9 +95,9 @@ module WebHelpers
   end
 
   def create_branch_request
-    create_branch
+    create_branch_as_user_3
     fill_in "Message", with: "Please accept"
-    click_button "Create Request"
+    click_button "Send Request"
   end
 
   def create_collab_request

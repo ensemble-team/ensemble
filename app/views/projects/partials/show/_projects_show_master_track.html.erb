@@ -1,12 +1,12 @@
-<% if @project.tracks.any?%>
-    <% @project.tracks.each do |track| %>
-      <% if track.title != nil %>
-        <audio src="<%=audio_path track.avatar%>" type="audio/mpeg" controls></audio>
-        <% @project.collaborations.each do |collaboration| %>
-          <% if current_user.id == collaboration.collaborator || current_user.id == @project.user_id %>
-            <a class="btn btn-default download" href="<%=track.avatar%>" download="Song">Download</a>
-          <% else %>
-            <h2> Send a collaboration request to download the track <h2>
+<% if @project.tracks.count != 0%>
+  <% @project.tracks.each do |track| %>
+    <% if track.title != nil %>
+      <audio src="<%=audio_path track.avatar%>" type="audio/mpeg" controls></audio>
+      <% @project.collaborations.each do |collaboration| %>
+        <% if current_user.id == collaboration.collaborator || current_user.id == @project.user_id %>
+          <a class="btn btn-default download" href="<%=track.avatar%>" download="Song">Download</a>
+        <% else %>
+          <h2> Send a collaboration request to download the track <h2>
           <% end %>
         <% end %>
         <% if current_user.id == @project.user_id%>

@@ -1,10 +1,8 @@
 FactoryGirl.define do
   factory :message do
-    project 1
-    branch 1
-    recipient 1
+    recipient 2
     sender 1
     body "MyText"
-    user nil
+    user_id 1
   end
 end

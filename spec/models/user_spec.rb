@@ -1,20 +1,19 @@
-require 'rails_helper'
-require 'omniauth'
-RSpec.describe User, type: :model do
-
-    before do
-    Rails.application.env_config["devise.mapping"] = Devise.mappings[:user]
-    Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook]
-    end
-
-
-    # describe "#create" do
-    #
-    #   it "should successfully create a user" do
-    #     expect {
-    #       get :create, provider: :facebook
-    #     }.to change{ User.count }.by(1)
-    #   end
+# require 'rails_helper'
+# require 'omniauth'
+# require 'support/controller_macros'
+# RSpec.describe User, type: : do
+#
+#     before do
+#     Rails.application.env_config["devise.mapping"] = Devise.mappings[:user]
+#     end
+#
+#
+#     describe "#create" do
+#
+#       it "should successfully create a user", focus: true do
+#         user_params = FactoryGirl.attributes_for(:user)
+#         expect{ post :create, user: user_params }.to change{ User.count }.by(1)
+#       end
     #
     #   it "should successfully create a session" do
     #     session[:user_id].should be_nil
@@ -45,5 +44,5 @@ RSpec.describe User, type: :model do
     #     response.should redirect_to root_url
     #   end
     # end
-
-  end
+  # end
+  # end

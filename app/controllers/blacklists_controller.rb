@@ -1,16 +1,16 @@
 class BlacklistsController < ApplicationController
+include BlacklistsHelper
 
   def create
-    @block_source = Project.find(params[:project_id])
-    @blacklist = @block_source.blacklists.build(blacklist_params)
-    @blacklist.save!
-    redirect_to request.referrer
+     @block_source = Project.find(params[:project_id])
+     @blacklist = @block_source.blacklists.build(blacklist_params)
+     @blacklist.save!
+     find_collab(@blacklist)
+     redirect_to request.referrer
   end
 
-
-  private
-
+   private
   def blacklist_params
-    params.require(:blacklist).permit(:blocked)
+     params.require(:blacklist).permit(:blocked)
   end
 end

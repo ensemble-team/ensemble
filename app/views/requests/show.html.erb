@@ -4,7 +4,6 @@
   <% @branch = Branch.find(@request.owner_id) %>
   <% @project = Project.find(@branch.project_id) %>
 
-
   <% if @project.tracks.count != 0%>
     <% @project.tracks.each do |track| %>
       <% if track.title != nil %>

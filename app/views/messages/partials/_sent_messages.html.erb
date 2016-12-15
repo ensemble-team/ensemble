@@ -1,0 +1,11 @@
+<% if @sent_messages.any? %>
+  <% @sent_messages.sort.reverse.each do |message| %>
+    <% recipient = User.find(message.recipient)  %>
+    <div class="sent-messages text-left">
+      To: <%= recipient.username %> <br>On: <%= message.created_at.strftime("%d/%m/%Y") %>
+      <br>Body: <%= message.body[0..20] %><br><br>
+        <%= link_to "See full message", user_message_path(message) %>
+        </div><br>
+      <% end %>
+    <% end %>
+</div>

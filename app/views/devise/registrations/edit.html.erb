@@ -1,18 +1,22 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">
+          Edit your profile
+        </h1>
+      </div>
+    </div>
 
-<div>
   <img src="<%= @user.image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
-Upload a new picture
-<%= simple_form_for @user do |i| %>
-  <%= i.file_field :image %>
-  <%= i.button :submit, "Upload Picture" %>
-<% end %>
-</div>
+  <%= simple_form_for @user do |i| %>
+    <%= i.file_field :image %>
+    <%= i.button :submit, "Upload Picture" %>
+  <% end %><br>
 
 <div>
-  Edit your bio
   <%= simple_form_for @user do |i| %>
-    <%= i.input :bio, value: @user.bio %>
+    <%= i.input :bio, value: @user.bio , placeholder: "Edit your bio", label: false %>
     <%= i.button :submit, "Edit Bio" %>
   <% end %>
 </div>
@@ -22,11 +26,9 @@ Upload a new picture
 
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
-
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-
     <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
     <%= f.input :password_confirmation, required: false %>
     <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
@@ -42,3 +44,6 @@ Upload a new picture
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+
+</div>
+</div>

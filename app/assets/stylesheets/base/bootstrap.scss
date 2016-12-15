@@ -4,7 +4,11 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-
+.new-project-form {
+  padding: 2em;
+  background-color: #d9534f;
+  border-radius: 4px;
+}
 .landing-page{
   height: 100vh;
   background-image: url("http://img04.deviantart.net/7541/i/2015/003/8/c/unplayed_piano_by_catch___22-d8c8igp.jpg") ;

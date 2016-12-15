@@ -1,52 +1,71 @@
-<ul>
-  <% @notifications.each do |n| %>
-    <% sender = User.find(n.notified_by) %>
-    <% case n.owner_type  %>
-    <% when "Message" %>
-      <li>
-        <%= sender.username %> has send you a message
-        <%= link_to "See message", notification_link_through_path(n) %>
-      </li>
-    <% when "Branch" %>
-      <li>
-        <%= sender.username %> has created a Branch
-        <%= link_to "See Branch", notification_link_through_path(n) %>
-      </li>
-    <% when "Comment"  %>
-      <li>
-        <%= sender.username %> has made a new comment
-        <%= link_to "Have a look", notification_link_through_path(n) %>
-      </li>
-    <% when "Track"  %>
-      <li>
-        <%= sender.username %> has uploaded a new track
-        <%= link_to "Listen to the track", notification_link_through_path(n) %>
-      </li>
-    <% when "Request"  %>
-      <li>
-        <%= sender.username %> has sent a new request
-        <%= link_to "Have a look", notification_link_through_path(n) %>
-      </li>
-      <% when "Approve Collab"  %>
-        <li>
-          <%= sender.username %> has approved your collaboration request
-          <%= link_to "Have a look", notification_link_through_path(n) %>
-        </li>
-      <% when "Approve Mix"  %>
-        <li>
-          <%= sender.username %> has approved your mix request
-          <%= link_to "Have a look", notification_link_through_path(n) %>
-        </li>
-      <% when "Reject Collab"  %>
-        <li>
-          <%= sender.username %> has rejected your collaboration request
-          <%= link_to "Have a look", notification_link_through_path(n) %>
-        </li>
-      <% when "Reject Mix"  %>
-        <li>
-          <%= sender.username %> has rejected your mix request
-          <%= link_to "Have a look", notification_link_through_path(n) %>
-        </li>
-    <% end %>
-  <% end %>
-</ul>
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">
+          Notifications
+        </h1>
+        <ol class="breadcrumb">
+          <li>
+            <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
+          </li>
+          <li class="active">
+            <i class="fa fa-fw fa-desktop"></i> Notifications
+          </li>
+        </ol>
+      </div>
+    </div>
+    <ul>
+      <% @notifications.each do |n| %>
+        <% sender = User.find(n.notified_by) %>
+        <% case n.owner_type  %>
+        <% when "Message" %>
+          <li>
+            <%= sender.username %> has send you a message
+            <%= link_to "See message", notification_link_through_path(n) %>
+          </li>
+        <% when "Branch" %>
+          <li>
+            <%= sender.username %> has created a Branch
+            <%= link_to "See Branch", notification_link_through_path(n) %>
+          </li>
+        <% when "Comment"  %>
+          <li>
+            <%= sender.username %> has made a new comment
+            <%= link_to "Have a look", notification_link_through_path(n) %>
+          </li>
+        <% when "Track"  %>
+          <li>
+            <%= sender.username %> has uploaded a new track
+            <%= link_to "Listen to the track", notification_link_through_path(n) %>
+          </li>
+        <% when "Request"  %>
+          <li>
+            <%= sender.username %> has sent a new request
+            <%= link_to "Have a look", notification_link_through_path(n) %>
+          </li>
+        <% when "Approve Collab"  %>
+          <li>
+            <%= sender.username %> has approved your collaboration request
+            <%= link_to "Have a look", notification_link_through_path(n) %>
+          </li>
+        <% when "Approve Mix"  %>
+          <li>
+            <%= sender.username %> has approved your mix request
+            <%= link_to "Have a look", notification_link_through_path(n) %>
+          </li>
+        <% when "Reject Collab"  %>
+          <li>
+            <%= sender.username %> has rejected your collaboration request
+            <%= link_to "Have a look", notification_link_through_path(n) %>
+          </li>
+        <% when "Reject Mix"  %>
+          <li>
+            <%= sender.username %> has rejected your mix request
+            <%= link_to "Have a look", notification_link_through_path(n) %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>

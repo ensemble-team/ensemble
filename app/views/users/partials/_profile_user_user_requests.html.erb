@@ -1,0 +1,57 @@
+<% if @requests.count != 0 %>
+  <% @project_check = false %>
+    <% @requests.each do |req| %>
+      <% if req.owner_type == "Project" && @project_check == false  %>
+        <h3>My Collaboration Requests</h3>
+        <% @project_check = true %>
+        <% end %>
+    <% end %>
+<% end %>
+
+<% if @requests.count != 0 %>
+  <% @requests.each do |req| %>
+    <% if req.owner_type == "Project" %>
+      <% project = Project.find(req.owner_id) %>
+        Project Name: <%= project.title %><br>
+        Time and Date of Request: <%= req.created_at.strftime("%H:%M, %m/%d/%Y") %><br>
+        Status:<%= req.status %><br><br>
+        <%= button_to "Delete", request_path(req), method: :delete %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+
+  <% if @requests.count != 0 %>
+    <% @branch_check = false %>
+      <% @requests.each do |req| %>
+        <% if req.owner_type == "Branch" && @branch_check == false  %>
+          <h3>My Mix Requests</h3>
+          <% @branch_check = true %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+
+  <% if @requests.count != 0 %>
+    <% @requests.each do |req| %>
+      <% if req.owner_type == "Branch" %>
+        <% branch = Branch.find(req.owner_id) %>
+          Branch Name: <%= branch.title %><br>
+          Time and Date of Request: <%= req.created_at.strftime("%H:%M, %m/%d/%Y") %><br>
+          Status: <%= req.status %><br><br>
+          <%= button_to "Delete", request_path(req), method: :delete %>
+        <% end %>
+      <% end %>
+    <% end  %>
+
+
+    <% if @requests.count != 0 %>
+     <% req = @requests[0]%>
+      <%= button_to "Delete all requests", request_kill_all_requests_path(req), method: :post %>
+    <% end %>
+
+
+<% if @requests.count == 0 %>
+  You have not made any collaboration requests.
+  You have not made any mix requests.
+<% end %>

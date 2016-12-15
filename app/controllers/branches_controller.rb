@@ -17,6 +17,7 @@ include BranchesHelper
   def show
     @branch = Branch.find(params[:id])
     @project = Project.find(@branch.project_id)
+    @branch_owner = User.find(@branch.user_id)
   end
 
   def destroy

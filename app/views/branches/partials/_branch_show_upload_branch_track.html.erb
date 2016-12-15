@@ -1,0 +1,10 @@
+<% if current_user.id == @branch.user_id %>
+  <h3>Upload Track</h3>
+  <%= simple_form_for ([@branch, @branch.tracks.build]) do |t| %>
+    <%= t.hidden_field :user_id, :value => current_user.id %>
+    <%= t.input :title, placeholder: 'Track Title', label: false %>
+    <%= t.input :text, placeholder: 'Track Description', wrapper_html: { class: 'form-group' }, label: false %>
+    <%= t.file_field :avatar %><br>
+    <%= t.button :submit, value: 'Upload Track', class: 'upload-track' %><br>
+  <% end %>
+<% end %>

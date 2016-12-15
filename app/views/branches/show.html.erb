@@ -1,19 +1,85 @@
+<body>
+  <div id="page-wrapper">
+    <div class="container-fluid">
+        <!-- Page Heading -->
+      <div class="row">
+          <div class="col-lg-12">
+              <h1 class="page-header">
+                  Project Collaboration <small><%= @branch.title + " by "%><a href="/user/<%= @branch_owner.username %>"><%= @branch_owner.username %></small>
+              </h1>
+              <% if @branch.user_id == current_user.id || @project.id == current_user.id %>
+                <%= button_to 'Delete Branch', [@project, @branch], method: :delete, data: { confirm: 'Are you sure you want to delete this collaboration?'}, class: 'btn btn-default delete-button' %>
+              <% end %>
+              <ol class="breadcrumb">
+                  <li>
+                      <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
+                  </li>
+                  <li class="active">
+                      <i class="fa fa-fw fa-music"></i><%= @project.title %> / <%= @branch.title %>
+                  </li>
+              </ol>
+          </div>
+      </div>
+
+      <div class="col-lg-12 project-box">
+        <div class="col-lg-6 project-genre">
+          <h4><%= @branch.instrument %></h4>
+          <p><%= @branch.description %><p>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 track-player">
+          <%= render "branches/partials/branch_show_upload_branch_track", local: { branch: @branch } %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 track-show">
+        <div class="col-lg-12 col-md-12 col-sm-12 upload-button" >
+          <%= render "branches/partials/branch_show_collaboration_track", local: { branch: @branch } %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 comments">
+        <%= render "branches/partials/branch_show_create_and_show_comments", local: { branch: @branch } %>
+      </div>
+
+      <%if current_user.id != @branch.user_id %>
+      <div class="col-lg-12 collab-requests">
+        <%= render "branches/partials/branch_show_send_mix_request", local: { branch: @branch } %>
+      </div>
+      <% end  %>
+
+      <% if @branch.user_id != current_user.id  %>
+      <div class="col-lg-12 private-messages">
+        <%= render "branches/partials/branch_show_send_private_message", local: { branch: @branch, branch_owner: @branch_owner, project: @project } %>
+      </div>
+      <% end  %>
+
+  </div>
+</div>
+</body>
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
-    <%= @branch.title %>
+  <body> -->
+    <!-- <%= @branch.title %>
     <%= @branch.instrument %>
     <%= @branch.description %>
 
     <% if @branch.user_id == current_user.id || @project.id == current_user.id %>
       <%= button_to 'Delete Branch', [@project, @branch], method: :delete, data: { confirm: 'Are you sure you want to delete this branch?'} %>
-    <% end %><br><br>
+    <% end %><br><br> -->
 
-    <% if current_user.id == @branch.user_id %>
+    <!-- <% if current_user.id == @branch.user_id %>
       <%= simple_form_for ([@branch, @branch.tracks.build]) do |t| %>
         <%= t.hidden_field :user_id, :value => current_user.id %>
         <%= t.input :title, placeholder: 'Track Title' %>
@@ -21,9 +87,9 @@
         <%= t.file_field :avatar %>
         <%= t.button :submit, button_html: { value: 'Upload Track' } %>
       <% end %>
-    <% end %>
+    <% end %> -->
 
-    <% if @branch.tracks.count != 0 %>
+    <!-- <% if @branch.tracks.count != 0 %>
       <% @branch.tracks.each do |track| %>
         <% if track.title != nil %>
           <audio src="<%=audio_path track.avatar%>" type="audio/mpeg" controls></audio>
@@ -33,9 +99,9 @@
           <% end %>
         <% end %>
       <% end %>
-    <% end %>
+    <% end %> -->
 
-    <%= simple_form_for ([@branch, @branch.comments.build]) do |c| %>
+    <!-- <%= simple_form_for ([@branch, @branch.comments.build]) do |c| %>
       <%= c.hidden_field :user_id, :value => current_user.id %>
       <%= c.input :body, placeholder: 'Comment' %>
       <%= c.button :submit,'Save' %>
@@ -49,19 +115,19 @@
           <%= comment.body %>
         <% end %>
       <% end %>
-    <% end %>
+    <% end %> -->
 
-    <% if current_user.id == @branch.user_id %>
-      <h2>Send a Mix request </h2>
+    <!-- <% if current_user.id == @branch.user_id %> -->
+      <!-- <h2>Send a Mix request </h2>
       <%= simple_form_for ([@branch, @branch.requests.build]) do |r| %>
         <%= r.hidden_field :status, :value => "In progress" %>
         <%= r.hidden_field :receiver_id, :value => @branch.user_id %>
         <%= r.hidden_field :collab_id, :value => current_user.id %>
         <%= r.input :message, placeholder: 'Mix Request' %>
         <%= r.button :submit, 'Send Request' %>
-      <% end %>
+      <% end %> -->
 
-      <h2>Send a message to the project owner </h2>
+      <!-- <h2>Send a message to the project owner </h2>
       <% project = Project.find(@branch.project_id) %>
       <%= simple_form_for ([current_user, current_user.messages.build]) do |m| %>
         <%= m.hidden_field :recipient, :value => project.user_id %>
@@ -74,4 +140,4 @@
     <% end %>
 
   </body>
-</html>
+</html> -->

@@ -1,13 +1,13 @@
 <body>
   <% @branch = Branch.find(@request.owner_id) %>
   <% @project = Project.find(@branch.project_id) %>
+  <% if @project.user_id == current_user.id %>
   <% @user = User.find(@branch.user_id) %>
   <div id="page-wrapper">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12">
           <h1 class="page-header text-center">
-          Mix request for "<%= @branch.title %>"
           </h1>
         </div>
       </div>
@@ -63,4 +63,5 @@
     </div>
   </div>
 </div>
+<% end %>
 </body>

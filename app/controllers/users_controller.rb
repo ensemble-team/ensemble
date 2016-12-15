@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(current_user.id)
+    find_user
     @user.update(user_params)
     @user.save!
     redirect_to request.referrer
@@ -42,7 +42,11 @@ class UsersController < ApplicationController
   end
 
   def find_user
+    if params[:username]
     @user = User.find_by(username: params[:username])
+    else
+      @user = User.find(current_user.id)
+    end
   end
 
   def user_params

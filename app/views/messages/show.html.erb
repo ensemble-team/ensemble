@@ -1,32 +1,40 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>
-    </title>
-      </head>
-      <body>
-
-      <% sender = User.find(@message.sender) %>
-        From: <%= sender.username %><br> <br>
-        <% @all_messages = Message.where({ recipient: current_user.id, sender: sender.id }) + Message.where({ recipient: sender.id , sender: current_user.id }) %>
-        <% @all_messages.sort.each do |message| %>
-          <% sender = User.find(message.sender) %>
-          On:   <%= message.created_at.strftime("%m/%d/%Y") %>
-          From: <%= sender.username %>
-                "<%= message.body %>"<br>
+<body>
+  <div id="page-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3 class="page-header">
+            <% sender = User.find(@message.sender) %>
+            Private message with <%= sender.username %>
+          </h3>
+        </div>
+      </div>
+      <% @all_messages = Message.where({ recipient: current_user.id, sender: sender.id }) + Message.where({ recipient: sender.id , sender: current_user.id }) %>
+      <% @all_messages.sort.each do |message| %>
+        <% sender = User.find(message.sender) %>
+        <% if sender.username == current_user.username %>
+          <strong>You: </strong>
+        <% else %>
+          <strong><%= sender.username %>: </strong>
         <% end %>
+        <small style="color:grey"><%= message.created_at.strftime("%d/%m/%Y") %></small>
+        <br><%= message.body %>
+        <br><br>
+      <% end %>
+      <br>
 
-    <p>Reply:<p>
-    <%= simple_form_for ([current_user, current_user.messages.build]) do |r| %>
-      <%= r.hidden_field :recipient, :value => sender.id %>
-      <%= r.hidden_field :sender, :value => current_user.id %>
-      <%= r.hidden_field :branch_id, :value => nil %>
-      <%= r.hidden_field :project_id, :value => nil %>
-      <%= r.input :body, placeholder: 'Message', label: false %>
-      <%= r.button :submit, 'Sent' %>
-    <% end %>
-<br><br>
-
-  </body>
-</html>
+      <div class="reply-box">
+        <p>Reply:<p>
+          <%= simple_form_for ([current_user, current_user.messages.build]) do |r| %>
+          <%= r.hidden_field :recipient, :value => sender.id %>
+          <%= r.hidden_field :sender, :value => current_user.id %>
+          <%= r.hidden_field :branch_id, :value => nil %>
+          <%= r.hidden_field :project_id, :value => nil %>
+          <%= r.input :body, placeholder: 'Message', label: false %>
+          <%= r.button :submit, 'Send' %>
+          <% end %>
+          <br><br>
+      </div>
+    </div>
+  </div>
+</body>

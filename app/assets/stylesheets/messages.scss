@@ -1,3 +1,23 @@
-// Place all the styles related to the Messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.sent-messages, .received-messages {
+  margin-left: 15%;
+  margin-right: 15%;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.5em;
+  max-width: 70%;
+}
+
+.sent-messages {
+  background-color: #6699ff;
+}
+
+.received-messages {
+  background-color: #ff6666;
+}
+
+.reply-box {
+  width: 25%;
+  textarea {
+    resize: none;
+  }
+}

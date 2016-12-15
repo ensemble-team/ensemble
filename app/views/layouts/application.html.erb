@@ -13,9 +13,10 @@
   </head>
 
   <body>
-
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <% if user_signed_in? %>
-      <%= render "layouts/partials/signed_in_or_out/signed_in_layout" %>
+      <%= render "layouts/partials/signed_in_or_out/signed_in_layout", local: { message: @messages } %>
     <% else %>
       <%= render "layouts/partials/signed_in_or_out/signed_out_layout" %>
     <% end %>

@@ -1,0 +1,26 @@
+<% if @user.id == current_user.id %>
+  <% if @messages.count != nil %>
+    <% @messages.each do |message| %>
+    <div class="col-lg-12 col-md-12 col-sm-12" style="padding-left:0px;">
+      <div class="panel panel-yellow">
+        <div class="panel-heading">
+          <div class="row">
+            <ul style="list-style:none;padding-left:10px;">
+                <% sender = find_sender(message)  %>
+                  <li><%= sender.username %> <br><small style="color:grey;">received: <%= message.created_at.strftime("%d/%m/%Y") %></small>
+          </div>
+        </div>
+                    <a href="/user/messages/<%= message.id%>">
+                      <div class="panel-footer">
+                        <span class="pull-left">View Message</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                      </div>
+                    </a>
+                  </li>
+            </ul>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+<% end %>

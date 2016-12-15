@@ -4,40 +4,39 @@
           <div class="row">
             <div class="col-lg-12">
               <h1 class="page-header">
-                <%= @user.username %> profile
+                <%= @user.username %>
               </h1>
             </div>
           </div>
+          <div class="col-lg-12">
+            <div class="col-lg-12 col-lg-offset-5" style="padding-left:0px;margin-bottom:15px;">
+              <% if @user.fb_image != nil && @user.image.read == nil %>
+                <img src="<%= @user.fb_image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
+              <% elsif @user.image.read != nil %>
+                <img src="<%= @user.image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
+              <% else%>
+                    <img src="https://s28.postimg.org/s7zoetr65/default_avatar.jpg" style="width:152px; height:152px; border-radius: 50%;"></img>
+              <%end %>
+            </div>
+            <div class="col-lg-offset-3 col-lg-6 text-center" style="text-align:justify;">
+              <p><%= @user.bio %></p>
+            </div>
+          </div>
 
-      <% if @user.fb_image != nil && @user.image.read == nil %>
-        <img src="<%= @user.fb_image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
-      <% elsif @user.image.read != nil %>
-        <img src="<%= @user.image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
-      <% else%>
-            <img src="https://s28.postimg.org/s7zoetr65/default_avatar.jpg" style="width:152px; height:152px; border-radius: 50%;"></img>
-      <%end %>
-
-
-
-
-    <div>
-      <p><%= @user.bio %></p>
-    </div>
     <div class="col-lg-3 col-md-3 col-sm-3">
-        <h2>Messages Inbox</h2>
+        <h2>Messages</h2>
         <%= render "users/partials/profile_messages", local: { message: @messages, user: @users } %>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-3">
-        <h2>Current Projects</h2>
+        <h2>Projects</h2>
         <%= render "users/partials/profile_user_projects", local: { project: @projects, user: @users } %>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-3">
-        <h2>Current Collaborations</h2>
+        <h2>Collaborations</h2>
         <%= render "users/partials/profile_user_collaborations", local: { branch: @branches, user: @user } %>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-3">
-        <h2>All my Requests
-        </h2>
+        <h2>Requests</h2>
         <%= render "users/partials/profile_user_user_requests", local: { branch: @branches, user: @users, project: @projects, request: @requests, project_check: @project_check, branch_check: @branch_check } %>
     </div>
   </div>

@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def navbar_message
-      @messages = Message.where(recipient: current_user.id)
+    @messages = Message.where(recipient: current_user.id)
   end
 
 

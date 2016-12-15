@@ -6,7 +6,7 @@
   </head>
   <body>
     <br><h2>Received messages</h2>
-    <% if @messages.any? %>
+    <% if @messages.count != 0 %>
       <% @messages.sort.reverse.each do |message| %>
         <% sender = User.find(message.sender) %>
             <div style="width:50%; background-color: pink;">
@@ -17,16 +17,17 @@
             </div><br>
         <% end %>
       <% end %>
+
     <h2>Sent Messages</h2>
-    <% if @sent_messages.any? %>
+    <% if @sent_messages.count != 0 %>
       <% @sent_messages.sort.reverse.each do |message| %>
         <% recipient = User.find(message.recipient)  %>
         <div style="width:50%; background-color: #42e5f4;">
           To: <%= recipient.username %> on: <%= message.created_at.strftime("%m/%d/%Y") %>
           <br><%= message.body[0..20] %><br>
-            <%= link_to "See full message", user_message_path(message) %>
-            </div><br>
-          <% end %>
+              <%= link_to "See full message", user_message_path(message) %>
+        </div><br>
         <% end %>
+    <% end %>
   </body>
 </html>

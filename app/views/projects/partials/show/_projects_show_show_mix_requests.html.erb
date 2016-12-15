@@ -1,6 +1,6 @@
-<%if @project.branches.any? %>
+<%if @project.branches.count != 0 %>
   <% @project.branches.each do |branch| %>
-    <%if branch.requests.any? %>
+    <%if branch.requests.count != 0 %>
       <% branch.requests.each do |request| %>
         <%if request.id != nil && request.status == "In progress" %>
           <% user = User.find(request.collab_id) %>

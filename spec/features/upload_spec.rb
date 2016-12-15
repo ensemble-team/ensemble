@@ -10,7 +10,7 @@ RSpec.feature "Project", :type => :feature  do
     @project = create(:project)
     visit "/projects/#{@project.id}"
     fill_in "track_title", with: "Nice Song"
-    fill_in "Text", with: "Sexy"
+    fill_in "Track Description", with: "Sexy"
     attach_file 'track_avatar', './spec/fixtures/files/mpthreetest.mp3'
     click_button "Create Track"
     expect(page).to have_content("Track uploaded")
@@ -35,7 +35,7 @@ RSpec.feature "Project", :type => :feature  do
     new_user_sign_in
     visit "/projects/100"
     expect(page).not_to have_content("Upload Your Master Track")
-    expect(page).to have_content("ensemble@gmail.com")
+
   end
 
 end

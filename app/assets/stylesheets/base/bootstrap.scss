@@ -4873,6 +4873,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: .25em;
+  font-weight: 400;
 }
 a.label:hover,
 a.label:focus {
@@ -6675,6 +6676,23 @@ button.close {
 @media (min-width: 992px) and (max-width: 1199px) {
   .visible-md-inline-block {
     display: inline-block !important;
+  }
+}
+@media (max-width: 1100px) {
+  h2 {
+    font-size: 1.7em;
+  }
+  h3 {
+    font-size: 1.3em;
+  }
+
+}
+@media (max-width: 930px) {
+  h2 {
+    font-size: 1.3em;
+  }
+  h3 {
+    font-size: 1.1em;
   }
 }
 @media (min-width: 1200px) {

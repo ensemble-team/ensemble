@@ -25,7 +25,9 @@
         </ul>
           <%= render "layouts/partials/layouts_left_navbar" %>
     </nav>
+    <div class="signed-in-notice-alert">
+      <%= notice %>
+      <%= alert %>
+    </div>
   <%= yield %>
-<!-- <p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p> -->
 </div>

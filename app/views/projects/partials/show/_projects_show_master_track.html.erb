@@ -1,17 +1,16 @@
 <% if @project.tracks.count != 0%>
   <% @project.tracks.each do |track| %>
     <% if track.title != nil %>
-      <audio src="<%=audio_path track.avatar%>" type="audio/mpeg" controls></audio>
+      <audio src="<%=audio_path track.avatar%>" type="audio/mpeg" controls></audio><br/>
       <% @project.collaborations.each do |collaboration| %>
         <% if current_user.id == collaboration.collaborator || current_user.id == @project.user_id %>
           <a class="btn btn-default download" href="<%=track.avatar%>" download="Song">Download</a>
-        <% else %>
-          <h2> Send a collaboration request to download the track <h2>
-          <% end %>
-        <% end %>
-        <% if current_user.id == @project.user_id%>
-          <%= button_to 'Remove track', project_track_path(@project, track), method: :delete, class: 'btn btn-default delete-button', data: {confirm: 'Are you sure you would like to delete this track?'} %><br><br>
         <% end %>
       <% end %>
+      <% if current_user.id == @project.user_id%>
+        <%= button_to 'Remove track', project_track_path(@project, track), method: :delete, class: 'btn btn-default delete-button', data: {confirm: 'Are you sure you would like to delete this track?'} %>
+        <br><br>
+      <% end %>
     <% end %>
+  <% end %>
 <% end %>

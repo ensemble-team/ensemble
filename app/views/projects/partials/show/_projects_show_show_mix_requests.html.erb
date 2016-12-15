@@ -5,13 +5,13 @@
         <% branch.requests.each do |request| %>
           <%if request.id != nil && request.status == "In progress" %>
             <% user = User.find(request.collab_id) %>
+            <h2> Mix requests </h2>
             <a href="/user/<%= user.username %>"><%= user.username %></a><br>
             <%= request.message %>
             <%= button_to 'View Mix Request', request_path(request), method: :get, class: "btn btn-default arbutton" %><br>
           <% end %>
         <% end %>
         <% else %>
-        No current requests
       <% end %>
     <% end %>
   <% end %>

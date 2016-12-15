@@ -1,7 +1,7 @@
 <% if @project.collaborations.count != 0 %>
   <% @project.collaborations.each do |collaboration| %>
     <% if current_user.id == collaboration.collaborator  %>
-      <hr/><h3>Create a branch</h3>
+      <h3>Create a branch</h3>
       <%= simple_form_for ([@project, @project.branches.build]) do |b| %>
       <%= b.hidden_field :user_id, :value => current_user.id %>
       <%= b.input :title, placeholder: 'Title', label: false %>

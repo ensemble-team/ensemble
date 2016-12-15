@@ -1,5 +1,5 @@
 <%if current_user.id != @project.user_id %>
-  <hr /><h2>Send a Collaboration request </h2>
+  <h3>Send a Collaboration request </h3>
   <%= simple_form_for ([@project, @project.requests.build]) do |r| %>
     <%= r.hidden_field :status, :value => "In progress" %>
     <%= r.hidden_field :receiver_id, :value => @project.user_id %>

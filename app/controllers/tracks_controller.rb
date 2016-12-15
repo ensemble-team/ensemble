@@ -18,7 +18,7 @@ include TracksHelper
       create_notification(@track_owner, @track)
       flash[:notice] = "Track uploaded"
     else
-      flash[:notice] = "Could not save the track, check the information entered"
+      flash[:notice] = "You need to enter track title before pressing upload"
     end
     redirect_to @track_owner
   end

@@ -5,7 +5,7 @@ module RequestsHelper
     @collaboration = Collaboration.new ({ collaborator: @request.collab_id, project_id: @request.owner_id})
       if @collaboration.save!
         notify_collab(@request)
-        flash[:notice] = "Approved collaborator"
+        flash[:notice] = "Collaboration approved"
       end
     redirect_to request.referrer
   end
@@ -14,7 +14,7 @@ module RequestsHelper
     @request = Request.find(params[:request_id])
     @request.update({ status: "Rejected"})
       notify_reject_collab(@request)
-      flash[:notice] = "Rejected collaborator"
+      flash[:notice] = "Collaboration rejected"
       redirect_to request.referrer
   end
 
@@ -27,7 +27,7 @@ module RequestsHelper
       @project.tracks.each do |t|
         if t.update ({ avatar: track.avatar })
           notify_mix(@request)
-          flash[:notice] = "Approved mix"
+          flash[:notice] = "Mix approved"
         end
       end
     end
@@ -40,7 +40,7 @@ module RequestsHelper
     @project = Project.find(@branch.project_id)
     @request.update({ status: "Rejected"})
     notify_reject_mix(@request)
-    flash[:notice] = "Rejected mix"
+    flash[:notice] = "Mix rejected"
     redirect_to @project
   end
 

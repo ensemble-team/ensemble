@@ -1,16 +1,18 @@
 <%if @project.branches.count != 0 %>
-  <% if @project.blacklists.count == 0 %>
-    List of current branches
-    <% @project.branches.each do |branch| %>
-      <% if branch.id != nil %>
-        <%= branch.title %>
-        <%= link_to "See Branch", branch_path(branch) %>
+  <div class="col-lg-12 col-md-12 col-xs-12">
+    <% if @project.blacklists.count == 0 %>
+      <% @project.branches.each do |branch| %>
+        <% if branch.id != nil %>
+          <%= branch.title %>
+          <%= link_to "See Branch", branch_path(branch) %><br>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
+  </div>
+
 
   <% if @project.blacklists.count != 0 %>
-    List of current branches
+  <div class="col-lg-12 col-md-12 col-xs-12">
     <% @project.blacklists.each do |blacklist| %>
       <% @project.branches.each do |branch| %>
         <% if blacklist.blocked != current_user.id %>
@@ -21,5 +23,6 @@
         <%end%>
       <%end%>
     <%end%>
+  </div>
   <%end%>
 <%end%>

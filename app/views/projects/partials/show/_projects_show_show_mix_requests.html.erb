@@ -7,10 +7,10 @@
           <%= user.username %>
           <%= request.message %>
           <%= button_to 'View Mix Request', request_path(request), method: :get%><br>
-        <% else %>
-          No current requests
         <% end %>
       <% end %>
+      <% else %>
+      No current requests
     <% end %>
   <% end %>
 <% end %>

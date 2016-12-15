@@ -1,4 +1,3 @@
-<% if @project.collaborations.count != 0 %>
   <% @project.collaborations.each do |collaboration| %>
     <% if current_user.id == collaboration.collaborator  %>
       <h3>Create a branch</h3>
@@ -11,4 +10,3 @@
       <% end %>
     <% end %>
   <% end %>
-<% end %>

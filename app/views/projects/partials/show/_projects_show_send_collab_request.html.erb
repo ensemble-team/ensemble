@@ -1,4 +1,3 @@
-<%if current_user.id != @project.user_id %>
   <h3>Send a Collaboration request </h3>
   <%= simple_form_for ([@project, @project.requests.build]) do |r| %>
     <%= r.hidden_field :status, :value => "In progress" %>
@@ -7,4 +6,3 @@
     <%= r.input :message, placeholder: 'Message', label: false %>
     <%= r.button :submit, value: 'Send' %>
   <% end %>
-<% end %>

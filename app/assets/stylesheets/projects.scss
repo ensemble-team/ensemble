@@ -103,9 +103,14 @@
 }
 
 .private-messages {
+  border-top: 1px solid #f5f5f5;
+  margin-top: 10px;
   padding-left: 0px;
   #new_message {
     max-width: 50%;
+  }
+  h3 {
+    margin-top: 10px;
   }
 }
 
@@ -116,6 +121,9 @@
   #new_branch {
     max-width: 50%;
   }
+  h3 {
+    margin-top: 10px;
+  }
 }
 
 .collab-requests {
@@ -124,5 +132,32 @@
   padding-left: 0px;
   #new_request {
     max-width: 50%;
+  }
+  h3 {
+    margin-top: 10px;
+  }
+}
+
+.active-branches {
+  padding-left: 0px;
+  h3 {
+    margin-top: 10px;
+  }
+}
+
+.dropdowns {
+  border-top: 1px solid #f5f5f5;
+  margin-top: 10px;
+  .mixes, .collabs, .members {
+    .notice {
+      background-color: #f5f5f5;
+      border-radius: 5px;
+      padding: 10px;
+      .arbutton {
+        padding: 2px 8px;
+        margin-top: 10px;
+      }
+    }
+
   }
 }

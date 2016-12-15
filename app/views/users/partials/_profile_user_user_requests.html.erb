@@ -70,7 +70,7 @@
 
 <% if @requests.count != 0 %>
  <% req = @requests[0]%>
-  <%= button_to "Delete all requests", request_kill_all_requests_path(req), method: :post %>
+  <%= button_to "Delete all requests", request_kill_all_requests_path(req), method: :post, class: "btn btn-default" %>
 <% end %>
 
 <% if @requests.count == 0 %>

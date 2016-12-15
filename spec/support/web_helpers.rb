@@ -77,7 +77,7 @@ module WebHelpers
     sign_in_as_user_3
     visit('projects/1000')
     fill_in "Message", with: "Please accept"
-    click_button "Create Request"
+    click_button "Collaboration Request"
     sign_out
     sign_in
     visit('projects/1000')
@@ -114,7 +114,7 @@ module WebHelpers
     sign_in_as_user_3
     visit('/projects/2500')
     fill_in "request_message", with: "Please accept"
-    click_button "Create Request"
+    click_button "Collaboration Request"
   end
 
 end

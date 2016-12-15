@@ -7,7 +7,7 @@
           <div class="row">
             <ul style="list-style:none;padding-left:10px;">
                 <% sender = find_sender(message)  %>
-                  <li><%= sender.username %> <br><small style="color:grey;">received: <%= message.created_at.strftime("%d/%m/%Y") %></small>
+                  <li><%= sender.username %> <br><small style="color:#e6e6e6;">received: <%= message.created_at.strftime("%d/%m/%Y") %></small>
           </div>
         </div>
                     <a href="/user/messages/<%= message.id%>">

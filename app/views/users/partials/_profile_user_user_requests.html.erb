@@ -1,55 +1,77 @@
+<div class="col-lg-12 col-md-12 col-sm-12" style="padding-left:0px;">
+  <div class="panel panel-red">
+    <div class="panel-heading">
+      <div class="row" style="list-style:none;padding-left:10px;">
 <% if @requests.count != 0 %>
   <% @project_check = false %>
     <% @requests.each do |req| %>
       <% if req.owner_type == "Project" && @project_check == false  %>
-        <h3>My Collaboration Requests</h3>
+        <strong><p>Collaboration request</p></strong>
         <% @project_check = true %>
         <% end %>
     <% end %>
 <% end %>
+        <% if @requests.count != 0 %>
+          <% @requests.each do |req| %>
+            <% if req.owner_type == "Project" %>
+              <% project = Project.find(req.owner_id) %>
+              Project Name: <%= project.title %><br>
+              Request Made: <%= req.created_at.strftime("%H:%M, %m/%d/%Y") %><br>
+              Status: <%= req.status %>
+      </div>
+    </div>
+        <a href="/projects">
+          <div class="panel-footer">
+            <span class="pull-left">Delete request</span>
+            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+            <div class="clearfix"></div>
+          </div>
+        </a>
+  </div>
+</div>
+<% end %>
+<% end %>
+<% end %>
 
-<% if @requests.count != 0 %>
-  <% @requests.each do |req| %>
-    <% if req.owner_type == "Project" %>
-      <% project = Project.find(req.owner_id) %>
-        Project Name: <%= project.title %><br>
-        Time and Date of Request: <%= req.created_at.strftime("%H:%M, %m/%d/%Y") %><br>
-        Status:<%= req.status %><br><br>
-        <%= button_to "Delete", request_path(req), method: :delete %>
-      <% end %>
-    <% end %>
-  <% end %>
-
-
-  <% if @requests.count != 0 %>
-    <% @branch_check = false %>
-      <% @requests.each do |req| %>
-        <% if req.owner_type == "Branch" && @branch_check == false  %>
-          <h3>My Mix Requests</h3>
-          <% @branch_check = true %>
+<div class="col-lg-12 col-md-12 col-sm-12" style="padding-left:0px;">
+  <div class="panel panel-red">
+    <div class="panel-heading">
+      <div class="row" style="list-style:none;padding-left:10px;">
+        <% if @requests.count != 0 %>
+          <% @branch_check = false %>
+          <% @requests.each do |req| %>
+            <% if req.owner_type == "Branch" && @branch_check == false  %>
+              <strong><p>Mix request</p></strong>
+              <% @branch_check = true %>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
-
-
-  <% if @requests.count != 0 %>
-    <% @requests.each do |req| %>
-      <% if req.owner_type == "Branch" %>
-        <% branch = Branch.find(req.owner_id) %>
-          Branch Name: <%= branch.title %><br>
-          Time and Date of Request: <%= req.created_at.strftime("%H:%M, %m/%d/%Y") %><br>
-          Status: <%= req.status %><br><br>
-          <%= button_to "Delete", request_path(req), method: :delete %>
+        <% if @requests.count != 0 %>
+          <% @requests.each do |req| %>
+            <% if req.owner_type == "Branch" %>
+              <% branch = Branch.find(req.owner_id) %>
+              Branch Name: <%= branch.title %><br>
+              Request Made: <%= req.created_at.strftime("%H:%M, %m/%d/%Y") %><br>
+              Status: <%= req.status %>
+            </div>
+          </div>
+          <a href="/projects">
+            <div class="panel-footer">
+              <span class="pull-left">Delete request</span>
+              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div class="clearfix"></div>
+            </div>
+          </a>
         <% end %>
       <% end %>
     <% end  %>
+  </div>
+</div>
 
-
-    <% if @requests.count != 0 %>
-     <% req = @requests[0]%>
-      <%= button_to "Delete all requests", request_kill_all_requests_path(req), method: :post %>
-    <% end %>
-
+<% if @requests.count != 0 %>
+ <% req = @requests[0]%>
+  <%= button_to "Delete all requests", request_kill_all_requests_path(req), method: :post %>
+<% end %>
 
 <% if @requests.count == 0 %>
   You have not made any collaboration requests.

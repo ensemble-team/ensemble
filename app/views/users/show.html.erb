@@ -9,31 +9,32 @@
             </div>
           </div>
 
-      <% if @user.fb_image %>
-        <img src="<%= @user.fb_image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
-      <% else %>
-        <img src="<%= @user.image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
-      <% end %>
+          <div class="col-lg-offset-4 col-lg-6">
+            <% if @user.fb_image %>
+              <img src="<%= @user.fb_image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
+            <% else %>
+              <img src="<%= @user.image %>" style="width:152px; height:152px; border-radius: 50%;"></img>
+            <% end %>
+          </div>
 
-
-    <div>
+    <div class="col-lg-offset-4 col-lg-6">
       <p><%= @user.bio %></p>
     </div>
+
     <div class="col-lg-3 col-md-3 col-sm-3">
-        <h2>Messages Inbox</h2>
+        <h2>Messages</h2>
         <%= render "users/partials/profile_messages", local: { message: @messages, user: @users } %>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-3">
-        <h2>Current Projects</h2>
+        <h2>Projects</h2>
         <%= render "users/partials/profile_user_projects", local: { project: @projects, user: @users } %>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-3">
-        <h2>Current Collaborations</h2>
+        <h2>Collaborations</h2>
         <%= render "users/partials/profile_user_collaborations", local: { branch: @branches, user: @user } %>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-3">
-        <h2>All my Requests
-        </h2>
+        <h2>Requests</h2>
         <%= render "users/partials/profile_user_user_requests", local: { branch: @branches, user: @users, project: @projects, request: @requests, project_check: @project_check, branch_check: @branch_check } %>
     </div>
   </div>

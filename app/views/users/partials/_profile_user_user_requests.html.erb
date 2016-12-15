@@ -1,16 +1,16 @@
+<% if @requests.count != 0 %>
+<% @project_check = false %>
 <div class="col-lg-12 col-md-12 col-sm-12" style="padding-left:0px;">
   <div class="panel panel-red">
     <div class="panel-heading">
       <div class="row" style="list-style:none;padding-left:10px;">
-<% if @requests.count != 0 %>
-  <% @project_check = false %>
-    <% @requests.each do |req| %>
-      <% if req.owner_type == "Project" && @project_check == false  %>
-        <strong><p>Collaboration request</p></strong>
-        <% @project_check = true %>
+            <% @requests.each do |req| %>
+              <% if req.owner_type == "Project" && @project_check == false  %>
+                <strong><p>Collaboration request</p></strong>
+                <% @project_check = true %>
+                <% end %>
+            <% end %>
         <% end %>
-    <% end %>
-<% end %>
         <% if @requests.count != 0 %>
           <% @requests.each do |req| %>
             <% if req.owner_type == "Project" %>
@@ -27,18 +27,18 @@
             <div class="clearfix"></div>
           </div>
         </a>
+        <% end %>
   </div>
 </div>
 <% end %>
 <% end %>
-<% end %>
 
+<% if @requests.count != 0 %>
+<% @branch_check = false %>
 <div class="col-lg-12 col-md-12 col-sm-12" style="padding-left:0px;">
   <div class="panel panel-red">
     <div class="panel-heading">
       <div class="row" style="list-style:none;padding-left:10px;">
-        <% if @requests.count != 0 %>
-          <% @branch_check = false %>
           <% @requests.each do |req| %>
             <% if req.owner_type == "Branch" && @branch_check == false  %>
               <strong><p>Mix request</p></strong>
@@ -63,17 +63,17 @@
             </div>
           </a>
         <% end %>
-      <% end %>
-    <% end  %>
   </div>
 </div>
+<% end %>
+<% end  %>
 
 <% if @requests.count != 0 %>
- <% req = @requests[0]%>
-  <%= button_to "Delete all requests", request_kill_all_requests_path(req), method: :post, class: "btn btn-default" %>
+<% req = @requests[0]%>
+<%= button_to "Delete all requests", request_kill_all_requests_path(req), method: :post, class: "btn btn-default" %>
 <% end %>
 
 <% if @requests.count == 0 %>
-  You have not made any collaboration requests.
-  You have not made any mix requests.
+You have not made any collaboration requests.
+You have not made any mix requests.
 <% end %>

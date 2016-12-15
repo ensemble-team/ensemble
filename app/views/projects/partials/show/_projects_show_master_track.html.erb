@@ -2,9 +2,13 @@
   <% @project.tracks.each do |track| %>
     <% if track.title != nil %>
       <audio src="<%=audio_path track.avatar%>" type="audio/mpeg" controls></audio><br/>
+      <% @counter = 0 %>
       <% @project.collaborations.each do |collaboration| %>
-        <% if current_user.id == collaboration.collaborator || current_user.id == @project.user_id %>
-          <a class="btn btn-default download" href="<%=track.avatar%>" download="Song">Download</a>
+        <% @counter += 1 %>
+        <% if @counter == 1 %>
+          <% if current_user.id == collaboration.collaborator || current_user.id == @project.user_id %>
+              <a class="btn btn-default download" href="<%=track.avatar%>" download="Song">Download</a>
+          <% end %>
         <% end %>
       <% end %>
       <% if current_user.id == @project.user_id%>

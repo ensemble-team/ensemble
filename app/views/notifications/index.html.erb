@@ -10,62 +10,83 @@
             <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
           </li>
           <li class="active">
-            <i class="fa fa-fw fa-desktop"></i> Notifications
+            <i class="fa fa-fw fa-bell"></i> Notifications
           </li>
         </ol>
       </div>
     </div>
-    <ul>
+
+
+    <div class="notifications-lists">
+    <ul style="list-style:none;padding-left:0px;">
       <% @notifications.each do |n| %>
         <% sender = User.find(n.notified_by) %>
+
+        <% if n.read == nil %>
+        <% if n.owner_type == "Track" %>
+        <% s = 'label label-info' %>
+        <% elsif n.owner_type == "Message" %>
+        <% s = 'label label-warning' %>
+        <% elsif n.owner_type == "Request" %>
+        <% s = 'label label-success' %>
+        <% elsif n.owner_type == "Approve Collab" %>
+        <% s = 'label label-danger' %>
+        <% elsif n.owner_type == "Branch" %>
+        <% s = 'label label-primary' %>
+        <% end %>
+        <% else  %>
+        <% s = 'label label-default' %>
+        <% end %>
+
         <% case n.owner_type  %>
         <% when "Message" %>
           <li>
-            <%= sender.username %> has send you a message
-            <%= link_to "See message", notification_link_through_path(n) %>
+            <strong><%= sender.username %></strong> has sent you a message
+            <a href="<%= notification_link_through_path(n) %>"><span class="<%= s %>"> See <%= n.owner_type %> </span></a>
           </li>
         <% when "Branch" %>
           <li>
-            <%= sender.username %> has created a Branch
-            <%= link_to "See Branch", notification_link_through_path(n) %>
+            <strong><%= sender.username %></strong> has created a Branch
+            <a href="<%= notification_link_through_path(n) %>"><span class="<%= s %>"> See <%= n.owner_type %> </span></a>
           </li>
         <% when "Comment"  %>
           <li>
-            <%= sender.username %> has made a new comment
-            <%= link_to "Have a look", notification_link_through_path(n) %>
+            <strong><%= sender.username %></strong> has made a new comment
+            <a href="<%= notification_link_through_path(n) %>"><span class="<%= s %>"> See <%= n.owner_type %> </span></a>
           </li>
         <% when "Track"  %>
           <li>
-            <%= sender.username %> has uploaded a new track
-            <%= link_to "Listen to the track", notification_link_through_path(n) %>
+            <strong><%= sender.username %></strong> has uploaded a new track
+            <a href="<%= notification_link_through_path(n) %>"><span class="<%= s %>"> See <%= n.owner_type %> </span></a>
           </li>
         <% when "Request"  %>
           <li>
-            <%= sender.username %> has sent a new request
-            <%= link_to "Have a look", notification_link_through_path(n) %>
+            <strong><%= sender.username %></strong> has sent a new request
+            <a href="<%= notification_link_through_path(n) %>"><span class="<%= s %>"> See <%= n.owner_type %> </span></a>
           </li>
         <% when "Approve Collab"  %>
           <li>
-            <%= sender.username %> has approved your collaboration request
-            <%= link_to "Have a look", notification_link_through_path(n) %>
+            <strong><%= sender.username %></strong> has approved your collaboration request
+            <a href="<%= notification_link_through_path(n) %>"><span class="<%= s %>"> <%= n.owner_type %> </span></a>
           </li>
         <% when "Approve Mix"  %>
           <li>
-            <%= sender.username %> has approved your mix request
-            <%= link_to "Have a look", notification_link_through_path(n) %>
+            <strong><%= sender.username %></strong> has approved your mix request
+            <a href="<%= notification_link_through_path(n) %>"><span class="<%= s %>"> <%= n.owner_type %> </span></a>
           </li>
         <% when "Reject Collab"  %>
           <li>
-            <%= sender.username %> has rejected your collaboration request
-            <%= link_to "Have a look", notification_link_through_path(n) %>
+            <strong><%= sender.username %></strong> has rejected your collaboration request
+            <a href="<%= notification_link_through_path(n) %>"><span class="<%= s %>"> <%= n.owner_type %> </span></a>
           </li>
         <% when "Reject Mix"  %>
           <li>
-            <%= sender.username %> has rejected your mix request
-            <%= link_to "Have a look", notification_link_through_path(n) %>
+            <strong><%= sender.username %></strong> has rejected your mix request
+            <a href="<%= notification_link_through_path(n) %>"><span class="<%= s %>"> <%= n.owner_type %> </span></a>
           </li>
         <% end %>
       <% end %>
     </ul>
+      </div>
   </div>
 </div>

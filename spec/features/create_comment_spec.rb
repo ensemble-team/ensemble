@@ -6,7 +6,7 @@ RSpec.feature 'User writes new comment', :type => :feature do
     create_user
     create_project
     fill_in 'Comment', with: "Great song"
-    click_button "Create Comment"
+    click_button "Save Comment"
     expect(page).to have_content "Comment added"
     expect(page).to have_content "Great song"
   end

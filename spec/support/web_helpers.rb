@@ -53,8 +53,6 @@ module WebHelpers
     sign_in
     visit ("projects/new")
     fill_in "Title", with: "New project"
-    fill_in "Genre", with: "Funk"
-    fill_in "Description", with: "Great new song"
     click_button "Create Project"
   end
 

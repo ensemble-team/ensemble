@@ -12,7 +12,7 @@ RSpec.feature "Project", :type => :feature  do
     fill_in "track_title", with: "Nice Song"
     fill_in "Track Description", with: "Sexy"
     attach_file 'track_avatar', './spec/fixtures/files/mpthreetest.mp3'
-    click_button "Create Track"
+    click_button "Upload Track"
     expect(page).to have_content("Track uploaded")
     expect(page).to have_css("audio")
   end

@@ -17,7 +17,7 @@ RSpec.feature 'User creates new request', :type => :feature do
     sign_in_as_user_3
     visit ("/projects/1")
     fill_in "Message", with: "Please accept"
-    click_button "Create Request"
+    click_button "Collaboration Request"
     expect(page).to have_content "Request sent successfully"
   end
 end

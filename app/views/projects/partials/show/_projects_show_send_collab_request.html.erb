@@ -4,5 +4,5 @@
     <%= r.hidden_field :receiver_id, :value => @project.user_id %>
     <%= r.hidden_field :collab_id, :value => current_user.id %>
     <%= r.input :message, placeholder: 'Message', label: false %>
-    <%= r.button :submit, value: 'Send' %>
+    <%= r.button :submit, value: 'Send', id: "Collaboration Request" %>
   <% end %>

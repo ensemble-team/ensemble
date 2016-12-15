@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/lichien/final/ensemble/app/models/user.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/user.rb": [
         1,
         1,
         null,
@@ -37,12 +37,12 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/models/application_record.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/lichien/final/ensemble/app/uploaders/avatar_uploader.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/uploaders/avatar_uploader.rb": [
         null,
         null,
         null,
@@ -96,11 +96,12 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/helpers/application_helper.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/application_helper.rb": [
         1,
+        null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/helpers/blacklists_helper.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/blacklists_helper.rb": [
         1,
         null,
         1,
@@ -110,7 +111,7 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/helpers/branches_helper.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/branches_helper.rb": [
         1,
         1,
         14,
@@ -122,11 +123,11 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/helpers/collaborations_helper.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/collaborations_helper.rb": [
         1,
         null
       ],
-      "/Users/lichien/final/ensemble/app/helpers/comments_helper.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/comments_helper.rb": [
         1,
         1,
         2,
@@ -137,11 +138,11 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/helpers/ensemble_helper.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/ensemble_helper.rb": [
         1,
         null
       ],
-      "/Users/lichien/final/ensemble/app/helpers/messages_helper.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/messages_helper.rb": [
         1,
         1,
         1,
@@ -154,39 +155,39 @@
         1,
         null,
         null,
-        null,
-        null,
-        null
-      ],
-      "/Users/lichien/final/ensemble/app/helpers/notifications_helper.rb": [
-        1,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
         null,
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/helpers/projects_helper.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/notifications_helper.rb": [
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/projects_helper.rb": [
         1,
         null
       ],
-      "/Users/lichien/final/ensemble/app/helpers/requests_helper.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/requests_helper.rb": [
         1,
         1,
         16,
@@ -290,7 +291,7 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/helpers/tracks_helper.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/tracks_helper.rb": [
         1,
         1,
         19,
@@ -319,11 +320,11 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/helpers/users_helper.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/lichien/final/ensemble/app/controllers/branches_controller.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/branches_controller.rb": [
         1,
         null,
         1,
@@ -343,6 +344,7 @@
         1,
         40,
         40,
+        40,
         null,
         null,
         1,
@@ -359,7 +361,7 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/controllers/application_controller.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -372,15 +374,17 @@
         250,
         null,
         null,
-        null
-      ],
-      "/Users/lichien/final/ensemble/app/controllers/ensemble_controller.rb": [
-        1,
-        1,
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/controllers/notifications_controller.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/ensemble_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/notifications_controller.rb": [
         1,
         null,
         1,
@@ -425,7 +429,7 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/controllers/projects_controller.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/projects_controller.rb": [
         1,
         1,
         null,
@@ -451,6 +455,7 @@
         null,
         1,
         106,
+        106,
         null,
         null,
         1,
@@ -467,7 +472,7 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/controllers/requests_controller.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/requests_controller.rb": [
         1,
         null,
         1,
@@ -504,7 +509,7 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/controllers/tracks_controller.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/tracks_controller.rb": [
         1,
         null,
         1,
@@ -551,13 +556,7 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/models/notification.rb": [
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/lichien/final/ensemble/app/models/project.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/project.rb": [
         1,
         null,
         1,
@@ -572,7 +571,7 @@
         1,
         null
       ],
-      "/Users/lichien/final/ensemble/app/models/branch.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/branch.rb": [
         1,
         1,
         1,
@@ -584,7 +583,20 @@
         1,
         null
       ],
-      "/Users/lichien/final/ensemble/app/models/track.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/comment.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/notification.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/track.rb": [
         1,
         1,
         1,
@@ -593,14 +605,7 @@
         1,
         null
       ],
-      "/Users/lichien/final/ensemble/app/models/comment.rb": [
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/lichien/final/ensemble/app/models/collaboration.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/collaboration.rb": [
         1,
         1,
         1,
@@ -608,7 +613,7 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/models/request.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/request.rb": [
         1,
         1,
         1,
@@ -616,37 +621,19 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/models/message.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/message.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/lichien/final/ensemble/app/models/blacklist.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/models/blacklist.rb": [
         1,
         1,
         null
       ],
-      "/Users/lichien/final/ensemble/app/controllers/blacklists_controller.rb": [
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/lichien/final/ensemble/app/controllers/users_controller.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -654,7 +641,7 @@
         1,
         null,
         1,
-        4,
+        3,
         null,
         null,
         1,
@@ -671,27 +658,31 @@
         1,
         null,
         1,
-        4,
-        4,
+        3,
+        3,
         null,
         null,
         1,
-        4,
-        4,
+        3,
+        3,
         null,
         null,
         1,
-        4,
-        4,
+        3,
+        3,
         null,
         null,
         1,
-        4,
-        4,
+        3,
+        3,
         null,
         null,
         1,
-        16,
+        12,
+        12,
+        null,
+        0,
+        null,
         null,
         null,
         1,
@@ -700,7 +691,25 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/controllers/messages_controller.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/blacklists_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/messages_controller.rb": [
         1,
         null,
         1,
@@ -733,7 +742,7 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/controllers/comments_controller.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/comments_controller.rb": [
         1,
         null,
         1,
@@ -773,42 +782,21 @@
         null,
         null
       ],
-      "/Users/lichien/final/ensemble/app/channels/application_cable/channel.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/lichien/final/ensemble/app/channels/application_cable/connection.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/lichien/final/ensemble/app/controllers/collaborations_controller.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/collaborations_controller.rb": [
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/lichien/final/ensemble/app/controllers/users/omniauth_callbacks_controller.rb": [
         0,
         0,
         0,
@@ -829,17 +817,38 @@
         0,
         0
       ],
-      "/Users/lichien/final/ensemble/app/jobs/application_job.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/controllers/users/omniauth_callbacks_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0
       ],
-      "/Users/lichien/final/ensemble/app/mailers/application_mailer.rb": [
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/tompage/Documents/ensemble/ensembleReal/ensemble/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1481741181
+    "timestamp": 1481823507
   }
 }

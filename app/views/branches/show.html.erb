@@ -38,7 +38,7 @@
         <%= render "branches/partials/branch_show_create_and_show_comments", local: { branch: @branch } %>
       </div>
 
-      <%if current_user.id != @branch.user_id %>
+      <%if (current_user.id == @branch.user_id) && (@branch.tracks.count != 0) %>
       <div class="col-lg-12 collab-requests">
         <%= render "branches/partials/branch_show_send_mix_request", local: { branch: @branch } %>
       </div>

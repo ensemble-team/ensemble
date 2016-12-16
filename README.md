@@ -2,113 +2,36 @@
 [![Build Status](https://travis-ci.org/ensemble-team/ensemble.svg?branch=master)](https://travis-ci.org/ensemble-team/ensemble)
 [![Coverage Status](https://coveralls.io/repos/github/ensemble-team/ensemble/badge.svg?branch=master)](https://coveralls.io/github/ensemble-team/ensemble?branch=master)
 
-# Ensemble - A Platform for Music Collaboration
+# Ensemble
+## A Platform for Music Collaboration
 
-###Ensemble User Stories
-#####MVP
+##Description
+Ensemble is a music collaboration platform where like minded musicians can discover unfinished but promising projects that they can contribute to.   
 
-```
-As a user
-So that I can start a project
-I want to be able to open a new repo
+Browsing through the different projects created by other Ensemble users, a collaborating musician can stream the master track of a project. Having done this they can then request permission from the projects founding user to contribute. Once this founding user has given their permission, the contributing user is then able to open a branch or sub-section of the original project.   
 
-As a User
-So that I can start or contribute to a project
-I want to be able to upload a music file to the platform
+Within this branch it's possible to first download the master track and then upload an altered version, presumably with the contributing users musical contribution. For example, a singer creates a project with their voice on the master track, a guitarist would then be able to download it, and add their guitar riff.   
+The contributing user can then send this branch off for the consideration of the founding user, in the form of a mix request.
+If the founding user likes what they hear, they are then able to nominate this altered track to be the main track of the project, i.e. the track which would then be present on the main project page, and would in turn be listened to by more potential contributing users.   
+The idea is that this process would be repeated until the track or piece of music came to fruition.  
 
-As a User
-So that I can contribute to an existing project
-I want to download a project track
-```
+Ensemble, a place where music gets made.  
 
-#####Version One
+## Check It Out!
+https://ensemble-app.herokuapp.com/
 
-```
-As a User
-So that I can be a specific user
-I want to create a user account
+##Built and Tested With
 
-As a User
-So that I can listen to other peoples tracks
-I want to play/stream music from the site
+- Ruby on Rails
+- HTML, SCSS & Bootstrap
+- JavaScript
+- RSpec, Capybara, Factory Girl
+- PostgreSQL
 
-As a User
-So that I can tell people what I think
-I want to leave a comment about the track I've just listened to
+##Ensemblers
 
-```
+Felix Harrison, Frankie Bell, Laurent Bouhnik, Li Beh, Tom Page
 
-#####Version Two
-
-```
-
-As a User
-So that I can contribute music
-I want to be able to add tracks to the site
-
-As a User
-So that I can remove any music I have uploaded
-I want to be able to delete tracks
-
-As a User
-So that I can see who has added what to a project
-I want to be able to see a timeline for the project
-
-```
-
-#####Version Three
-
-```
-As a contributing User
-So that I can collaborate on projects I like
-I want to ask the Super User for permission to collaborate
-
-As a super User
-So that I can decide who can contribute to my project
-I want to be able to give permission to contributing users
-
-As a super User
-So that I can control my project
-I want to be able to delete any tracks I don't like from my project
-
-As a super User
-So that I can control my project
-I want to be able to remove any contributing user from my project
-
-```
-
-#####Version Four
-
-```
-As a contributing user
-So that I can add to another persons project
-I want to I want to be able to create a track (branch) of the original project
-
-As a contributing user
-So that I can add my contribution to the main project branch
-I want to be able to make a mix track request (merge branch)
-
-As a super super
-So that I can decide if I want to mix a contributing track into my project
-I want to be able to review the contributing track and approve it (or not)
-
-
-```
-
-#####Version 5
-
-```
-
-As a super user
-So that I can decide who can hear my project
-I want to be able to set my project as public or private
-
-As a super user
-So that I don't have to worry about people adding things I don't like to my project
-I want ensemble to have a default denial setting for mixing in tracks
-
-As a super user
-So that I protect my project from people I don't like
-I want to be able to block users from my project
-
-```
+##Acknowledgments
+- Mary Rose Cook
+- Makers Academy

@@ -1,4 +1,4 @@
-.sent-messages, .received-messages {
+.sent-messages, .received-messages, .read-messages {
   margin-left: 15%;
   margin-right: 15%;
   color: #fff;
@@ -13,6 +13,9 @@
 
 .received-messages {
   background-color: #ff6666;
+}
+.read-messages {
+  background-color: #f7aab4;
 }
 
 .reply-box {

@@ -21,6 +21,7 @@ include MessagesHelper
   def show
     @messages = Message.where(recipient: current_user.id)
     @message = Message.find(params[:id])
+    @message.update(read: "read")
   end
 
 private

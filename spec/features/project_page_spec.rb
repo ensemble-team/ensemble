@@ -14,8 +14,6 @@ RSpec.feature 'User creates new project', :type => :feature do
     sign_in
     visit new_project_path
     expect(page).to have_content 'Title'
-    expect(page).to have_content 'Genre'
-    expect(page).to have_content 'Description'
     page.has_button? 'Create Project'
   end
 
@@ -118,7 +116,7 @@ RSpec.feature 'User creates new project', :type => :feature do
       sign_in_as_user_3
       visit('projects/5')
       fill_in "Message", with: "Please accept"
-      click_button "Create Request"
+      click_button "Collaboration Request"
       sign_out
       sign_in
       visit('projects/5')

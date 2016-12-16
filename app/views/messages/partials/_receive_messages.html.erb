@@ -1,11 +1,17 @@
 <% if @messages.any? %>
   <% @messages.sort.reverse.each do |message| %>
+  <% if message.sender != current_user.id %>
   <% sender = User.find(message.sender) %>
+  <% if message.read == nil %>
   <div class="received-messages text-left">
+  <% else %>
+  <div class="read-messages text-left">
+  <% end %>
     From: <%= sender.username %>
     <br>On :  <%= message.created_at.strftime("%d/%m/%Y") %><br>
     Body: <%= message.body[0..20] %><br><br>
     <%= link_to "See full message and reply", user_message_path(message) %>
   </div><br>
+  <% end %>
   <% end %>
 <% end %>

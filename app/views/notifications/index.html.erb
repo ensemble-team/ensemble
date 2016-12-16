@@ -19,19 +19,27 @@
 
     <div class="notifications-lists">
     <ul style="list-style:none;padding-left:0px;">
-      <% @notifications.each do |n| %>
+      <% @notifications.reverse_each do |n| %>
         <% sender = User.find(n.notified_by) %>
 
         <% if n.read == nil %>
           <% if n.owner_type == "Track" %>
+            <% s = 'label label-info' %>
+          <% elsif n.owner_type == "Branch" %>
             <% s = 'label label-info' %>
           <% elsif n.owner_type == "Message" %>
             <% s = 'label label-warning' %>
           <% elsif n.owner_type == "Request" %>
             <% s = 'label label-success' %>
           <% elsif n.owner_type == "Approve Collab" %>
+            <% s = 'label label-success' %>
+          <% elsif n.owner_type == "Reject Collab" %>
             <% s = 'label label-danger' %>
-          <% elsif n.owner_type == "Branch" %>
+          <% elsif n.owner_type == "Approve Mix" %>
+              <% s = 'label label-success' %>
+          <% elsif n.owner_type == "Reject Mix" %>
+              <% s = 'label label-danger' %>
+          <% elsif n.owner_type == "Comment" %>
             <% s = 'label label-primary' %>
           <% end %>
         <% else  %>

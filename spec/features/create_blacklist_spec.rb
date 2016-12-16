@@ -7,7 +7,7 @@ RSpec.feature 'User can create a blaclist', :type => :feature do
     sign_in
     visit('/projects/2500')
     click_button("Accept Request")
-    click_button ("Create Blacklist")
+    click_button ("Block user")
     expect(Blacklist.count).to eq(1)
 
 

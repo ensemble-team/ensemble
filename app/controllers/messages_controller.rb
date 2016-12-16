@@ -13,7 +13,7 @@ include MessagesHelper
         create_notification(@message)
         flash[:notice] = "Message sent successfully"
       else
-        flash[:notice] = "Could not send the message, check the information entered"
+        flash[:notice] = "You need to enter a message before pressing send"
       end
       redirect_to request.referrer
   end
@@ -21,6 +21,7 @@ include MessagesHelper
   def show
     @messages = Message.where(recipient: current_user.id)
     @message = Message.find(params[:id])
+    @message.update(read: "read")
   end
 
 private

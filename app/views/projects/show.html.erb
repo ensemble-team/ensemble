@@ -63,15 +63,18 @@
       </div>
       <% end %>
 
-      <%if (current_user.id == @project.user_id) && (@project.requests.count > 1 || @project.collaborations.count > 1) %>
+      <%if (current_user.id == @project.user_id) && (@project.requests.count >= 1 || @project.collaborations.count >= 1) %>
         <div class="col-lg-12 dropdowns text-center">
           <div class="col-lg-4 col-md-6 col-xs-12 mixes">
+            <h3>Mix Requests</h3>
             <%= render "projects/partials/show/projects_show_show_mix_requests", local: { project: @projects } %>
           </div>
           <div class="col-lg-4 col-md-6 col-xs-12 collabs">
+            <h3>Collaboration Requests</h3>
             <%= render "projects/partials/show/projects_show_show_collab_requests", local: { project: @projects } %>
           </div>
           <div class="col-lg-4 col-md-6 col-xs-12 members">
+            <h3>Collaborators</h3>
             <%= render "projects/partials/show/projects_show_existing_collabs", local: { project: @projects } %>
           </div>
         </div>

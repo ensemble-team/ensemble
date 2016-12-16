@@ -13,7 +13,7 @@ include RequestsHelper
       create_notification(@request_owner, @request)
       flash[:notice] = "Request sent successfully"
     else
-      flash[:notice] = "Could not send the request, check the information entered"
+      flash[:notice] = "You need to enter a message before pressing send"
     end
     redirect_to request.referrer
   end

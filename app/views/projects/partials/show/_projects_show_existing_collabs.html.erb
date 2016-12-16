@@ -2,6 +2,7 @@
   <% if @project.collaborations.count != 0  && @project.user_id == current_user.id %>
     <% @project.collaborations.each do |collaboration| %>
       <%user = User.find(collaboration.collaborator) %>
+      <h2> Collab requests </h2>
       <a href="/user/<%= user.username %>"><%= user.username %></a>
       <%= button_to 'Remove Collaboration', project_collaboration_path(@project, collaboration), method: :delete, data: {confirm: 'Are you sure you would like to delete this collaboration?'}, class: 'btn btn-default arbutton' %>
       <%= simple_form_for ([@project, @project.blacklists.build]) do |b| %>

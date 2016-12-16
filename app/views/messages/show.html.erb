@@ -13,14 +13,14 @@
       <% @all_messages.sort.each do |message| %>
         <% sender = User.find(message.sender) %>
         <% if sender.username == current_user.username %>
-          <div style= "border: 2px solid #ea6060;
-            border-radius: 5px; width: 150px; background-color: #ea6060"><strong>&nbsp You: </strong>
+        <div class="indent">
+          <div class="current-user-message"><strong>You: </strong>
             <small style="color:grey"><%= message.created_at.strftime("%d/%m/%Y") %></small>
             <br><%= message.body %>
-            </div><br>
+          </div><br>
+        </div>
         <% else %>
-        <div style= "border: 2px solid #4fa3f7;
-            border-radius: 5px; width: 150px; background-color: #4fa3f7"><strong>&nbsp<%= sender.username %>: </strong>
+        <div class="sender-message-user"><strong><%= sender.username %>: </strong>
             <small style="color:grey"><%= message.created_at.strftime("%d/%m/%Y") %></small>
             <br><%= message.body %>
             </div><br>

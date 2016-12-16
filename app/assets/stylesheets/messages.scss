@@ -8,14 +8,18 @@
 }
 
 .sent-messages {
-  background-color: #6699ff;
+  background-color: #fff;
+  color: #6699ff;
+  border: #6699ff 1px solid;
 }
 
 .received-messages {
-  background-color: #ff6666;
+  background-color: #1a66ff;
+  color: #fff;
 }
 .read-messages {
-  background-color: #f7aab4;
+  background-color: #6699ff;
+  color: #fff;
 }
 
 .reply-box {
@@ -23,4 +27,22 @@
   textarea {
     resize: none;
   }
+}
+.indent {
+  margin-left: 7em;
+}
+.current-user-message {
+  padding: 1em 2em 1em 1em;
+  border: #6699ff 1px solid;
+  color: #6699ff;
+  border-radius: 5px;
+  width: 150px;
+}
+.sender-message-user {
+  padding: 1em 1em 1em 1em;
+  border: 2px solid #6699ff;
+  border-radius: 5px;
+  width: 150px;
+  background-color: #6699ff;
+  color: #fff;
 }

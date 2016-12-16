@@ -24,7 +24,7 @@ include CommentsHelper
       create_notification(@comment_owner, @comment)
       flash[:notice] = "Comment added"
     else
-      flash[:notice] = "Could not save the comment, check the information entered"
+      flash[:notice] = "You need to enter a comment before pressing send"
     end
     redirect_to request.referrer
   end

@@ -3,6 +3,7 @@
     <% @project.requests.each do |request| %>
       <%if request.id != nil && request.status == "In progress" %>
         <% user = User.find(request.collab_id) %>
+          <h2> Collab requests </h2>
         <strong><%= user.username + ": "%></strong><%= request.message %>
         <%= button_to 'Accept Request', request_approve_collab_path(request), method: :post, class: 'btn btn-default arbutton'%>
         <%= button_to 'Reject Request', request_reject_collab_path(request), method: :post, class: 'btn btn-default arbutton'%>

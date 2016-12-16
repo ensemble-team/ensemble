@@ -25,8 +25,7 @@ class NotificationsController < ApplicationController
     when "Request"
       find_request
       if @origin.class == Branch
-        project = Project.find(@origin.project_id)
-        redirect_to project
+        redirect_to @request
       elsif @origin.class == Project
         redirect_to @origin
       end

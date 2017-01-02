@@ -37,7 +37,7 @@ RSpec.describe TracksController, type: :controller do
       post :create, :project_id => project.id, track: FactoryGirl.attributes_for(:track, track_owner_id: project.id, title: nil, track_owner_type: "Project")
 
       expect(response).to have_http_status(:redirect)
-      expect(flash[:notice]).to match(/^Could not save the track, check the information entered/)
+      expect(flash[:notice]).to match(/^You need to enter track title before pressing upload/)
     end
 
     it "creates a track" do

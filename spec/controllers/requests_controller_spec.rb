@@ -21,7 +21,7 @@ RSpec.describe RequestsController, type: :controller do
     it "shows flash message for failure " do
       request.env['HTTP_REFERER'] = 'http://example.com'
       post :create, branch_id: branch.id, request: FactoryGirl.attributes_for(:request, request_owner_id: branch.id, message: nil)
-      expect(flash[:notice]).to match(/^Could not send the request, check the information entered/)
+      expect(flash[:notice]).to match(/^You need to enter a message before pressing send/)
     end
   end
 
@@ -34,7 +34,7 @@ RSpec.describe RequestsController, type: :controller do
     it "shows flash message for failure " do
       request.env['HTTP_REFERER'] = 'http://example.com'
       post :create, project_id: project.id, request: FactoryGirl.attributes_for(:request, request_owner_id: project.id, message: nil)
-      expect(flash[:notice]).to match(/^Could not send the request, check the information entered/)
+      expect(flash[:notice]).to match(/^You need to enter a message before pressing send/)
     end
   end
 
